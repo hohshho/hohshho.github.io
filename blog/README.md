@@ -33,9 +33,14 @@
  - [ ] 태그 아이콘으로 보이게 수정
  - [ ] 포스트 보일 때 미리보기 로직 수정
 
+ - [ ] 방문자 Total, Today 등록 기능
+
+ - [ ] 백기선님 블로그 대박인게 구독까지 있네... 이거 나도 하고싶다.
 ## POST
  - [ ] 비율 50% 늘리기
-
+ - [ ] 포스트 오른쪽 목차 글씨 투명도 조정
+ - [ ] [하단 next, previous버튼](http://homoefficio.github.io/2019/10/09/IntelliJ%EC%97%90%EC%84%9C-H2-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B3%A0-JPA-Console-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/#disqus_thread)
+ - [ ] 접고 닫는 구현
 ## Tags
  - [ ] 비율 50% 늘리기
 
@@ -45,3 +50,11 @@
 
 ## Portfolio
  - [ ] 포트 폴리오 태그 생성 
+
+## Category
+ - [ ] 카테고리 탭 생성
+
+## 구독기능
+
+https://sejoung.github.io/2020/06/2020-06-18-mockMvc_mediaType_UTF8/#MediaType-APPLICATION-JSON-UTF8-Deprecated
+여기두 멋있따.

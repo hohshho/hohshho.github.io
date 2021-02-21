@@ -56,7 +56,7 @@ const Bio = () => {
           </div>
 
           <a href={website} target="_blank" rel="noopener noreferrer">
-            {website}
+            포트폴리오 🌈
           </a>
         </div>
       )}
