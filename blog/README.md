@@ -56,5 +56,4 @@
 
 ## 구독기능
 
-https://sejoung.github.io/2020/06/2020-06-18-mockMvc_mediaType_UTF8/#MediaType-APPLICATION-JSON-UTF8-Deprecated
-여기두 멋있따.
+![구독기능 참고](https://sejoung.github.io/2020/06/2020-06-18-mockMvc_mediaType_UTF8/#MediaType-APPLICATION-JSON-UTF8-Deprecated)

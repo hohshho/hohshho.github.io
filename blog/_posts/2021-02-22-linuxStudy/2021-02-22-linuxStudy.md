@@ -1,6 +1,6 @@
 ---
 title: Linux Study
-date: 2021-02-21
+date: 2021-02-22
 tags: 
   - Linux
 keywords:
@@ -44,8 +44,28 @@ keywords:
  -newer : 뒤에 적힌 파일보다 최근에 변경된 파일 찾음
 ```
 
+## 사용 예제
+```bash
+# 수정된지 100일이 지난 파일 목록 출력
+$ find -mtime +100
+
+# php 디렉토리 파일 중, 오늘 생성한 디렉토리를 삭제하시오
+$ find ~/php/* -ctime 0 -type d -exec rm -r {} \;
+
+# 연결되지 않은 심볼릭 링크 찾는 방법
+$ find -L . -type l
+
+# 현재 디렉토리에서 test로 시작하는 디렉토리만 찾아 삭제
+$ rm -r `find -name 'test*' -type d`
+
+```
+
+
 **Tip!!**
- - 2>/dev/null : 권한 없는건 화면에 출력되지 않는다.  
+ - 명령어에서 `(backtick)사용 : 스크립트 내에서 명령어를 실행할 경우 이용
+ - 2>/dev/null : 명령어 뒤에 추가로 달아주면 권한 없는건 화면에 출력되지 않는다.  
+
+
 
 # 2. grep
 > grep [option] [pattern] [file_name] : 특정 문자열을 파일에서 찾아주는 명령어
@@ -74,6 +94,23 @@ keywords:
  -G : 기본 정규식으로 검색
 ```
 
+## 사용 예제
+
+```bash
+# 'm'으로 시작하는 모든 파일에서 'hamster'를 포함하는 모든 행을 찾으시오
+$ grep -n hamster m*
+
+# grep을 사용하여 마침표로 시작되는 줄을 찾으시오
+$ grep ^\. {찾을 파일 / 디렉토리 명}
+
+# NW나 EA가 포함된 행을 출력한다
+$ egrep 'NW|EA' {file 명}
+
+# 숫자 3이 한 번 이상 등장하는 행 출력
+$ egrep '3+' {file 명}
+
+```
+
 
 # 3. awk
 > awk [옵션] 
@@ -82,15 +119,39 @@ keywords:
 ```
 $ awk {-f 파일명} {-F 필드 구분자} {"패턴"} {처리할 파일명}
 ```
+- pattern 생략 시 **모든 레코드 적용**
+- action 생략 시 **print 적용**
+- pattern과 action에 작성되는 awk program 코드에는 표현식, 변수, 함수 사용 가능
+- 
 
 ## 옵션
+```
+-F : 필드 구분 문자 지정
+-f : awk program 파일 경로 지정
+-v : awk program에서 사용될 특정 variable값 지정
+```
 
+
+## 사용 예제
+```bash
+# pattern 생략
+$ awk '{print}' ./file.txt
+
+# action 생략
+$ awk '/p/' ./file.txt
+
+# 레코드의 길이가 10 이상인 경우, 세 번째($3), 네 번째($4), 다섯 번째($5) 필드를 출력
+$ awk 'length($0) > 10 { print $3, $4, $5} ' {파일 이름}
+
+
+```
 
 
 # 4. Redirection
 > 명령의 결과를 모니터로 출력하지 않고, 파일로 저장할 수 있다. (리다이렉션을 사용해 출력, 입력 방향 지정 가능)
 
-표준 입출력(Standard I/O)
+표준 입출력(Standard I/O)  
+
 |구분|파일 디스크럽터|
 |----|----|
 | 표준 입력 | 0 |
@@ -127,13 +188,29 @@ $ awk {-f 파일명} {-F 필드 구분자} {"패턴"} {처리할 파일명}
 - .vimrc 파일에 환경설정 가능!
 
 
-# 6. sed 
+# 6. sed(stream deitor) 
+> 필터링과 텍스트를 변환하는 스트림 편집기
 
+- 
 
-## 옵션
+## 주요기능
+```bash
+# 1. 치환
+# addrass를 address로 바꾼다.
+$ sed 's/addrass/address/' {파일이름}
 
+# tab문자를 enter로 변환
+$ sed 's/\t/\ /' {파일이름}
+
+# 2. 삭제
+# 처음 1줄, 2줄을 지운다.
+
+# 공백라인을 삭제하는 명령
+$ sed '/^$/d {파일 이름}
+
+```
  
-
+[추가 사용법 링크](https://www.tecmint.com/linux-sed-command-tips-tricks/)
 
 # 7. ls
 
@@ -151,7 +228,6 @@ $ awk {-f 파일명} {-F 필드 구분자} {"패턴"} {처리할 파일명}
 chown [OPTION]... [OWNER][:[GROUP]] FILE...
 ```
 
-
 ## chmod
 > 파일이나 디렉토리의 모드를 변경
 
@@ -164,7 +240,6 @@ $ chmod {옵션} {권한} {파일}
 - 로그인 한 모든 세션은 각각 고유의 tty를 가지고 있다.
 - 입력과 출력을 처리한다.
   
-
 ```bash
 $ tty
 
@@ -259,14 +334,19 @@ HISTSIZE : 히스토리에 저장 가능한 최대 명령어 개수
 
 
 # 17. 심볼릭 링크, 하드 링크
+> 하나의 파일에 두개의 이름 사용하게 링크를 연결
 
-<!-- > 표현식 -->
+사용하는 경우
+ - 매우 긴 파일명이 있을 때
+ - 경로를 입력하지 않고 파일명만 입력해 사용할 때
 
-**Tip!!**
+## 차이점
 
-## 옵션
-
- 
+|하드 링크|심볼릭 링크|
+|----|----|
+| 파일에만 링크 가능 | 파일 또는 디렉토리에 링크 할 수 있음 |
+| 존재하지 않는 파일 링크 불가능 | 존재하지 않는 파일에 대해 링크 가능 |
+| 같은 파일 시스템에서만 가능 | 다른 파일 시스템에서 가능 |
 
 
 # 18. du / df
@@ -357,7 +437,7 @@ seek = n        #n*obs 바이트만큼 무시하고 쓴다.
  
 
 
-27. csh에서 로그아웃 할 때 백그라운드 프로세스를 자동으로 죽이려면 어떤 파일을 참조하면 되는가? - C쉘은로그아웃할 때 홈디렉토리의 ‘.logout’파일을 읽는다.
+csh에서 로그아웃 할 때 백그라운드 프로세스를 자동으로 죽이려면 어떤 파일을 참조하면 되는가? - C쉘은로그아웃할 때 홈디렉토리의 ‘.logout’파일을 읽는다.
 
 <!-- > 표현식 -->
 
@@ -630,5 +710,3 @@ https://jhnyang.tistory.com/287
 
 일단 오늘 해결
 [요거 보고 해결함 ㅋ](https://velog.io/@issac/SSH-%EC%A0%91%EC%86%8D%EC%8B%9C-RSA-%EA%B3%B5%EC%9C%A0%ED%82%A4-%EC%B6%A9%EB%8F%8C-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0)
-
-rm 보면 `` , '' , "" 차이 있거든? https://askubuntu.com/questions/20034/differences-between-doublequotes-singlequotes-and-backticks-on-comm 요거 보고 해결함
