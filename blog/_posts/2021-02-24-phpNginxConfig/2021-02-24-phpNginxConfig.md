@@ -23,7 +23,8 @@ keywords:
 2. Nginx 이해
 3. PHP 언어 사용방법 학습
 4. Codeigniter를 사용한 MVC 구현 방법 학습
-5. Codeigniter + SQLite + React 게시판 구현
+5. SQLite 학습
+6. Codeigniter + SQLite + React 게시판 구현
 
 # 1. Window / Linux 환경 설정
 

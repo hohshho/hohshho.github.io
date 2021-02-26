@@ -1,8 +1,8 @@
 ---
-title: Codeigniter3
+title: Codeigniter 학습
 date: 2021-02-25
 tags: 
-  - PHP
+  - Codeigniter
 keywords:
   - PHP
   - Nginx
@@ -79,15 +79,6 @@ public function _remap($method, $params = array()) {
 > 
 
 <!-- TODO : VIEW, Output 클래스 내용 정리하고 다시보자 -->
-
-#### 2. _remap() 함수
-> 
-
-#### 2. _remap() 함수
-> 
-
-#### 2. _remap() 함수
-> 
 
 **추가로 알아야 될 사항은 내용이 조금 어려워서 실제로 쓰이는 코드를 보게되면 코드를 통해 더 알아볼 예정이다**
 
@@ -201,6 +192,9 @@ if (!-e $request_filename ) {
 	rewrite ^(.*)$ /index.php last;
 }
 ```
+file이 존재하지 않으면, index.php로 이동
+
+
 
 ## Helper
 > 자주 사용하는 로직을 재활용 할 수 있게 만드는 Library
