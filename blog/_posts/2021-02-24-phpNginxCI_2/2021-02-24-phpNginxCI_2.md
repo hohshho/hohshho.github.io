@@ -1,6 +1,7 @@
 ---
 title: Nginx 학습
 date: 2021-02-24
+update: 2021-03-01
 tags: 
   - Nginx
 keywords:
@@ -31,6 +32,18 @@ keywords:
  - HTTP 요청마다 **새로운 프로세스를 만들어** 서버 메모리를 사용한다 (Fork로 구현되어 있음)
  - 데이터가 메모리에 캐시될 수 없다.
 
+### 추가
+[RPC 3875-1.4 항목](https://tools.ietf.org/html/rfc3875#section-1.4)
+```
+1. CGI 프로그램을 호출하는 WEB 서버 역할
+  1) 전송 단계에서의 인증 및 보안
+  2) CGI 프로그램의 선택
+  3) CGI Request 로 변환
+  4) CGI Response에서의 변환
+2. 호출 프로그램의 지정 방법 (URI)
+3. WEB 서버에서 CGI Request의 해석 방법 (경로 및 프로토콜)
+4. WEB 서버에서 CGI Response에 대한 반환 방법 (경로 및 프로토콜)
+```
 
 ## FastCGI란?
 > 하나의 큰 프로세스로 동작한다. 이 프로세스가 계속해서 새로운 요청(Request) 처리(CGI 단점 해결)
@@ -43,7 +56,7 @@ keywords:
 > PHP를 FastCGI 모드로 동작하게 해준다.
 
 
-## Nginx 역할
+## 1. 역할
 1. 정적 파일을 처리하는 **HTTP 서버**로서의 역할
 
 ![](webserver.PNG)
@@ -52,13 +65,24 @@ keywords:
 
 ![](reverseProxy.PNG)
 
+프록시는, **클라이언트와 서버 통신 사이에서 통신을 대신!! 해주는 서버를 의미한다.**
+
 ### 리버스 프록시란?
  > 클라이언트가 서버에 요청하면, 프록시 서버가 배후 서버(응용프로그램 서버)로부터 데이터를 가져옴
+
+추가로 포워드 프록시는 클라이언트 앞단에서
+**보안을 위해 사용을 제한할 목적**
+
+리버스 프록시는 서버의 앞단에서 요청을 처리  
+**좀 더 안전하게 Request, Response를 관리**
 
 ### 리버스 프록시를 쓰는 이유
  > **프록시 서버를 둠으로써 요청을 배분하는 역할**
  > cli가 직접 App 서버에 요청하면 프로세스 1개가 응답대기 상태가 되어서 요청에 대한 버퍼링이 생김
+ > 추가로 **보안** 때문이다. -> WAS는 대부분 DB서버와 연결되어 있으므로 WS - WAS가 통신을 통해 클라이언트에게 제공하는 방식
 
+추가로 스위치(로드밸런서)로써 역할도 가능하다.
+> 프로세스 응답 대기를 막고, 요청을 배분하는 역할 
 ### Event-driven 방식
 
 Thread 기반은 하나의 커넥션당 하나의 쓰레드를 사용
@@ -69,12 +93,57 @@ Event-driven 방식은 Event Handler를 통해 비동기 방식으로 처리해 
 
 ![](eventp.PNG)
 
-## 지원 및 SNI 기능 지원
+## 2. 파일 구조
 
+5개 폴더 및 파일을 알아보고 넘어가겠다.
 
+```
+conf.d : nginx.conf에서 불러들일 수 있는 파일을 저장
+fastcgi.conf : FastCGI 환경설정 파일
+nginx.conf : 접속자 수, 동작 프로세스 수 등 퍼포먼스에 관한 설정들
+sites-available : 비활성화된 사이트들의 설정 파일들이 위치한다.
+sites-enabled : 활성화된 사이트들의 설정 파일들이 위치한다. 
+```
 
+사실 기본 설정이 이렇다는 거고, 폴더명 같은 경우는 상황에 따라 변경이 가능하다. 
 
-## Nginx 설정
+## 3. 변수
+
+#### $arg_{PARAMETER}
+> URI의 파라미터 변수의 이름 의미
+#### $host
+> 현재 요청의 호스트 명
+
+#### $uri
+> 현재 요청의 URI (호스트명과 파라미터는 제외된다.)
+
+#### $args
+> URL의 질의 문자열
+
+#### $binary_remote_addr
+> 바이너리 형식의 클라이언트 주소
+
+#### $body_bytes_sent
+> 전송된 바디의 바이트 수
+
+#### $content_length
+> HTTP 요청헤더의 Content-length
+
+#### $content_type
+> HTTP 요청헤더의 Content-type
+
+#### $document_root
+> 현재 요청의 document root 값
+
+#### $http_HEADER
+> HTTP 헤더의 값을 소문자로 한 값(-는 _로 변환된다.)
+
+#### \$server\_name / \$server\_port / \$server\_protocol
+> 각각 name, port, protocol을 의미한다.
+
+#### cookie_{쿠키이름}
+> 해당 쿠키의 값을 얻을 수 있다.
+## 4. 설정
 
 **설정 수정 시 원본을 복사해 보관해 두는 습관 가지자!**
 
@@ -220,7 +289,72 @@ location 블록을 상세히 살펴보면
 > /var/log/nginx
 
 ## Upstream Module
-> NGINX를 일종의 LoadBalancer로 이용할 수 있게 해주는 모듈
+> NGINX를 일종의 LoadBalancer(부하분산, 속도개선)로 이용할 수 있게 해주는 모듈
 
+- conf파일의 upstream블록을 통해 사용한다. 
+- was를 의미하고, nginx는 downstream에 해당한다고 할 수 있다.
 
-nginx에 대해 정리해보았다. 추가적으로 Reverse Proxy, Load Balencer에 대해 더 알아보고 가상 호스팅, 권한, /etc/nginx 파일 구조, 포스트 빠진내용에 대해 공부하고 관련 내용을 추가 할 예정이다.
+**형식**
+```
+upstream 이름 {
+    [ip_hash;]
+    server host 주소:포트 [옵션];
+    .....
+}
+```
+
+**예제**
+```
+upstream backend {
+    ip_hash;
+    server 192.168.125.142:9000 weight=3;
+    server 192.168.125.143:9000;
+    server 192.168.125.144:9000 max_fails=5 fail_timeout=30s;
+    server unix:/var/run/php5-fpm.sock backup;
+}
+```
+
+**옵션**
+```
+ip_hash : 같은 방문자로부터 도착한 요청은 항상 같은 업스트림 서버가 처리하게 설정
+weight=n : 업스트림 서버의 비중(2 -> 2배 더 자주 사용)
+max_fails=n : n으로 지정한 횟수만큼 실패가 일어나면 서버가 죽은 것으로 간주한다.
+fail_timeout=n : max_fails가 지정된 상태에서 이 값이 설정만큼 서버가 응답하지 않으면 죽은 것으로 간주한다.
+down : 해당 서버를 사용하지 않게 지정한다. ip_hash; 지시어가 설정된 상태에서만 유효하다.
+backup : 모든 서버가 동작하지 않을 때 backup으로 표시된 서버가 사용되고 그 전까지는 사용되지 않는다.
+```
+
+다음 사진과 같이 사용한다.
+![](upstream.PNG)
+
+## 재작성(rewrite)
+> rewrite 모듈을 통해 URL 재작성
+
+예제
+```
+location ~ /tutorials/javascript.html {
+    rewrite ^ http://opentutorials.org/course/48;
+}
+```
+
+리다이렉션을 디버깅 하기 위해선 **error_log 지시자를 server나 location블록 아래에 위치!!**
+
+```
+server {
+    server_name opentutorials.org
+    error_log /var/log/opentutorials.org.error debug;
+    location ~ /.php$ {
+        error_log /var/log/opentutorials.org.php.error debug;
+    }
+}
+```
+
+위와 같이 사용하면 error log는 debug수준에서 출력 -> 에러 출력 debug레벨 사용
+
+www를 제거하는 예제
+```
+if ($host ~* ^www\.(.*)){
+    set $host_without_www $1;
+    rewrite ^/(.*)$ $scheme://$host_without_www/$1 permanent;
+}
+```

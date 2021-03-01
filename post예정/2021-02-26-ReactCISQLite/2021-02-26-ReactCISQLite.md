@@ -18,8 +18,8 @@ keywords:
 | Web Server | Nginx | TODO |
 | Backend | Codeigniter3 | 3.1 |
 | Frontend | React | |
-| RDBMS | SQLite3 | |
+| RDBMS | MySQL | |
 
-# 1. AWS 인스턴스 생성
+
 
 
