@@ -281,7 +281,7 @@ public class num4195 {
 				String[] inputData = br.readLine().split(" ");
 				int v1 = getMapValue(inputData[0]);
 				int v2 = getMapValue(inputData[1]);
-				int result = -union(v1,v2);
+				int result = union(v1,v2);
 				sb.append(result+"\n");
 			}
 		}

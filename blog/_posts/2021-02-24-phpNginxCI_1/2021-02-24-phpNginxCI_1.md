@@ -94,7 +94,6 @@ tail -f /var/log/nginx/error.log
 ```bash
 sudo systemctl set-default multi-user.target
 ```
-putty로 vitual box 연결  
+
 [putty로 virtualbox 연결하기 - 숭숭이님 블로그](https://m.blog.naver.com/skddms/220575084716)  
-vim 설정  
 [[Vim]vim 설정하기 - heyhyo님 블로그](https://hyoje420.tistory.com/51)  
