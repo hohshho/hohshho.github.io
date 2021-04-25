@@ -1,6 +1,6 @@
 ---
 title: 알고리즘 랜덤 문제 풀이
-date: 2021-02-06
+date: 2021-04-30
 tags: 
   - Algorithm
 keywords:
