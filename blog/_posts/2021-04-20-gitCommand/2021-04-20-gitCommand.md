@@ -53,6 +53,23 @@ $ git branch --merged
 $ git log --oneline --graph
 ```
 
+### 태그 목록 조회
+```bash
+$ git tag -l
+````
+
+### 태그 checkout
+```bash
+git checkout tags/<tag_name>
+```
+
+### 태그 checkout
+```bash
+git checkout tags/<tag_name> -b <branch_name>>
+```
+
+
+
 추가로 기억해야 할 명령어는 계속 정리할 예정이다.
 
 [Git Tips!](https://github.com/mingrammer/git-tips#20%EA%B0%9C-%EB%82%B4%EC%99%B8%EC%9D%98-%EB%AA%85%EB%A0%B9%EC%96%B4%EB%A1%9C-git-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
