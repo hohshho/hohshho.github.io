@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://hohshho.github.io/sitemap.xml
+Host: https://hohshho.github.io
