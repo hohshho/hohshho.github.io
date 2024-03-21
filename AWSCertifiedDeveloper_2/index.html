@@ -57,7 +57,7 @@
 <ul>
 <li>EC2, RDS, ELB 등을 탑재하고 ENI(Elastic Network Interface)에 사설 IP혹은 공인 IP를 부여해 사용</li>
 <li>서브넷 사용 시 VPC내에서 네트워크 분할 가능</li>
-<li>공용 서브넷 인터넷 접근 o, 사설 서브넷 인터넷 접근x</li>
+<li>라우팅 테이블 설정 추가해 공용 서브넷 인터넷 접근 o, 사설 서브넷 인터넷 접근x</li>
 <li><strong>NAT Gateways</strong>를 사용하면 프라이빗 서브넷의 인스턴스가 프라이빗 상태를 유지하며 인터넷 액세스 가능<br>
 -> 작동 방식 : NAT Instance를 공용 서브넷에 배포하고 사설 서브넷에서 게이트 웨이로 라우팅</li>
 </ul>
@@ -141,7 +141,7 @@ ex) s3://my-bucket/my_folder1/another_folder/my_file.txt<br>
 <p>정책은 json 파일로 명시</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="86823316872825980000"
+              data-toaster-id="25968995036166120000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -157,7 +157,7 @@ ex) s3://my-bucket/my_folder1/another_folder/my_file.txt<br>
       &quot;Resource&quot;: [&quot;&quot;]
     }
   ]
-}`, `86823316872825980000`)"
+}`, `25968995036166120000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -338,7 +338,7 @@ ex) s3://my-bucket/my_folder1/another_folder/my_file.txt<br>
 </ul>
 <h1 id="10-cloudfront" style="position:relative;"><a href="#10-cloudfront" aria-label="10 cloudfront permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>10. CloudFront</h1>
 <blockquote>
-<p>짧은 지연 시간과 빠른 전송 속도로 데이터, 동영상, 애플리케이션 및 API를 전세계 고객에게 안전하게 전송하는 고속 콘텐츠 전송 네트워크(CDN) 서비스, DDos공격에 대비하기 위해 shield와 방화벽 사용</p>
+<p>짧은 지연 시간과 빠른 전송 속도로 데이터, 동영상, 애플리케이션 및 API를 전세계 고객에게 안전하게 전송하는 고속 콘텐츠 전송 네트워크(CDN) 서비스, DDos공격에 대비하기 위해 Shield와 방화벽 사용</p>
 </blockquote>
 <p>CDN이 나오면 CloudFront를 생각하자</p>
 <p>Tip!!</p>
@@ -378,6 +378,10 @@ ex) s3://my-bucket/my_folder1/another_folder/my_file.txt<br>
 </blockquote>
 <hr>
 <p>한줄 정리하면 AWS 백본 네트워크를 사용하여 사용자의 요청이 통과해야 하는 네트워크 홉(hop) 수를 획기적으로 줄이고 성능 향상, 낮은 지연 시간 및 높은 데이터 전송 속도를 제공</p>
+<p>tip!!</p>
+<ul>
+<li>CloudFront Key Pairs는 Root계정만 생성 가능하다.</li>
+</ul>
 <h2 id="101-캐시-요청-정책" style="position:relative;"><a href="#101-%EC%BA%90%EC%8B%9C-%EC%9A%94%EC%B2%AD-%EC%A0%95%EC%B1%85" aria-label="101 캐시 요청 정책 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>10.1 캐시 요청 정책</h2>
 <p>캐시의 각 객체는 캐시 키로 식별 - <strong>호스트 이름 + URL 리소스</strong> 부분</p>
 <ol>
@@ -386,7 +390,7 @@ ex) s3://my-bucket/my_folder1/another_folder/my_file.txt<br>
 <ul>
 <li>CloudFront가 어떻게 캐싱할 지 설정</li>
 <li>사용자, 디바이스, 언어, 사용자 위치 등을 캐시에 추가가능 <strong>HTTP 헤더, 쿠키, 쿼리 문자열</strong></li>
-<li>3가지 옵션 / Node, Whitelist, Includ All-Except</li>
+<li>3가지 옵션 / Node, Whitelist, Include All-Except</li>
 <li>TTl 정책 설정</li>
 </ul>
 </li>
@@ -439,7 +443,7 @@ ex) s3://my-bucket/my_folder1/another_folder/my_file.txt<br>
 <p><strong>URL이나 Cookie</strong>에 서명하는 방법 사용</p>
 <ul>
 <li>URL이나 쿠키를 생성하면 정책을 연결해서 URL이나 쿠키의 만료 시점을 지정</li>
-<li>이 때 클아이언트 IP를 알면 활용</li>
+<li>이 때 클라이언트 IP를 알면 활용</li>
 <li>음악, 영화같은 콘텐츠는 몇 분 정도로 짧지만, 오래 액세스 할 콘텐츠라면 길게 유지</li>
 </ul>
 <ol>
@@ -820,7 +824,7 @@ ex) s3://my-bucket/my_folder1/another_folder/my_file.txt<br>
 <p>ECS Cluster를 접근하기 전에 ALB를 사용해 EC2 type, Fargate type으로 로드밸런싱이 가능하다<br>
 (EC2 경우 모든 포트 오픈, Fargate경우 80, 443만 오픈 - task가 해당 포트들로 열림)</p>
 <p>ALB는 대부분의 사용 사례에서 활용하고</p>
-<p>Network Load Balancer는 높은 성능을 요구하거나 AWS PrivateLink를 사용할 때만 권장한다.</p>
+<p>Network Load Balancer는 높은 성능을 요구하거나 AWS Private link를 사용할 때만 권장한다.</p>
 <h3 id="1113-ecs-data-volumn" style="position:relative;"><a href="#1113-ecs-data-volumn" aria-label="1113 ecs data volumn permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>11.1.3 ECS Data Volumn</h3>
 <p><strong>EFS 파일 시스템을 ECS에 마운트 (S3는 파일 시스템으로 마운트 불가)</strong></p>
 <p>EFS는 네트워크 파일 시스템이기 때문에 EC2와 Fargate와 모두 호환 가능하고</p>
@@ -1009,7 +1013,7 @@ ex) s3://my-bucket/my_folder1/another_folder/my_file.txt<br>
 <li>ECS, VPC, ELB, ECR 등과 같은 복잡한 인프라를 준비해준다.</li>
 <li>CodePipeline과 통합해 명령어 하나만으로 컨테이너 자동 배포 가능</li>
 <li>App 문제 해결, 로그 확인, 건강 상태 검사도 수행 가능</li>
-<li>CLI나 TAML 파일을 이용해 MSA 아키텍처 형성 -> Copilot CLI를 이용해 APP 컨테이너 화 배포</li>
+<li>CLI나 YAML 파일을 이용해 MSA 아키텍처 형성 -> Copilot CLI를 이용해 APP 컨테이너 화 배포</li>
 </ul>
 <h2 id="114-eks" style="position:relative;"><a href="#114-eks" aria-label="114 eks permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>11.4 EKS</h2>
 <p>ECS랑 동일한 기능 제공</p>
@@ -1033,6 +1037,11 @@ ex) s3://my-bucket/my_folder1/another_folder/my_file.txt<br>
 <li>불변 : 새 인스턴스 가동하고, 이 인스턴스에 버전 배포 / 모든 것이 정상일 때 인스턴스 교체 (높은 비용) / 빠르게 롤백 가능</li>
 <li>청록색 : 새로운 환경 만들고 준비가 되면 전환 (새 환경 테스트 -> 롤백 or 적용 - URL 스왑)</li>
 <li>트래픽 분할 : 카나리아 테스트, 소량의 트래픽을 새 배포로 보낸다.</li>
+</ul>
+<p>tip!!</p>
+<ul>
+<li>EC2 burst balance가 모두 소진되는 경우<br>
+=> 불변, 트래픽 분할 (전체 변경 한꺼번에 하는 경우)</li>
 </ul>
 <h2 id="122-life-cycle" style="position:relative;"><a href="#122-life-cycle" aria-label="122 life cycle permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>12.2 Life Cycle</h2>
 <ul>
@@ -1122,7 +1131,7 @@ Events : 이벤트 트리거 (CodeCommit - EventBridge, Github - CodeStar Source
 </ol>
 <p><strong>종류</strong></p>
 <ol>
-<li>In-place : 반 배포, 반 배포 / 한번에 하번 / 한번에</li>
+<li>In-place : 반 배포, 반 배포 / 한번에 한번 / 한번에</li>
 <li>blue-green deployment : 전체 복사해서 배포 후 전환</li>
 </ol>
 <p><strong>Redeploy &#x26; Rollbacks</strong></p>
@@ -1134,7 +1143,7 @@ Events : 이벤트 트리거 (CodeCommit - EventBridge, Github - CodeStar Source
 </ol>
 <p>Rollback을 하면 CodeDeploy는 마지막으로 감지한 성공한 리비전을</p>
 <p>새로 배포하는데 이전으로 돌아가지 않는다.</p>
-<p>새로운 배포를 할 때 가장 나중에 성공한 배포 사용 (즉, 새로운 버전)</p>
+<p>새로운 배포를 할 때 가장 나중에 성공한 배포 사용 (새로운 버전)</p>
 <h2 id="135-code-star" style="position:relative;"><a href="#135-code-star" aria-label="135 code star permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>13.5 Code Star</h2>
 <blockquote>
 <p>CI/CD관련 모든 솔루션을 통합하는 솔루션</p>
@@ -1174,6 +1183,13 @@ Events : 이벤트 트리거 (CodeCommit - EventBridge, Github - CodeStar Source
 <p>CloudFormation은 AWS의 인프라 구조를 JSON와 YMSL로 작성하여 프로비저닝하기 위해 공통 언어를 제공하는 서비스 (코드형 인프라)<br>
 ex) Auto Scaling Group, Load Balancer, DB 등</p>
 </blockquote>
+<ul>
+<li>생성한 모든 스택에는 식별자가 있어 손쉽게 스택 비용 추적 가능</li>
+<li>CloudFormation 템플릿으로 리소스 비용을 추산 가능</li>
+<li>Application 스택은 Beanstalk로 확인했는데 Beanstalk에서 CloudFormation 템플릿을 생성해 사용한 것</li>
+<li>AWS리소스 전부 리소스가 될 수 있다. (EC2, LoadBalancer 등)</li>
+<li>CloudFormation에서 내보낸 출력 값은 <strong>단일 지역내에서 고유한 이름을 가져야 함</strong></li>
+</ul>
 <p>배포 방법</p>
 <ul>
 <li>수동 : 템플릿 수정, CloudFormation designer, console에 매개변수 입력)</li>
@@ -1196,6 +1212,44 @@ ex) Auto Scaling Group, Load Balancer, DB 등</p>
 <p>Description 섹션에는 그 템플릿에 관련된 커맨트를 지정한다.</p>
 </li>
 </ol>
+<pre class="grvsc-container default-dark" data-language="" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">// JSON</span></span>
+<span class="grvsc-line"><span class="grvsc-source">{</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  &quot;AWSTemplateFormatVersion&quot; : &quot;version date&quot;,</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">  &quot;Description&quot; : &quot;JSON string&quot;,</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">  &quot;Metadata&quot; : {</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    template metadata</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  },</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">  &quot;Parameters&quot; : {</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    set of parameters</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  },</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">  &quot;Rules&quot; : {</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    set of rules</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  },</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">  &quot;Mappings&quot; : {</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    set of mappings</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  },</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">  &quot;Conditions&quot; : {</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    set of conditions</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  },</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">  &quot;Transform&quot; : {</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    set of transforms</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  },</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">  &quot;Resources&quot; : {</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    set of resources</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  },</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">  &quot;Outputs&quot; : {</span></span>
+<span class="grvsc-line"><span class="grvsc-source">    set of outputs</span></span>
+<span class="grvsc-line"><span class="grvsc-source">  }</span></span>
+<span class="grvsc-line"><span class="grvsc-source">}</span></span></code></pre>
 <h2 id="142-outputs" style="position:relative;"><a href="#142-outputs" aria-label="142 outputs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>14.2 Outputs</h2>
 <ul>
 <li>CloudFormation 템플릿을 연결할 수 있다.</li>
@@ -1257,7 +1311,7 @@ ex) Auto Scaling Group, Load Balancer, DB 등</p>
 <ul>
 <li>case 인스턴스가 예기치 않게 정기적으로 정지 : cloudwatch로 경보 설정 및 인스턴스 재부팅(임시방편)</li>
 <li>클라우드워치 경보 작업으로 인스턴스를 자동 중지, 종료, 재부팅, 복구 경보 설정이 가능</li>
-<li>인스턴스를 모니터링하고 자동으로 재부텅하는 경보설정 가능(바로 되는데 굳이 Lambda 쓸 필요없음)</li>
+<li>인스턴스를 모니터링하고 자동으로 재부팅하는 경보설정 가능 (바로 되는데 굳이 Lambda 쓸 필요없음)</li>
 <li>AWS 클라우드 리소스와 실행하는 어플리케이션 모니터링 경보를 사용하여 SNS를 통해 이메일 전송 가능</li>
 <li>CloudWatch Synthetics은 API, URL, 웹사이트 등 모니터링 하는 구성 가능한 스크립트
 <ul>
@@ -1303,7 +1357,7 @@ ex) Auto Scaling Group, Load Balancer, DB 등</p>
 <li>이벤트는 90일 동안 저장</li>
 </ul>
 <h2 id="cloud-watch-vs-x-ray-vs-cloud-tail" style="position:relative;"><a href="#cloud-watch-vs-x-ray-vs-cloud-tail" aria-label="cloud watch vs x ray vs cloud tail permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cloud Watch vs X-Ray vs Cloud Tail</h2>
-<p>CloudTail : API 호출 감사, 승인되지 않은 호출 또는 변경의 근번 원인 탐지에 유용</p>
+<p>CloudTail : AWS API 호출 감사, 승인되지 않은 호출 또는 변경의 근번 원인 탐지에 유용</p>
 <p>CloudWatch : 모니터링을 위한 시간 경과에 따른 지표, 로그 저장을 위한 CloudWatch Logs</p>
 <p>X-ray : 자동 추적 분석 및 중앙 서비스 맵 시각화, 분산 시스템 오류 요청 추적</p>
 <h1 id="16-aws-messaging" style="position:relative;"><a href="#16-aws-messaging" aria-label="16 aws messaging permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16. AWS Messaging</h1>
@@ -1332,6 +1386,8 @@ ex) Auto Scaling Group, Load Balancer, DB 등</p>
 <li>메세지 손실이 없음, 알림을 보낼 수 없음</li>
 <li>기존 sqs -> fifo sqs로 마이그레이션할때 기존꺼 삭제후 새로만들어야 함</li>
 <li>가시성 떄문에 메시지가 2번 처리 할 떄 주의해야 함, 가시성 시간을 늘려 다른 인스턴스가 message를 더 오랫동안 가져가지못해 한번만 처리하게 가능 (완전한 솔루션은 아닌거 같긴함)</li>
+<li>대기열 제한 시간 초과값은 초 단위이며, <strong>기본값 30초</strong></li>
+<li>대기열 생성 후에는 유형 생성 후에는 변경 불가</li>
 </ul>
 <h2 id="162-sns" style="position:relative;"><a href="#162-sns" aria-label="162 sns permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.2 SNS</h2>
 <blockquote>
@@ -1368,7 +1424,7 @@ ex) Auto Scaling Group, Load Balancer, DB 등</p>
 <li>Kinesis를 이용하면 데이터의 누락이 없으며 내구성이 있고 데이터 순으로 스트리밍</li>
 <li>센서 데이터를 처리하기 위해 Amazon Kinesis이용 가능 (iot)</li>
 <li>Amazon Kinesis Data Streams와 Lamabda를 연계시켜 데이터 처리를 서버리스 실현 가능<br>
--> Amazon Kinesis Data Streams가 스트리밍 데이터 처리 -> Lambda함수가 데이터 변환처리 -> Amazon Kinesis Data Firehouse가 S3에 데이터를 저장</li>
+-> Amazon Kinesis Data Streams가 스트리밍 데이터 처리 -> Lambda함수가 데이터 변환처리 -> Amazon Kinesis Data Firehose가 S3에 데이터를 저장</li>
 <li>데이터 분석과 키네시스 데이터 스트림은 모두 실시간 수집 및 분석을 위한것이다. 데이터 손실 가능</li>
 </ul>
 <p><strong>Kinesis Data Firehose</strong></p>

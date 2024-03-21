@@ -106,13 +106,14 @@
 <li>그룹 별 정책 설정 가능</li>
 <li>사용자 권한 설정은 <strong>JSON 문서</strong>를 통해 작성 (editor를 통해 추가가능)</li>
 <li><strong>최소 권한의 원칙 적용</strong></li>
-<li>태그를 통해 사용자, 그룹, aws 내 리소스에 대한 정보추가 가능</li>
+<li><strong>태그</strong>를 통해 사용자, 그룹, aws 내 리소스에 대한 정보추가 가능</li>
 </ul>
+<p>추가로 태그는 AWS내 모든 리소스에 대해 정보 추가하는데 사용!</p>
 <hr>
 <p>계정 Tip!</p>
 <ul>
-<li>Aws의 root account는 ID가 숫자형식인데, 계정에 별칭을 줘서 해당 별칭으로 로그인 가능</li>
-<li>IAM 계정의 aws에 로그인하기 위해서는 <code>https:{별칭}.signin.aws.amazon.com/console</code>로 접속<br>
+<li>AWS의 root account는 ID가 숫자형식(계정번호) 인데, 계정에 별칭을 줘서 해당 별칭으로 로그인 가능</li>
+<li>IAM 계정의 aws에 로그인하기 위해서는 <code>https:{별칭}.signin.aws.amazon.com/console</code>로 접속
 -> 로그인 페이지로 리다이렉트 해준다.</li>
 </ul>
 <p>그룹 Tip!</p>
@@ -168,7 +169,7 @@
 </table>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="53621857029687670000"
+              data-toaster-id="53043862976929510000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -199,7 +200,7 @@
       &quot;Condition&quot;: { &quot;Bool&quot;: { &quot;aws:MultiFactorAuthPresent&quot;: &quot;true&quot; } }
     }
   ]
-}`, `53621857029687670000`)"
+}`, `53043862976929510000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -254,14 +255,14 @@
 <li>ex) EC2, Lambda</li>
 </ul>
 <hr>
-<p>AWS security tool은 2가지가 존재한다</p>
+<p>AWS security tool</p>
 <ul>
 <li>IAM Credentials Report (account - level)
 <ul>
 <li>사용자의 자격증명 상태 표기한 보고서 생성 가능</li>
 </ul>
 </li>
-<li>IM Access Advisor (User-level)
+<li>IAM Access Advisor (User-level)
 <ul>
 <li>해당 서비스의 권한과 마지막으로 엑세스 시간 확인 가능</li>
 </ul>
@@ -318,7 +319,7 @@ l, D : 스토리지 최적화 -> 로컬 스토리지의 대규모 데이터 세�
 </tr>
 <tr>
 <td>Saving Plans</td>
-<td>1년 or 3년 기간 동안 시간당 USD로 특정 사용량을 약정해 비용 절감 (약 72%)</td>
+<td>1년 or 3년 기간 동안 시간당 USD로 특정 사용량을 약정해 비용 절감 (약 72%) <br> 초과 시 온디맨드 가격으로 청구</td>
 </tr>
 <tr>
 <td>Reserved Instance(RI)</td>
@@ -326,11 +327,11 @@ l, D : 스토리지 최적화 -> 로컬 스토리지의 대규모 데이터 세�
 </tr>
 <tr>
 <td>Spot Instance</td>
-<td>가장 할인률이 큰데, 짧은 단기 워크로드용 인스턴스로 스팟 가격보다 사용자가 제시한 최고 가격이 더 높을 때만 실행된다 (<strong>중단 되어도 되는 App에 적합, DB X</strong>)</td>
+<td>가장 할인률이 큰데, 짧은 단기 워크로드용 인스턴스로 스팟 가격보다 사용자가 제시한 최고 가격이 더 높을 때만 실행된다 (<strong>중단 되어도 되는 App에 적합, DB X</strong>) <br> 배치 작업, 데이터 분석, 이미지 처리 및 분산된 워크로드</td>
 </tr>
 <tr>
 <td>EC2 Dedicated Hosts</td>
-<td>실제 물리서버 예약, 보안 규정 상 호스트를 타 고객과 공유할 수 없는 수준의 컴플라이언스(compliance)를 지켜야 하는 경우 혹은 기존에 온-프로그레미스 환경에서 보유한 고정 서버 방식의 소프트웨어 라이선스를 재사용하여 비용을 아껴야 하는 경우</td>
+<td>실제 물리서버 예약, 보안 규정 상 호스트를 타 고객과 공유할 수 없는 수준의 컴플라이언스(compliance)를 지켜야 하는 경우 혹은 기존에 온-프로그레미스 환경에서 보유한 고정 서버 방식의 소프트웨어 라이선스를 재사용하여 비용을 아껴야 하는 경우 <br> 가장 비싼 옵션</td>
 </tr>
 <tr>
 <td>EC2 Dedicated Instance</td>
@@ -338,6 +339,56 @@ l, D : 스토리지 최적화 -> 로컬 스토리지의 대규모 데이터 세�
 </tr>
 </tbody>
 </table>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/755714ed2aa6052dcf0fa8200b738793/e9bec/dedicated.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 49.079754601226995%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAACX0lEQVR42i3S60/TUBzG8f7vJoYQjUSjhouGSyILQsRIQOQispVtsNldgV3abl0v69ata0878NXXtPDivDrnfPJ7fnmkeP5Aq92lrFRpNO+o1JqMvSkiiglFRBjFtDoqheJN+sZ23PQuCAXJ34Fpc1W4RqnW8SY+0iwImfSy9JUvqH93sBp7hL5FIOb4QcRk1Ecvb9JTMhiVDHbrOAWnM4HvWTiNHbSbDfrlDTztFKnTVRkoW+iXC5ilZYbltwTjDiL+x8AaYupV+vIi/eJ7hpUVpp09RDzHckYYWg0j/4bOxSKd85eMmhkkVdOx6rsY18u0Lt4wKCwRehqBeCCMHgg8HVtZY6BsMiit4LW/E4gIET8S+RZubR27toVTXWfS3kcyBhZmdZvW2QuM8ifs8keCsUqQYCIBNWxlBVNZxyyvpWAoksgRE1fFqXymf7OGnn/H+H4PSdN7WLUMPfk16uVrzOIS4UR/wpIpPQ23uoJT3cBRlpl29tPIpv0UedzcxCit0r1YwLv/ihQEAXbrlHz2gMrVN4bFVwSe+gzOiaY69fwO+dwvutkP+K1dgmhOGD0ynxncXn/junhOO7eKf5dBElHEzMyj1Y9QKz8Y17eIAzvF0jMx6NX20ZpnmJVt3PYhszBK0em4j9E4QGucYNf3cFuHSFE8x3EcruQ/FK4uyeVyJGtIOpjUYzh0kbMXXP4+4fjnEbIsM536iDjGHY0plW44PTshK8tUa/UncOiOUO66lDoG5bsupmUhklhC4IcR9f6QQqNN8bbL7cBNyx4+F9uxHRqFArelEn4o+A+6XcON4yGWRQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/755714ed2aa6052dcf0fa8200b738793/a81b5/dedicated.webp 163w,
+/static/755714ed2aa6052dcf0fa8200b738793/da3ef/dedicated.webp 325w,
+/static/755714ed2aa6052dcf0fa8200b738793/309d5/dedicated.webp 650w,
+/static/755714ed2aa6052dcf0fa8200b738793/78344/dedicated.webp 975w,
+/static/755714ed2aa6052dcf0fa8200b738793/bdb72/dedicated.webp 1300w,
+/static/755714ed2aa6052dcf0fa8200b738793/f98dc/dedicated.webp 1392w"
+              sizes="(max-width: 650px) 100vw, 650px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/755714ed2aa6052dcf0fa8200b738793/5e043/dedicated.png 163w,
+/static/755714ed2aa6052dcf0fa8200b738793/e5cc6/dedicated.png 325w,
+/static/755714ed2aa6052dcf0fa8200b738793/663f3/dedicated.png 650w,
+/static/755714ed2aa6052dcf0fa8200b738793/d880f/dedicated.png 975w,
+/static/755714ed2aa6052dcf0fa8200b738793/4c573/dedicated.png 1300w,
+/static/755714ed2aa6052dcf0fa8200b738793/e9bec/dedicated.png 1392w"
+            sizes="(max-width: 650px) 100vw, 650px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/755714ed2aa6052dcf0fa8200b738793/663f3/dedicated.png"
+            alt="dedicated"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<p>Dedicated Instance -> 하드웨어에 고유한 인스턴스를 가지는 것 / 호텔의 방</p>
+<p>Dedicated Host -> 물리적 서버를 점유 (ex - CAD) / 호텔 전부</p>
 <h2 id="32-ec2-instance-storage" style="position:relative;"><a href="#32-ec2-instance-storage" aria-label="32 ec2 instance storage permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.2 EC2 Instance Storage</h2>
 <blockquote>
 <p>물리적 서버에 연결된 하드웨어 드라이브를 <code>EC2 Instance</code>라 한다.</p>
@@ -586,7 +637,7 @@ l, D : 스토리지 최적화 -> 로컬 스토리지의 대규모 데이터 세�
 <ul>
 <li>Proxy를 사용하면 APP이 데이터 베이스로 설정된 연결을 풀링하고 공유 가능</li>
 <li>DB 리소스 부하를 줄이고 커넥션을 최소화 하여 효율성 향상</li>
-<li>DB에 대한 IAM 인증을 시행하고 자격 증명을 AWS Secrets Manager에 안전하게저장</li>
+<li>DB에 대한 IAM 인증을 시행하고 자격 증명을 AWS Secrets Manager에 안전하게 저장</li>
 <li>RDS Proxy는 공개적으로 액세스 할 수 없고, VPC에서 엑세스 해야 함</li>
 </ul>
 <h2 id="54-elastic-cache" style="position:relative;"><a href="#54-elastic-cache" aria-label="54 elastic cache permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5.4 Elastic Cache</h2>
@@ -599,7 +650,7 @@ l, D : 스토리지 최적화 -> 로컬 스토리지의 대규모 데이터 세�
 </ul>
 <p><strong>캐시 전략</strong></p>
 <ul>
-<li>write Through : 데이터가 DB에 기록될 때 마다 데이터를 추가 or 업데이트, 쓰기가 길지만 읽기가 빠르고, 데이터가 항상 캐시에 업데이트</li>
+<li>Write Through : 데이터가 DB에 기록될 때 마다 데이터를 추가 or 업데이트, 쓰기가 길지만 읽기가 빠르고, 데이터가 항상 캐시에 업데이트</li>
 <li>Lazy Loading : 필요할 때만 캐시에 데이터 로드</li>
 </ul>
 <p>Redis용 Amazon MemoryDB</p>

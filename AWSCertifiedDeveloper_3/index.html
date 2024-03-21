@@ -73,8 +73,13 @@
 <li>Lamabda 엣지를 사용하면 서버 관리를 하지 않아도 웹 어플리케이션을 글로벌로 분산시켜 퍼포먼스를 향상</li>
 <li>Invocation이란 Lamdba함수의 이름공간에 있는 매트릭스이다. 이벤트 혹은 API를 호출로 인해 호출된 함수의 횟수를 측정</li>
 <li>람다의 배포 패키지 크기는 250MB를 초과 할 수 없다.</li>
-<li>할당한 메모리에 비례하여 cpu를 할당</li>
+<li><strong>할당한 메모리에 비례하여 cpu를 할당</strong> -> 성능 향상시킬 시 메모리를 확장해야 함</li>
 <li>동시성 조절을 꼭 해야함 -> 제한하지 않으면 너무 많은 람다함수가 실행 되 많은 과금</li>
+<li>람다 함수로 API에 대한 액세스를 제어하기 위한 <strong>Amazon API Gateway Lambda 권한 부여자(이전의 사용자 지정 권한 부여자)</strong> 사용 가능
+<ul>
+<li>OAuth, SAML같은 전달자 토큰 인증 전략 사용</li>
+</ul>
+</li>
 </ul>
 <h1 id="18-dynamodb" style="position:relative;"><a href="#18-dynamodb" aria-label="18 dynamodb permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>18. DynamoDB</h1>
 <blockquote>
@@ -99,6 +104,9 @@
 <li>DynamoDB의 글로벌 테이블 설정을 통해 <strong>여러 개의 리전 테이블 동기화 가능</strong></li>
 <li>개체 max 크기 400k, 문서나 이미지를 저장하는데 적합x</li>
 <li>s3 object key값을 dynamo에 저장하는게 좋은 패턴</li>
+<li>불일치나 데이터 손실 없이 중복 요청 처리 할 경우 -> DynamoDB 테이블의 각 요청에 대한 고유 식별자를 유지, 요청을 처리하기 전에 테이블에서 식별자 확인하도록 Lambda함수 변경</li>
+<li>TTL설정 해 자동으로 삭제 가능</li>
+<li>테이블 생성 시 테이블 이름 외에도 테이블의 기본키 지정해야 한다.</li>
 </ul>
 <h2 id="181-dynamodb-stream" style="position:relative;"><a href="#181-dynamodb-stream" aria-label="181 dynamodb stream permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>18.1 DynamoDB Stream</h2>
 <ul>
@@ -151,6 +159,11 @@
 <li>너무 갑작스러운 트래픽 급증 시 요청을 조절할려고 할 때 -> API gateway, sqs, kinesis</li>
 <li>API Gateway 권한 부여할 땐 <strong>Amazon API Gateway Lambda 권한 부여자</strong> 사용</li>
 </ul>
+<p>Tip!!</p>
+<p>API Gateway 성능 개선</p>
+<ul>
+<li>API Gateway에서 API캐싱 활성화</li>
+</ul>
 <h1 id="20-samserverless-application-model" style="position:relative;"><a href="#20-samserverless-application-model" aria-label="20 samserverless application model permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>20. SAM(Serverless Application Model)</h1>
 <blockquote>
 <p>서버리스 어플리케이션 구축용의 Deploy 서비스</p>
@@ -180,9 +193,10 @@
 </ul>
 <h1 id="22-cognito" style="position:relative;"><a href="#22-cognito" aria-label="22 cognito permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>22. Cognito</h1>
 <blockquote>
-<p>사용자에게 웹 또는 모바일 Application과 상호 작용 할 수 있는 ID 제공</p>
+<p>사용자에게 <strong>웹 또는 모바일 Application</strong>과 상호 작용 할 수 있는 ID 제공</p>
 </blockquote>
 <ul>
+<li>AWS에서 관리</li>
 <li>웹 및 모바일 앱용 서버리스 사용자 DB 생성</li>
 <li>비밀번호 초기화</li>
 <li>이메일 및 전화번호 확인</li>
@@ -219,6 +233,7 @@
 <li>AWS 소유키, 관리키 무료 / KMS 생성 월 1<span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo separator="true">,</mo><mtext>고객관리키월</mtext><mn>1</mn></mrow><annotation encoding="application/x-tex">, 고객관리 키 월 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord hangul_fallback">고객관리키월</span><span class="mord">1</span></span></span></span></span>, API 10000호출 당 0.03$</li>
 <li>resion간 스냅샷 복사</li>
 <li>KMS 암호화 API 호출은 4KB 제한</li>
+<li>KMS는 CMK(고객 마스터 키)를 저장하고 클라이언트로부터 데이터를 수신하여 암호화하여 내보낸다.</li>
 </ul>
 <h2 id="252-secret-manager" style="position:relative;"><a href="#252-secret-manager" aria-label="252 secret manager permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>25.2 Secret Manager</h2>
 <ul>
@@ -268,6 +283,12 @@
 <p>Amazon Macie : 기계 학습 및 패턴일치를 사용해 AWS에서 중요한 데이터를 검색하고 보호하는 완전 관리형 데이터 보안 및 데이터개인정보 보호 서비스</p>
 <ul>
 <li>개인 식별 정보 같은 중요 데이터를 식별하고 경고하도록 도와준다.</li>
+</ul>
+</li>
+<li>
+<p>IAM Access Analyzer</p>
+<ul>
+<li>외부 엔티티와 공유되는 S3버킷 또는 IAM역할과 같은 조직 및 계정의 리소스 식별에 도움</li>
 </ul>
 </li>
 </ul>
