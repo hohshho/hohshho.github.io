@@ -68,21 +68,24 @@
 <p>HTTP 요청 메시지를 편리하게 사용 할 수 있도록 <strong>HTTP 요청 메세지 파싱</strong></p>
 </blockquote>
 <ul>
+<li>요청마다 객체 재생성 비효율 -> 하나의 객체 생성해 재사용</li>
 <li>서블릿 객체는 싱글톤으로 관리</li>
 <li>공유 변수 사용 주의</li>
 <li>동시 요청을 위한 멀티 쓰레드 처리 지원</li>
 </ul>
+<p>서블릿 객체 생성, 초기화, 호출, 종료하는 생명주기 관리 -> <strong>서블릿 컨테이너</strong></p>
 <h2 id="멀티-쓰레드" style="position:relative;"><a href="#%EB%A9%80%ED%8B%B0-%EC%93%B0%EB%A0%88%EB%93%9C" aria-label="멀티 쓰레드 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>멀티 쓰레드</h2>
 <ul>
-<li>쓰레드 풀에서 쓰레드를 꺼내서 사용 후 반납</li>
-<li>미리 생성되어 있어 비용 절약, 응답시간 빠름</li>
+<li>요청마다 쓰레드 생성 시 -> 과도한 요청 시 너무 많은 컨텍스트 스위칭으로 인해 cpu, memory임계치 넘어 서버 장애</li>
+<li>쓰레드 풀에서 쓰레드를 꺼내서 사용 후 반납 -> 미리 생성되어 있어 비용 절약, 응답시간 빠름</li>
 <li>생성 가능한 쓰레드의 최대치가 있음, 기존 요청 안전하게 처리 가능</li>
+<li>WAS의 주요 튜닝 포인트는 최대 쓰레드(max thread) 수</li>
 <li>성능 테스트 - 아파치 ab, 제이미터, nGrinder</li>
 </ul>
 <h1 id="servlet" style="position:relative;"><a href="#servlet" aria-label="servlet permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Servlet</h1>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="33800532902112180000"
+              data-toaster-id="31320340608420995000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -93,7 +96,7 @@ request.getAttribute(name);
 
 // 세션 관리
 request.getSession(create: true);
-`, `33800532902112180000`)"
+`, `31320340608420995000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -114,7 +117,7 @@ request.getSession(create: true);
 <p>조회 메서드</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="70084129572123710000"
+              data-toaster-id="67243546449703320000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -124,7 +127,7 @@ request.getSession(create: true);
 String username = request.getParameter(&quot;username&quot;);               //단일 파라미터 조회
 Enumeration<String> parameterNames = request.getParameterNames(); //파라미터 이름들 모두 조회
 Map<String, String[]> parameterMap = request.getParameterMap();   //파라미터를 Map 으로 조회
-String[] usernames = request.getParameterValues(&quot;username&quot;);      //복수 파라미터 조회`, `70084129572123710000`)"
+String[] usernames = request.getParameterValues(&quot;username&quot;);      //복수 파라미터 조회`, `67243546449703320000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -147,7 +150,7 @@ String[] usernames = request.getParameterValues(&quot;username&quot;);      //�
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="66443673519306310000"
+              data-toaster-id="46293873085593166000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -155,7 +158,7 @@ String[] usernames = request.getParameterValues(&quot;username&quot;);      //�
               onClick="copyToClipboard(`ServletInputStream inputStream = request.getInputStream();
 String messageBody = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8);
 
-JsonData data= objectMapper.readValue(messageBody, JsonData.class);`, `66443673519306310000`)"
+JsonData data= objectMapper.readValue(messageBody, JsonData.class);`, `46293873085593166000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -174,7 +177,7 @@ JsonData data= objectMapper.readValue(messageBody, JsonData.class);`, `664436735
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="21691646378355920000"
+              data-toaster-id="60873809524073730000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -189,7 +192,7 @@ data.setUsername(&quot;kim&quot;);
 data.setAge(20);
 
 String result = objectMapper.writeValueAsString(data);
-response.getWriter().write(result);`, `21691646378355920000`)"
+response.getWriter().write(result);`, `60873809524073730000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -248,13 +251,13 @@ ex) 리턴 타입 변경, 매개변수 변경</li>
 -> RequestMappingHandlerMapping, RequestMappingAdaptorMapping</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="79158453234838540000"
+              data-toaster-id="31766637974856147000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`@Controller     // Spring bean에 등록
-@RequestMapping // 요청 정보 매핑`, `79158453234838540000`)"
+@RequestMapping // 요청 정보 매핑`, `31766637974856147000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -270,13 +273,13 @@ ex) 리턴 타입 변경, 매개변수 변경</li>
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="80664839764792030000"
+              data-toaster-id="55477515072752310000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`@RequestMapping(&quot;/map/&quot;); // 클래스 레벨
-@RequestMapping(&quot;kr&quot;);    // 메서드 레벨 -> /map/kr`, `80664839764792030000`)"
+@RequestMapping(&quot;kr&quot;);    // 메서드 레벨 -> /map/kr`, `55477515072752310000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -292,7 +295,7 @@ ex) 리턴 타입 변경, 매개변수 변경</li>
 <p>사용 방법</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="7959879202348064000"
+              data-toaster-id="5335471918786428000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -300,7 +303,7 @@ ex) 리턴 타입 변경, 매개변수 변경</li>
               onClick="copyToClipboard(`private Logger log = LoggerFactory.getLogger(getClass());
 @Slf4j // Lombok 사용 가능
 
-log.trace(&quot;{}&quot;, data); // 로그 출력 레벨에 따라 실행 x`, `7959879202348064000`)"
+log.trace(&quot;{}&quot;, data); // 로그 출력 레벨에 따라 실행 x`, `5335471918786428000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -317,7 +320,7 @@ log.trace(&quot;{}&quot;, data); // 로그 출력 레벨에 따라 실행 x`, `7
 <h2 id="http-메서드-매핑" style="position:relative;"><a href="#http-%EB%A9%94%EC%84%9C%EB%93%9C-%EB%A7%A4%ED%95%91" aria-label="http 메서드 매핑 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP 메서드 매핑</h2>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="1263211381526119200"
+              data-toaster-id="36924920844152530000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -331,7 +334,7 @@ log.trace(&quot;{}&quot;, data); // 로그 출력 레벨에 따라 실행 x`, `7
 @PostMapping({path})
 @PutMapping({path})
 @DeleteMapping({path})
-@PatchMapping({path})`, `1263211381526119200`)"
+@PatchMapping({path})`, `36924920844152530000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -353,7 +356,7 @@ log.trace(&quot;{}&quot;, data); // 로그 출력 레벨에 따라 실행 x`, `7
 <h2 id="pathvariable경로-변수" style="position:relative;"><a href="#pathvariable%EA%B2%BD%EB%A1%9C-%EB%B3%80%EC%88%98" aria-label="pathvariable경로 변수 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PathVariable(경로 변수)</h2>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="36565486097385260000"
+              data-toaster-id="94086750035628230000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -361,7 +364,7 @@ log.trace(&quot;{}&quot;, data); // 로그 출력 레벨에 따라 실행 x`, `7
               onClick="copyToClipboard(`@GetMapping(&quot;/mapping/users/{id}/name/{name}&quot;)
 public String mappingPath(@PathVariable String id, @PathVariable String name) {
     return &quot;ok&quot;;
-}`, `36565486097385260000`)"
+}`, `94086750035628230000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -381,12 +384,12 @@ public String mappingPath(@PathVariable String id, @PathVariable String name) {
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="74866066921142940000"
+              data-toaster-id="5758960586861872000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`@PostMapping(value = &quot;/api&quot;, produces = &quot;text/html&quot;)`, `74866066921142940000`)"
+              onClick="copyToClipboard(`@PostMapping(value = &quot;/api&quot;, produces = &quot;text/html&quot;)`, `5758960586861872000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -433,7 +436,7 @@ public String mappingPath(@PathVariable String id, @PathVariable String name) {
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="97482026915182250000"
+              data-toaster-id="83378769972821490000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -447,7 +450,7 @@ public String requestParam(
   // @RequestParam Map<String, Object> paramMap
 ){
   ...
-}`, `97482026915182250000`)"
+}`, `83378769972821490000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -484,7 +487,7 @@ public String requestParam(
 <h2 id="text-데이터-처리" style="position:relative;"><a href="#text-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B2%98%EB%A6%AC" aria-label="text 데이터 처리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Text 데이터 처리</h2>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="80514258529021120000"
+              data-toaster-id="9981128678279027000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -493,7 +496,7 @@ public String requestParam(
 public HttpEntity<String> requestBody(HttpEntity<String> httpEntity) {
 // public HttpEntity<String> requestBody(@RequestBody String httpbody) {
   ...
-}`, `80514258529021120000`)"
+}`, `9981128678279027000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -539,7 +542,7 @@ public HttpEntity<String> requestBody(HttpEntity<String> httpEntity) {
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="21745824824622305000"
+              data-toaster-id="79868054414707260000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -548,7 +551,7 @@ public HttpEntity<String> requestBody(HttpEntity<String> httpEntity) {
 // public HelloData requestBodyJson(HttpEntity<HelloData> httpEntity) {
 public HelloData requestBodyJson(@RequestBody HelloData data) {
   ...
-}`, `21745824824622305000`)"
+}`, `79868054414707260000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -570,7 +573,7 @@ Http Body가 아닌 요청 파라미터 처리(Form처리)</p>
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="84010700210125720000"
+              data-toaster-id="14310001644701241000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -585,7 +588,7 @@ public ResponseEntity<String> ResponseEntityApi() {
 @GetMapping(&quot;/ModelAttribute&quot;)
 public Data ModelAttributeApi() {
   ...
-}`, `84010700210125720000`)"
+}`, `14310001644701241000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -631,7 +634,7 @@ public Data ModelAttributeApi() {
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="85216749116030010000"
+              data-toaster-id="52919524147959400000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -645,7 +648,7 @@ public String addItem(Item item, RedirectAttributes redirectAttributes) {
 
     // pathVarible해주고 나머진 쿼리 파라미터 처리
     return &quot;redirect:/basic/items/{itemId}&quot;;
-}`, `85216749116030010000`)"
+}`, `52919524147959400000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -673,12 +676,12 @@ public String addItem(Item item, RedirectAttributes redirectAttributes) {
 <p>사용 선언</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="93106113533740020000"
+              data-toaster-id="47002516478941380000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`<html xmlns:th=&quot;http://www.thymeleaf.org&quot;></html>`, `93106113533740020000`)"
+              onClick="copyToClipboard(`<html xmlns:th=&quot;http://www.thymeleaf.org&quot;></html>`, `47002516478941380000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -692,12 +695,12 @@ public String addItem(Item item, RedirectAttributes redirectAttributes) {
 ex) WAS안에 여러 애플리케이션 배포 시</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="81649504856687890000"
+              data-toaster-id="97269547272329450000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`@{/basic/items}`, `81649504856687890000`)"
+              onClick="copyToClipboard(`@{/basic/items}`, `97269547272329450000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -722,7 +725,7 @@ ex) WAS안에 여러 애플리케이션 배포 시</p>
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="97348174751427120000"
+              data-toaster-id="34262977117002790000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -732,7 +735,7 @@ map.add(&quot;key&quot;, &quot;value1&quot;);
 map.add(&quot;key&quot;, &quot;value2&quot;);
 
 //[value1,value2]
-List<String> values = map.get(&quot;key&quot;);`, `97348174751427120000`)"
+List<String> values = map.get(&quot;key&quot;);`, `34262977117002790000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
