@@ -233,14 +233,14 @@
 (docker search 명령어를 통해 검색)</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="42405701457783950000"
+              data-toaster-id="43679195550497490000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`\$ docker search {검색 할 레지스트리 명} --filter=stars=10
 
-# --filter=stars=n : star 수가 n개 이상인 결과만 표시`, `42405701457783950000`)"
+# --filter=stars=n : star 수가 n개 이상인 결과만 표시`, `43679195550497490000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -264,7 +264,7 @@
 <p>DockerFile엔 자체 이미지를 빌드할 때 실행하려는 도커에 대한 명령이 포함한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="38279639082220120000"
+              data-toaster-id="28728048317187650000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -278,7 +278,7 @@ COPY {이미지의 외부 경로} {이미지 내부 경로} # 어떤 파일이 �
 EXPOSE # 로컬 시스템에 노출 시킬 포트 설정
 
 RUN # 실행 할 명령어
-`, `38279639082220120000`)"
+`, `28728048317187650000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -297,10 +297,16 @@ RUN # 실행 할 명령어
 <span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="8"></span><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="9"></span><span class="grvsc-source"><span class="mtk4">RUN</span><span class="mtk1"> # 실행 할 명령어</span></span></span>
 <span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="10"></span><span class="grvsc-source"></span></span></code></pre>
-<p>DockerFile에서 RUN, CMD 2가지 명령어가 비슷한 역할을 해 헷갈릴 수 있는데</p>
-<p>RUN 명령어는 <strong>이미지 생성 시 실행</strong> 하고</p>
-<p>CMD 명령어는 <strong>이미지 기반으로 컨테이너 시작 시 실행</strong>한다.</p>
-<p>작성한 DOCKERFILE을 build 수행 하였다면 run명령어를 통해 Container를 실행 가능하다.</p>
+<p>DockerFile에서 RUN, CMD, ENTRYPOINT 3가지 명령어가 비슷한 역할을 해 헷갈릴 수 있는데
+TODO:</p>
+<p>RUN 명령어는 <strong>새로운 layer를 생성하거나, 생성된 layer 위에서 command를 실행</strong> 하고</p>
+<p>주로 라이브러리 설치 하는데 사용</p>
+<p>CMD 명령어는 <strong>docker가 실행될때 실행되는 명령어 정의</strong>한다.</p>
+<p>만약 docker run 으로 실행될 때 사용자가 직접 실행할 명령어를 입력하면 CMD의 명령어는 실행되지 않는다.</p>
+<p>여러번 사용 가능하지만 가장 마지막 CMD만 남는다 (오버라이딩)</p>
+<p><a href="https://blog.naver.com/freepsw/220982529575" target="_blank" rel="nofollow noopener noreferrer">[docker] RUN vs CMD vs ENTRYPOINT - freepsw</a></p>
+<p>위의 글을 참고해서 한줄 요약헤보면</p>
+<p>docker run 명령어로 실행시</p>
 <p>Docker는 모든 명령어를 기반으로 하는 이미지 레이어 생성 -> 모든 명령 결과를 캐시</p>
 <p>다시 빌드할 때 변경사항이 없으면 캐시 된 내용을 사용해 실행한다.<br>
 -> <strong><code>레이어 기반 아키텍처</code></strong> 라 한다.</p>
@@ -545,7 +551,7 @@ RUN # 실행 할 명령어
 <p>레이어 기반 아키텍처를 이해하면 다음과 같은 최적화가 가능하다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="74377592797451340000"
+              data-toaster-id="77097426495342850000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -569,7 +575,7 @@ EXPOSE 80
 RUN node server.js
 
 # CMD의 경우 이미지 기반으로 컨테이너가 실행 될 때 실행
-# CMD [&quot;node&quot;, &quot;server.js&quot;]`, `74377592797451340000`)"
+# CMD [&quot;node&quot;, &quot;server.js&quot;]`, `77097426495342850000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -602,7 +608,7 @@ RUN node server.js
 <p>npm install이 실행되어 종속된 파일을 전부 다시 받게되는데</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="27872068844722287000"
+              data-toaster-id="58940674095126910000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -626,7 +632,7 @@ COPY . /app
 EXPOSE 80
 
 # 마지막 server.js 파일을 실행
-RUN node server.js`, `27872068844722287000`)"
+RUN node server.js`, `58940674095126910000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -676,7 +682,7 @@ RUN node server.js`, `27872068844722287000`)"
 <p>리눅스에서 도커 엔진을 제어하기 위한 명령어는 아래와 같다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="52259427168408570000"
+              data-toaster-id="40599992327492180000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -688,7 +694,7 @@ RUN node server.js`, `27872068844722287000`)"
 \$ sudo systemctl start/stop docker
 
 # Docker 데몬 사용/미사용 설정
-\$ sudo systemctl enabloe/disable docker`, `52259427168408570000`)"
+\$ sudo systemctl enabloe/disable docker`, `40599992327492180000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -708,12 +714,12 @@ RUN node server.js`, `27872068844722287000`)"
 <p>Docker 명령어의 기본적인 형태는 아래와 같다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="28033453474723770000"
+              data-toaster-id="51496499164208930000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker [command] (option) [target] (arguments)`, `28033453474723770000`)"
+              onClick="copyToClipboard(`\$ docker [command] (option) [target] (arguments)`, `51496499164208930000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -734,12 +740,12 @@ RUN node server.js`, `27872068844722287000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="33925637543998157000"
+              data-toaster-id="47215778980902830000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker build [options] . -t &quot;app/container_name&quot;    # name`, `33925637543998157000`)"
+              onClick="copyToClipboard(`\$ docker build [options] . -t &quot;app/container_name&quot;    # name`, `47215778980902830000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -755,7 +761,7 @@ RUN node server.js`, `27872068844722287000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="51267641783743170000"
+              data-toaster-id="67341129082928505000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -771,7 +777,7 @@ RUN node server.js`, `27872068844722287000`)"
   # -P, --publish-all          # publish all ports
   #     --link container:alias # linking
   # -v, --volume \`pwd\`:/app    # mount (absolute paths needed)
-  # -e, --env NAME=hello       # env vars`, `51267641783743170000`)"
+  # -e, --env NAME=hello       # env vars`, `67341129082928505000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -798,14 +804,14 @@ RUN node server.js`, `27872068844722287000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="52161876132576900000"
+              data-toaster-id="27410895498099384000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`\$ docker start [options] CONTAINER
   # -a, --attach        # attach stdout/err
-  # -i, --interactive   # attach stdin`, `52161876132576900000`)"
+  # -i, --interactive   # attach stdin`, `27410895498099384000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -823,7 +829,7 @@ RUN node server.js`, `27872068844722287000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="72897538363792780000"
+              data-toaster-id="44984991540246380000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -843,7 +849,7 @@ RUN node server.js`, `27872068844722287000`)"
 # --it : 터미널 입력 옵션 (컨테이너의 표준 입력과 로컬 컴퓨터 입력 연결)
 # --rm : 프로세스 종료 시 컨테이너 자동 제거
 # --restart : docker desktop 실행 시 container 자동 실행 여부 (default : no)
-`, `72897538363792780000`)"
+`, `44984991540246380000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -874,12 +880,12 @@ RUN node server.js`, `27872068844722287000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="41486565262734710000"
+              data-toaster-id="21219015277050724000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker attach {이미지}:{태그}`, `41486565262734710000`)"
+              onClick="copyToClipboard(`\$ docker attach {이미지}:{태그}`, `21219015277050724000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -895,7 +901,7 @@ RUN node server.js`, `27872068844722287000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="20119320003788020000"
+              data-toaster-id="6088045748534698000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -903,7 +909,7 @@ RUN node server.js`, `27872068844722287000`)"
               onClick="copyToClipboard(`\$ docker ps -a
 \$ docker kill \$ID
 
-# -a : 현재 존재하는 모든 컨테이너의 목록 출력`, `20119320003788020000`)"
+# -a : 현재 존재하는 모든 컨테이너의 목록 출력`, `6088045748534698000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -919,13 +925,13 @@ RUN node server.js`, `27872068844722287000`)"
 <h4 id="7-cp" style="position:relative;"><a href="#7-cp" aria-label="7 cp permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7. cp</h4>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="86822444571247590000"
+              data-toaster-id="41079489184996600000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`\$ docker cp
-`, `86822444571247590000`)"
+`, `41079489184996600000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -945,12 +951,12 @@ RUN node server.js`, `27872068844722287000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="18216797866700740000"
+              data-toaster-id="62167620360945720000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker stop {Container ID}`, `18216797866700740000`)"
+              onClick="copyToClipboard(`\$ docker stop {Container ID}`, `62167620360945720000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -966,12 +972,12 @@ RUN node server.js`, `27872068844722287000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="65258936208757020000"
+              data-toaster-id="1657580686473325600"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker rm {컨테이너 명}`, `65258936208757020000`)"
+              onClick="copyToClipboard(`\$ docker rm {컨테이너 명}`, `1657580686473325600`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -987,13 +993,13 @@ RUN node server.js`, `27872068844722287000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="23567708856631020000"
+              data-toaster-id="41827570649221330000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`\$ docker rmi {이미지 명}
-# -f : 컨테이너도 강제 삭제`, `23567708856631020000`)"
+# -f : 컨테이너도 강제 삭제`, `41827570649221330000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1010,13 +1016,13 @@ RUN node server.js`, `27872068844722287000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="72652317710239460000"
+              data-toaster-id="94922192216166000000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`\$ docker pull {이미지 이름}:{태그}
-\$ docker`, `72652317710239460000`)"
+\$ docker`, `94922192216166000000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1033,12 +1039,12 @@ RUN node server.js`, `27872068844722287000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="48207151831856370000"
+              data-toaster-id="6198484813348948000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker rename {기존 이름} {변경하고자 하는 이름}`, `48207151831856370000`)"
+              onClick="copyToClipboard(`\$ docker rename {기존 이름} {변경하고자 하는 이름}`, `6198484813348948000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1054,12 +1060,12 @@ RUN node server.js`, `27872068844722287000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="67485814464365170000"
+              data-toaster-id="79413070882276360000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker container logs -t {컨테이너 식별자}`, `67485814464365170000`)"
+              onClick="copyToClipboard(`\$ docker container logs -t {컨테이너 식별자}`, `79413070882276360000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1076,7 +1082,7 @@ RUN node server.js`, `27872068844722287000`)"
 <p><a href="https://docs.docker.com/config/pruning/" target="_blank" rel="nofollow noopener noreferrer">Prune unused Docker objects</a></p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="33067435168403735000"
+              data-toaster-id="74509018388246610000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1084,7 +1090,7 @@ RUN node server.js`, `27872068844722287000`)"
               onClick="copyToClipboard(`\$ docker container prune # 사용하지 않는 컨테이너 삭제
 \$ docker image prune # 사용하지 않는 이미지 삭제
 \$ docker volume prune # 컨테이너와 연결되어 있지 않은 모든 볼륨 삭제
-\$ docker system prune # 컨테이너, 이미지, 볼륨, 네트워크 전부 삭제`, `33067435168403735000`)"
+\$ docker system prune # 컨테이너, 이미지, 볼륨, 네트워크 전부 삭제`, `74509018388246610000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1345,14 +1351,14 @@ RUN node server.js`, `27872068844722287000`)"
 <p>Named Volume은 제거되지 않기 때문에 수동으로 제거시켜 줘야한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="49736446478284040000"
+              data-toaster-id="66335497616734030000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`# DockerFile 내부
 
-VOLUME [ &quot;/app/log&quot; ]`, `49736446478284040000`)"
+VOLUME [ &quot;/app/log&quot; ]`, `66335497616734030000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1367,13 +1373,13 @@ VOLUME [ &quot;/app/log&quot; ]`, `49736446478284040000`)"
 <p>명령어를 통해 Volume을 생성하고 확인하기 위해선 아래 명령어들을 사용한다</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="53407736276320360000"
+              data-toaster-id="30095414556265878000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`\$ docker volume create app_vol
-\$ docker volume ls`, `53407736276320360000`)"
+\$ docker volume ls`, `30095414556265878000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1388,12 +1394,12 @@ VOLUME [ &quot;/app/log&quot; ]`, `49736446478284040000`)"
 <p>Mountpoint 항목을 보면 해당 볼륨이 컴퓨터의 어느 경로에 생성 하였는지 확인 가능하다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="35997172249594757000"
+              data-toaster-id="55997388600546300000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker volume inspect app_log`, `35997172249594757000`)"
+              onClick="copyToClipboard(`\$ docker volume inspect app_log`, `55997388600546300000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1452,12 +1458,12 @@ VOLUME [ &quot;/app/log&quot; ]`, `49736446478284040000`)"
 <p>Docker 실행 시 volume지정은 -v 옵션으로 volume의 이름과 경로를 지정한다</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="33728295693816280000"
+              data-toaster-id="67438714902872965000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker run -d -p 3000:80 --rm --name exampleApp -v app_log:/app/log first:latest`, `33728295693816280000`)"
+              onClick="copyToClipboard(`\$ docker run -d -p 3000:80 --rm --name exampleApp -v app_log:/app/log first:latest`, `67438714902872965000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1471,12 +1477,12 @@ VOLUME [ &quot;/app/log&quot; ]`, `49736446478284040000`)"
 mount된 정보를 확인할 수 있다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="65408822011772920000"
+              data-toaster-id="23976434703209206000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker inspect exampleApp | grep -A 12 &quot;Mounts&quot;`, `65408822011772920000`)"
+              onClick="copyToClipboard(`\$ docker inspect exampleApp | grep -A 12 &quot;Mounts&quot;`, `23976434703209206000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1542,13 +1548,13 @@ mount된 정보를 확인할 수 있다.</p>
 <p>아래 두 명령어를 통해 볼륨 삭제 가능하다</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="41899890937479120000"
+              data-toaster-id="20238752758168687000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`\$ docker volume rm VOL_NAME
-\$ docker volume prune`, `41899890937479120000`)"
+\$ docker volume prune`, `20238752758168687000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1585,12 +1591,12 @@ mount된 정보를 확인할 수 있다.</p>
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="67021136341519580000"
+              data-toaster-id="67259426531698360000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`\$ docker run -d -p 3000:80 --rm --name exampleApp --mount {절대 경로}:/app/log first:latest`, `67021136341519580000`)"
+              onClick="copyToClipboard(`\$ docker run -d -p 3000:80 --rm --name exampleApp --mount {절대 경로}:/app/log first:latest`, `67259426531698360000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1664,8 +1670,8 @@ mount된 정보를 확인할 수 있다.</p>
 <img src="bind_3.png" alt=""></p>
 <h3 id="volume-vs-bind-mount" style="position:relative;"><a href="#volume-vs-bind-mount" aria-label="volume vs bind mount permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Volume vs Bind Mount</h3>
 <p>한줄정리 해보면</p>
-<p><strong>Container 데이터를 호스트 컴퓨터로 꺼내오기</strong> 위해 <strong>Volumes</strong> 사용</p>
-<p><strong>심볼릭 링크처럼 호스트 데이터를 읽을 때 사용 (호스트 폴더를 복사)</strong> 하기 위한 <strong>Bind Mount</strong>.</p>
+<p><strong>Volumes</strong>은 Docker에서 관리하는 호스트 파일 시스템과 컨테이너와 매핑해 데이터를 <strong>영구적으로 사용</strong>하는 방법</p>
+<p><strong>Bind Mount</strong>은 <strong>심볼릭 링크처럼 호스트 데이터를 읽을 때 사용 (호스트 폴더를 복사)</strong></p>
 <table>
 <thead>
 <tr>
@@ -1685,7 +1691,7 @@ mount된 정보를 확인할 수 있다.</p>
 </tbody>
 </table>
 <h3 id="tmpfs-mount" style="position:relative;"><a href="#tmpfs-mount" aria-label="tmpfs mount permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>tmpfs Mount</h3>
-<p>Volume과 bind Mount와 달리 일시적이며 호스트 메모리에 저장된다.</p>
+<p>Volume과 bind Mount와 달리 일시적이며 호스트 <strong>메모리</strong>에 저장된다.</p>
 <p>호스트나 컨테이너 쓰기 가능 계층에 유지하고 싶지 않은 <strong>민감한 파일을 임시로 저장하는데 유용</strong></p>
 <ul>
 <li>Linux에서 Docker를 실행하는 경우에만 사용 가능</li>
@@ -1705,7 +1711,7 @@ mount된 정보를 확인할 수 있다.</p>
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="8317385130062904000"
+              data-toaster-id="11731118052714496000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1713,7 +1719,7 @@ mount된 정보를 확인할 수 있다.</p>
               onClick="copyToClipboard(`ENV abc=hello
 
 ENV FOO=/bar
-WORKDIR \${FOO}`, `8317385130062904000`)"
+WORKDIR \${FOO}`, `11731118052714496000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1739,13 +1745,13 @@ WORKDIR \${FOO}`, `8317385130062904000`)"
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="35288129959039160000"
+              data-toaster-id="15812058484509616000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`ARG  CODE_VERSION=latest
-FROM base:\${CODE_VERSION}`, `35288129959039160000`)"
+FROM base:\${CODE_VERSION}`, `15812058484509616000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2016,6 +2022,6 @@ FROM base:\${CODE_VERSION}`, `35288129959039160000`)"
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-6e88cdb9a8736ce745b3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-5c97ada4935f63ea4dac.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-ce8ac85836a7f19c882e.js\"],\"component---src-pages-search-tsx\":[\"/component---src-pages-search-tsx-94ebe93d875ac40c1cab.js\"],\"component---src-templates-post-tsx\":[\"/component---src-templates-post-tsx-0eb74eeef903c575f946.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-6e88cdb9a8736ce745b3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-5c97ada4935f63ea4dac.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-9149ce021f039c394585.js\"],\"component---src-pages-search-tsx\":[\"/component---src-pages-search-tsx-94ebe93d875ac40c1cab.js\"],\"component---src-templates-post-tsx\":[\"/component---src-templates-post-tsx-0eb74eeef903c575f946.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="3bf269a922d9cc66ab8c";</script><script src="/webpack-runtime-3c0b043099c2ce331583.js" async></script><script src="/framework-3a490fc63390479c2f13.js" async></script><script src="/app-6e88cdb9a8736ce745b3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="5d0bfe5e8f23e3be266e";</script><script src="/webpack-runtime-68b2d571b81da4741d46.js" async></script><script src="/framework-3a490fc63390479c2f13.js" async></script><script src="/app-6e88cdb9a8736ce745b3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
