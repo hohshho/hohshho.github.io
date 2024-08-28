@@ -74,7 +74,7 @@
 <p>추가로 계정 추가, 권한 추가, DB연동 등 작업 필요</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="19398254576082660000"
+              data-toaster-id="96901535877542970000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -93,7 +93,7 @@ public class SecurityConfig{
                 .formLogin(withDefaults());
         return http.build();
     }
-}`, `19398254576082660000`)"
+}`, `96901535877542970000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -122,13 +122,13 @@ public class SecurityConfig{
 <p>application.properties파일에 이를 명시할 수 있다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="19714247826654364000"
+              data-toaster-id="49481492128836530000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`spring.security.user.name=user
-spring.security.user.password=1111`, `19714247826654364000`)"
+spring.security.user.password=1111`, `49481492128836530000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -211,7 +211,7 @@ spring.security.user.password=1111`, `19714247826654364000`)"
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="87743924709662300000"
+              data-toaster-id="54110408398421180000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -239,7 +239,7 @@ spring.security.user.password=1111`, `19714247826654364000`)"
                 response.sendRedirect(&quot;/login&quot;);
             }
         })
-        .permitAll();`, `87743924709662300000`)"
+        .permitAll();`, `54110408398421180000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -283,7 +283,7 @@ spring.security.user.password=1111`, `19714247826654364000`)"
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="87981464892043770000"
+              data-toaster-id="29841348170399960000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -305,7 +305,7 @@ spring.security.user.password=1111`, `19714247826654364000`)"
                     response.sendRedirect(&quot;/login&quot;);
                 }
             })
-        .deleteCookies(&quot;remember-me&quot;)`, `87981464892043770000`)"
+        .deleteCookies(&quot;remember-me&quot;)`, `29841348170399960000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -362,7 +362,7 @@ spring.security.user.password=1111`, `19714247826654364000`)"
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="65247388494904615000"
+              data-toaster-id="38877757145304240000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -372,7 +372,7 @@ spring.security.user.password=1111`, `19714247826654364000`)"
   .rememberMeParameter(&quot;remember&quot;) // 파라미터 변경 / 기본 파라미터 명은 remember-me
   .tokenValiditySeconds(3600) // remeberme 시간 설정 가능 / default(14)
   .alwaysRemember(false); // 기능이 활성화 되지 않아도 항상 리하는 것 여부 / default false
-  userDetailsService(userDetailsService); // 사용자 계정을 조회하는 과정 (필수로 설정 해야한다)`, `65247388494904615000`)"
+  userDetailsService(userDetailsService); // 사용자 계정을 조회하는 과정 (필수로 설정 해야한다)`, `38877757145304240000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -429,7 +429,7 @@ spring.security.user.password=1111`, `19714247826654364000`)"
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="90251119491919480000"
+              data-toaster-id="488307263399812030"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -440,7 +440,7 @@ http
         .maximumSessions(1)                 // 최대 허용 가능 세션 수 (1) , -1 -> 무제한 로그인 세션 허용
         .maxSessionsPreventsLogin(false)    // true : 현재 사용자 인증 실패, false : 기존 사용자 인증 실패
 //      .invalidSessionUrl(&quot;/invalid&quot;)      // 세션이 유효하지 않을 경우 이동 할 페이지
-        .expiredUrl(&quot;/expired&quot;);            // 세션이 만료 된 경우 이동 할 페이지`, `90251119491919480000`)"
+        .expiredUrl(&quot;/expired&quot;);            // 세션이 만료 된 경우 이동 할 페이지`, `488307263399812030`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -459,7 +459,7 @@ http
 <h2 id="세션-고정-보호" style="position:relative;"><a href="#%EC%84%B8%EC%85%98-%EA%B3%A0%EC%A0%95-%EB%B3%B4%ED%98%B8" aria-label="세션 고정 보호 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>세션 고정 보호</h2>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="59501348078006440000"
+              data-toaster-id="92216069196798430000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -470,7 +470,7 @@ http
         .sessionFixation()
             .changeSessionId(); // 기존 사용자의 세션에 Session ID만 변경
 //          .none();            //세션 고정 보호를 하지 않음.
-//          .newSession()       // 인증 성공 시 새로운 세션 사용`, `59501348078006440000`)"
+//          .newSession()       // 인증 성공 시 새로운 세션 사용`, `92216069196798430000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -492,7 +492,7 @@ http
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="43597472494730985000"
+              data-toaster-id="71693257747790094000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -503,7 +503,7 @@ http
 //      .sessionCreationPolicy(SessionCreationPolicy.ALWAYS);     // Spring Security가 항상 세션 설정
         .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED);  // 필요 시 생성(default)
 //      .sessionCreationPolicy(SessionCreationPolicy.NEVER);      // 생성x, 존재하면 사용
-//      .sessionCreationPolicy(SessionCreationPolicy.STATELESS);  // 생성x, 존재해도 사용x (JWT 사용 시)`, `43597472494730985000`)"
+//      .sessionCreationPolicy(SessionCreationPolicy.STATELESS);  // 생성x, 존재해도 사용x (JWT 사용 시)`, `71693257747790094000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -544,13 +544,13 @@ http
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="74235085107654430000"
+              data-toaster-id="16945558086991254000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`http
-    .requestMatchers(&quot;/users/**&quot;).hasRole(&quot;USER&quot;);`, `74235085107654430000`)"
+    .requestMatchers(&quot;/users/**&quot;).hasRole(&quot;USER&quot;);`, `16945558086991254000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -643,12 +643,12 @@ http
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="73928623499348970000"
+              data-toaster-id="18034847954285226000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`SavedRequest savedRequest = requestCache.getRequest(request, response);`, `73928623499348970000`)"
+              onClick="copyToClipboard(`SavedRequest savedRequest = requestCache.getRequest(request, response);`, `18034847954285226000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -661,7 +661,7 @@ http
 <h3 id="authenticationexception" style="position:relative;"><a href="#authenticationexception" aria-label="authenticationexception permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AuthenticationException</h3>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="5586815486829155000"
+              data-toaster-id="15646030627234664000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -684,7 +684,7 @@ http
                     }
                 });
 
-    }`, `5586815486829155000`)"
+    }`, `15646030627234664000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -843,7 +843,7 @@ Spring에서 만든 Bean을 Injection 해서 사용할 수 없다.</p>
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="45005580793485040000"
+              data-toaster-id="28104844774555193000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -863,7 +863,7 @@ Spring에서 만든 Bean을 Injection 해서 사용할 수 없다.</p>
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         ...
-    }`, `45005580793485040000`)"
+    }`, `28104844774555193000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1028,12 +1028,12 @@ Spring에서 만든 Bean을 Injection 해서 사용할 수 없다.</p>
 <p>SecurityContextHolder에서 인증정보 가져오는 방법</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="72002265097559850000"
+              data-toaster-id="36931004442919370000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`Authentication authentication = SecurityContextHolder.getContext().getAuthentication();`, `72002265097559850000`)"
+              onClick="copyToClipboard(`Authentication authentication = SecurityContextHolder.getContext().getAuthentication();`, `36931004442919370000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1421,7 +1421,7 @@ a. 인증 전</p>
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="59600524043723050000"
+              data-toaster-id="14038577421443832000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1432,7 +1432,7 @@ a. 인증 전</p>
             .requestMatchers(&quot;/admin/pay&quot;).hasRole(&quot;ADMIN&quot;)
             .requestMatchers(&quot;/admin/**&quot;).hasAnyRole(&quot;ADMIN&quot;, &quot;SYS&quot;)
             .anyRequest().authenticated() // 모든 요청이 인증을 요청하게 설정
-    );`, `59600524043723050000`)"
+    );`, `14038577421443832000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1544,7 +1544,7 @@ a. 인증 전</p>
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="90531441895669840000"
+              data-toaster-id="91283733622688270000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1554,7 +1554,7 @@ a. 인증 전</p>
 @Override
 public void configure(WebSecurity web) throws Exception {
    web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
-}`, `90531441895669840000`)"
+}`, `91283733622688270000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1676,7 +1676,7 @@ public void configure(WebSecurity web) throws Exception {
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="15350953867387340000"
+              data-toaster-id="26663464965106210000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1715,7 +1715,7 @@ public class UserServiceImpl implements UserService {
         userRepository.save(account);
     }
     ...
-}`, `15350953867387340000`)"
+}`, `26663464965106210000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1834,7 +1834,7 @@ public class UserServiceImpl implements UserService {
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="44641634206162490000"
+              data-toaster-id="33894085658740724000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1878,7 +1878,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         List<GrantedAuthority> collect = userRoles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
         return new AccountContext(account, collect);
     }
-}`, `44641634206162490000`)"
+}`, `33894085658740724000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1946,7 +1946,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="92607923973921100000"
+              data-toaster-id="37179509441744420000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2007,7 +2007,7 @@ public AuthenticationProvider authenticationProvider() {
 public AuthenticationManager authenticationManagerBean() throws Exception {
     return super.authenticationManagerBean();
 }
-`, `92607923973921100000`)"
+`, `37179509441744420000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2082,7 +2082,7 @@ public AuthenticationManager authenticationManagerBean() throws Exception {
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="35901913265696830000"
+              data-toaster-id="42728619489117570000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2111,7 +2111,7 @@ public class FormWebAuthenticationDetails extends WebAuthenticationDetails {
 }
 
 // config 추가
-http.authenticationDetailsSource(authenticationDetailsSource)`, `35901913265696830000`)"
+http.authenticationDetailsSource(authenticationDetailsSource)`, `42728619489117570000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2151,7 +2151,7 @@ http.authenticationDetailsSource(authenticationDetailsSource)`, `359019132656968
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="99504748370986100000"
+              data-toaster-id="43011896141076860000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2161,7 +2161,7 @@ http.authenticationDetailsSource(authenticationDetailsSource)`, `359019132656968
     .loginPage(&quot;/login&quot;) // 사용자 정의 로그인 페이지, default: /login
     .loginProcessingUrl(&quot;/login&quot;) // 로그인 Form Action Url, default: /login
     .defaultSeccessUrl(&quot;/&quot;)
-    .permitAll()`, `99504748370986100000`)"
+    .permitAll()`, `43011896141076860000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2186,7 +2186,7 @@ http.authenticationDetailsSource(authenticationDetailsSource)`, `359019132656968
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="99977795529937350000"
+              data-toaster-id="38383977172944880000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2200,7 +2200,7 @@ public String logout(HttpServletRequest request, HttpServletResponse response) t
     }
 
     return &quot;redirect:/login&quot;;
-}`, `99977795529937350000`)"
+}`, `38383977172944880000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2227,7 +2227,7 @@ public String logout(HttpServletRequest request, HttpServletResponse response) t
 <p>SimpleUrlAuthenticationSuccessHandler 을 상속받아 구현 - 인증 성공 후 페이지 이동 기능 구현</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="56002623499078386000"
+              data-toaster-id="86951968948373730000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2254,7 +2254,7 @@ public class FormAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuc
             redirectStrategy.sendRedirect(request, response, getDefaultTargetUrl());
         }
     }
-}`, `56002623499078386000`)"
+}`, `86951968948373730000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2292,7 +2292,7 @@ public class FormAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuc
 <p>SimpleUrlAuthenticationFailureHandler 상속 받아 구현 - exception이 난 경우 에러 처리 구현</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="37063207398220400000"
+              data-toaster-id="56273259820026580000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2320,7 +2320,7 @@ public class FormAuthenticationFailureHandler extends SimpleUrlAuthenticationFai
         super.onAuthenticationFailure(request, response, exception);
 
     }
-}`, `37063207398220400000`)"
+}`, `56273259820026580000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2366,7 +2366,7 @@ public class FormAuthenticationFailureHandler extends SimpleUrlAuthenticationFai
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="76374114408234320000"
+              data-toaster-id="86172754413180780000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2402,7 +2402,7 @@ public class FormAccessDeniedHandler implements AccessDeniedHandler {
     }
 
 }
-`, `76374114408234320000`)"
+`, `86172754413180780000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2505,7 +2505,7 @@ public class FormAccessDeniedHandler implements AccessDeniedHandler {
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="810225283117738100"
+              data-toaster-id="46467151976232970000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2535,7 +2535,7 @@ public class FormAccessDeniedHandler implements AccessDeniedHandler {
 
         return this.getAuthenticationManager().authenticate(token);
     }
-}`, `810225283117738100`)"
+}`, `46467151976232970000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2579,7 +2579,7 @@ public class FormAccessDeniedHandler implements AccessDeniedHandler {
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="92302741755987600000"
+              data-toaster-id="82012408767588270000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2613,7 +2613,7 @@ public class FormAccessDeniedHandler implements AccessDeniedHandler {
         return this.principal;
     }
 }
-`, `92302741755987600000`)"
+`, `82012408767588270000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2655,7 +2655,7 @@ public class FormAccessDeniedHandler implements AccessDeniedHandler {
 <p>추가로 설정한 Filter를 사용하기 위해선 AuthenticationManager에 등록(set) 시켜야 한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="80428256268437930000"
+              data-toaster-id="16419321906836726000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2671,7 +2671,7 @@ public AjaxLoginProcessingFilter ajaxLoginProcessingFilter() throws Exception {
     AjaxLoginProcessingFilter ajaxLoginProcessingFilter = new AjaxLoginProcessingFilter();
     ajaxLoginProcessingFilter.setAuthenticationManager(authenticationManagerBean()); // 등록
     return ajaxLoginProcessingFilter;
-}`, `80428256268437930000`)"
+}`, `16419321906836726000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2711,7 +2711,7 @@ public AjaxLoginProcessingFilter ajaxLoginProcessingFilter() throws Exception {
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="99773953797781620000"
+              data-toaster-id="96315980582390640000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2723,7 +2723,7 @@ public AjaxLoginProcessingFilter ajaxLoginProcessingFilter() throws Exception {
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException e) throws IOException, ServletException {
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, &quot;UnAuthorized&quot;);
     }
-}`, `99773953797781620000`)"
+}`, `96315980582390640000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2752,7 +2752,7 @@ public AjaxLoginProcessingFilter ajaxLoginProcessingFilter() throws Exception {
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="24349868896270690000"
+              data-toaster-id="4233644451566109700"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2779,7 +2779,7 @@ public AjaxLoginProcessingFilter ajaxLoginProcessingFilter() throws Exception {
     ajaxLoginProcessingFilter.setAuthenticationSuccessHandler(ajaxAuthenticationSuccessHandler());
     ajaxLoginProcessingFilter.setAuthenticationFailureHandler(ajaxAuthenticationFailureHandler());
     return ajaxLoginProcessingFilter;
-}`, `24349868896270690000`)"
+}`, `4233644451566109700`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2932,7 +2932,7 @@ filter, handler, 환경설정 메서드의 set을 만든다</p>
 -> getAttributes() 메서드만 구현 / 나머지 DefaultFilterInvocationSecurityMetadataSource 복사해 사용</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="77250313991056330000"
+              data-toaster-id="28616877879004910000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2981,7 +2981,7 @@ filter, handler, 환경설정 메서드의 set을 만든다</p>
     public boolean supports(Class<?> clazz) {
         return FilterInvocation.class.isAssignableFrom(clazz);
     }
-}`, `77250313991056330000`)"
+}`, `28616877879004910000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3041,7 +3041,7 @@ url Mapping 정보인 requestMap 객체를 정의</p>
 <h4 id="config-설정" style="position:relative;"><a href="#config-%EC%84%A4%EC%A0%95" aria-label="config 설정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Config 설정</h4>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="81066503565109480000"
+              data-toaster-id="74071717171198430000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -3072,7 +3072,7 @@ private List<AccessDecisionVoter<?>> getAccessDecisionVoters() {
 @Bean
 public FilterInvocationSecurityMetadataSource urlFilterInvocationSecurityMetadataSource() {
     return new UrlFilterInvocationMetadataSource();
-}`, `81066503565109480000`)"
+}`, `74071717171198430000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3126,7 +3126,7 @@ public FilterInvocationSecurityMetadataSource urlFilterInvocationSecurityMetadat
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="10826755405664778000"
+              data-toaster-id="34565134934582555000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -3164,7 +3164,7 @@ public FilterInvocationSecurityMetadataSource urlFilterInvocationSecurityMetadat
         return true;
     }
 }
-`, `10826755405664778000`)"
+`, `34565134934582555000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3212,12 +3212,12 @@ public FilterInvocationSecurityMetadataSource urlFilterInvocationSecurityMetadat
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="97997631828003780000"
+              data-toaster-id="60540050226118120000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`requestMap.put(new AntPathRequestMatcher(&quot;/mypage&quot;), Arrays.asList(new SecurityConfig(&quot;ROLE_USER&quot;)));`, `97997631828003780000`)"
+              onClick="copyToClipboard(`requestMap.put(new AntPathRequestMatcher(&quot;/mypage&quot;), Arrays.asList(new SecurityConfig(&quot;ROLE_USER&quot;)));`, `60540050226118120000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3232,7 +3232,7 @@ public FilterInvocationSecurityMetadataSource urlFilterInvocationSecurityMetadat
 <h3 id="resource를-가져오는-service를-생성" style="position:relative;"><a href="#resource%EB%A5%BC-%EA%B0%80%EC%A0%B8%EC%98%A4%EB%8A%94-service%EB%A5%BC-%EC%83%9D%EC%84%B1" aria-label="resource를 가져오는 service를 생성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource를 가져오는 Service를 생성</h3>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="3480135346782109700"
+              data-toaster-id="10612736347745110000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -3258,7 +3258,7 @@ public class SecurityResourceService {
         });
         return result;
     }
-}`, `3480135346782109700`)"
+}`, `10612736347745110000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3294,7 +3294,7 @@ public class SecurityResourceService {
 <p>이전엔 UrlFilterInvocationSecurityMetadataSource를 그대로 사용했는데 urlResourcesMapFactoryBean을 사용하게 변경</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="9561668816089686000"
+              data-toaster-id="34155629138845733000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -3311,7 +3311,7 @@ public class SecurityResourceService {
 
         return urlResourcesMapFactoryBean;
     }
-}`, `9561668816089686000`)"
+}`, `34155629138845733000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3340,7 +3340,7 @@ public class SecurityResourceService {
 <h4 id="urlfilterinvocationmetadatasource에-reload-메서드-추가" style="position:relative;"><a href="#urlfilterinvocationmetadatasource%EC%97%90-reload-%EB%A9%94%EC%84%9C%EB%93%9C-%EC%B6%94%EA%B0%80" aria-label="urlfilterinvocationmetadatasource에 reload 메서드 추가 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UrlFilterInvocationMetadataSource에 reload 메서드 추가</h4>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="85699482481105370000"
+              data-toaster-id="56879399613410160000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -3355,7 +3355,7 @@ public class SecurityResourceService {
         Map.Entry<RequestMatcher, List<ConfigAttribute>> entry = iterator.next();
         requestMap.put(entry.getKey(), entry.getValue());
     }
-}`, `85699482481105370000`)"
+}`, `56879399613410160000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3378,7 +3378,7 @@ public class SecurityResourceService {
 <h4 id="controller-수정" style="position:relative;"><a href="#controller-%EC%88%98%EC%A0%95" aria-label="controller 수정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Controller 수정</h4>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="17780595446628356000"
+              data-toaster-id="50627747525736150000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -3396,7 +3396,7 @@ public class SecurityResourceService {
         return &quot;redirect:/admin/resources&quot;;
 
     }
-`, `17780595446628356000`)"
+`, `50627747525736150000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3449,7 +3449,7 @@ public class SecurityResourceService {
 <p>(추후에 적용시킬 경우 DB로 불러와 적용시켜도 좋을 것 같다.)</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="48947305031256690000"
+              data-toaster-id="3864229930948059600"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -3507,7 +3507,7 @@ public class SecurityResourceService {
             super.afterInvocation(token, null);
         }
     }
-}`, `48947305031256690000`)"
+}`, `3864229930948059600`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3583,7 +3583,7 @@ public class SecurityResourceService {
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="78924651200677500000"
+              data-toaster-id="76492861456978330000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -3664,7 +3664,7 @@ public interface ResourcesRepository extends JpaRepository<Resources, Long> {
     public RoleHierarchyImpl roleHierarchy() {
         RoleHierarchyImpl roleHierarchy = new RoleHierarchyImpl();
         return roleHierarchy;
-    }`, `78924651200677500000`)"
+    }`, `76492861456978330000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3753,7 +3753,7 @@ public interface ResourcesRepository extends JpaRepository<Resources, Long> {
 <p>추가로 config에서 사용되는 RoleHierarchy를 전달받아야 하는데 강의에서는 ApplicationRunner의 run메소드를 이용해서 RoleHierarchy객체를 전달한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="5009445341547369000"
+              data-toaster-id="70460587662685320000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -3772,7 +3772,7 @@ public class SecurityInitializer implements ApplicationRunner {
         String allHierarchy = roleHierarchyService.findAllHierarchy();
         roleHierarchy.setHierarchy(allHierarchy);
     }
-}`, `5009445341547369000`)"
+}`, `70460587662685320000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3815,7 +3815,7 @@ public class SecurityInitializer implements ApplicationRunner {
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="37595339439743025000"
+              data-toaster-id="18295900216080808000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -3837,7 +3837,7 @@ public class AccessIp implements Serializable {
     @Column(name = &quot;IP_ADDRESS&quot;, nullable = false)
     private String ipAddress;
 
-}`, `37595339439743025000`)"
+}`, `18295900216080808000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3873,7 +3873,7 @@ public class AccessIp implements Serializable {
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="21157757694393010000"
+              data-toaster-id="60087025323722610000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -3911,7 +3911,7 @@ public class IpAddressVoter implements AccessDecisionVoter {
         throw new AccessDeniedException(&quot;Invalid Ip Address&quot;);
 
     }
-}​`, `21157757694393010000`)"
+}​`, `60087025323722610000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3960,7 +3960,7 @@ public class IpAddressVoter implements AccessDecisionVoter {
 <p>인가 결정을 보류하는 로직이 있기 때문에 <strong>반드시 roleVoter 앞에 위치</strong></p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="50529931080547860000"
+              data-toaster-id="1071592687157241200"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -3971,7 +3971,7 @@ public class IpAddressVoter implements AccessDecisionVoter {
         accessDecisionVoters.add(roleVoter());
 
     return accessDecisionVoters;
-}`, `50529931080547860000`)"
+}`, `1071592687157241200`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -4177,7 +4177,7 @@ public class IpAddressVoter implements AccessDecisionVoter {
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="82329564061616820000"
+              data-toaster-id="34842750540362990000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -4252,7 +4252,7 @@ public class MethodSecurityConfig extends GlobalMethodSecurityConfiguration {
         methodResourcesMapFactoryBean.setResourceType(&quot;method&quot;);
         return methodResourcesMapFactoryBean;
     }
-}`, `82329564061616820000`)"
+}`, `34842750540362990000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"

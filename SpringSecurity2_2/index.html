@@ -831,7 +831,7 @@ fromIssuerLocation가 실행되는데 application.yml에 issuer-uri의 OIDC, AUT
 <p>여기까진 Login 과정으로 SecurityConfig에</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="82832274399697010000"
+              data-toaster-id="62330458270987665000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -841,7 +841,7 @@ fromIssuerLocation가 실행되는데 application.yml에 issuer-uri의 OIDC, AUT
         http.authorizeRequests((requests) -> requests.anyRequest().authenticated());
         http.oauth2Login(Customizer.withDefaults());
         return http.build();
-    }`, `82832274399697010000`)"
+    }`, `62330458270987665000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -866,7 +866,7 @@ fromIssuerLocation가 실행되는데 application.yml에 issuer-uri의 OIDC, AUT
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="68583726835735880"
+              data-toaster-id="57795359245786780000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -895,7 +895,7 @@ public class OAuth2ClientConfig {
         successHandler.setPostLogoutRedirectUri(&quot;http://localhost:8081/login&quot;);
         return successHandler;
     }
-}`, `68583726835735880`)"
+}`, `57795359245786780000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -932,7 +932,7 @@ public class OAuth2ClientConfig {
 <h3 id="mvc에서-인증-객체-참조-방법" style="position:relative;"><a href="#mvc%EC%97%90%EC%84%9C-%EC%9D%B8%EC%A6%9D-%EA%B0%9D%EC%B2%B4-%EC%B0%B8%EC%A1%B0-%EB%B0%A9%EB%B2%95" aria-label="mvc에서 인증 객체 참조 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MVC에서 인증 객체 참조 방법</h3>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="11596450654852485000"
+              data-toaster-id="53546005742061270000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -961,7 +961,7 @@ public class OAuth2ClientConfig {
     public OidcUser oidcUser(@AuthenticationPrincipal OidcUser oidcUser){
         System.out.println(&quot;oidcUser = &quot; + oidcUser);
         return oidcUser;
-    }`, `11596450654852485000`)"
+    }`, `53546005742061270000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1102,7 +1102,7 @@ public class OAuth2ClientConfig {
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="482238677647539600"
+              data-toaster-id="32642320239273583000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1119,7 +1119,7 @@ redirect-uri: http://localhost:8081/login/v1/oauth2/code/keycloak
                                 authorizationEndpointConfig.baseUri(&quot;/oauth2/v1/authorization&quot;))
                         .redirectionEndpoint(redirectionEndpointConfig ->
                                 redirectionEndpointConfig.baseUri(&quot;/login/v1/oauth2/code/*&quot;))
-                );`, `482238677647539600`)"
+                );`, `32642320239273583000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1149,7 +1149,7 @@ redirect-uri: http://localhost:8081/login/v1/oauth2/code/keycloak
 <p>resolve 로직을 간단히 요약하면 request 요청에 registrationId를 <strong>keycloakWithPKCE</strong>(yml 파일에서 해당 이름으로 매칭 시켜 놓음) 값이 있을 경우에 대한 분기처리를 한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="54245753134752860000"
+              data-toaster-id="70201974045707580000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1224,7 +1224,7 @@ public class CustomOAuth2AuthorizationRequestResolver implements OAuth2Authoriza
         return builder.build();
     }
     ...
-}`, `54245753134752860000`)"
+}`, `70201974045707580000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1505,7 +1505,7 @@ OAuth2.0 Client() 인가처리는 가능하지만 최종 사용자의 인증은 
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="23001500265754960000"
+              data-toaster-id="42353064394246595000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1567,7 +1567,7 @@ public class AppConfig {
             return contextAttributes;
         };
     }
-}`, `23001500265754960000`)"
+}`, `42353064394246595000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1651,7 +1651,7 @@ public class AppConfig {
 <p>실제 로그인 기능을 구현하기 위해서 Controller 구현해야 한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="87011211296304580000"
+              data-toaster-id="90241744782481900000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1746,7 +1746,7 @@ public class LoginController {
     private boolean hasTokenExpired(OAuth2Token token) {
         return this.clock.instant().isAfter(token.getExpiresAt().minus(this.clockSkew));
     }
-}`, `87011211296304580000`)"
+}`, `90241744782481900000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1857,7 +1857,7 @@ public class LoginController {
 <p>인가 처리 로직은 이전과 동일하고 Config 설정에서 Filter 등록을 한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="77236141352638220000"
+              data-toaster-id="71651843004986370000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1890,7 +1890,7 @@ public class OAuth2ClientConfig {
             response.sendRedirect(&quot;/home&quot;);
         });
         return customOAuth2LoginAuthenticationFilter;
-    }`, `77236141352638220000`)"
+    }`, `71651843004986370000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1931,7 +1931,7 @@ public class OAuth2ClientConfig {
 <p>customOAuth2LoginAuthenticationFilter 설정을 살펴보면</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="1493586265868241000"
+              data-toaster-id="16076630042294137000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2019,7 +2019,7 @@ public class OAuth2ClientConfig {
     private boolean hasTokenExpired(OAuth2Token token) {
         return this.clock.instant().isAfter(token.getExpiresAt().minus(this.clockSkew));
     }
-}`, `1493586265868241000`)"
+}`, `16076630042294137000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
