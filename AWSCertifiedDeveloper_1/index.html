@@ -169,7 +169,7 @@
 </table>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="97577994007300180000"
+              data-toaster-id="73844875234424030000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -200,7 +200,7 @@
       &quot;Condition&quot;: { &quot;Bool&quot;: { &quot;aws:MultiFactorAuthPresent&quot;: &quot;true&quot; } }
     }
   ]
-}`, `97577994007300180000`)"
+}`, `73844875234424030000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -485,7 +485,7 @@ l, D : 스토리지 최적화 -> 로컬 스토리지의 대규모 데이터 세�
 <ul>
 <li>로드 분산</li>
 <li>단일 엑세스 지점(DNS) 노출</li>
-<li>인스턴스 상태 확인 (ELB Health Checks : 비정상 인스턴스로 트래픽 전송x)</li>
+<li>인스턴스 상태 확인 (ELB Health Checks : 비정상 인스턴스로 트래픽 전송x, Port 4567, /health)</li>
 <li>웹사이트에 SSL 제공</li>
 <li>App에서 사용할 수 있는 static DNS이름 제공</li>
 <li>ALB의 경우 동일한 클라이언트에 대한 트래픽이 동일한 인스턴스로 리다이렉트 할 수 있는 기능을 제공하는데 <strong>ELB Sticky Session</strong>이라 한다
@@ -512,8 +512,9 @@ l, D : 스토리지 최적화 -> 로컬 스토리지의 대규모 데이터 세�
 <li>X-Forwarded-For헤더로 사용자 IP전달해 사용자 구별</li>
 </ul>
 </li>
-<li>NLB (Network Load Balancer) : HTTP, HTTPS,TLS, UDP
+<li>NLB (Network Load Balancer) : HTTP, HTTPS,TLS, UDP - L4 Load Balancer
 <ul>
+<li>1 ~ 3개 IP로만 액세스할 수 있는 App만들면 네트워크 로드 밸런서 옵션으로 고려</li>
 <li><strong>AZ당 하나의 정적 IP</strong>를 가지며 탄력적 IP할당</li>
 <li>AWS프리티어에는 포함되지 않고 높은 성능이 필요할 때 사용</li>
 <li>경로, 호스팅 기반 사용 불가</li>
