@@ -65,7 +65,7 @@
 </li>
 </ol>
 <p>Application에서 DB의 데이터를 관리하기 위해서는 다양한 데이터 접근 기술 학습 필요</p>
-<p>어려운 이유는 크게 3가지</p>
+<p>어려운 이유는 크게 3가지이다.</p>
 <ol>
 <li>DB기반 지식이 약하기 때문</li>
 </ol>
@@ -88,13 +88,13 @@
 <p>dependencies에 lombok설정 추가</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="61913646199007630000"
+              data-toaster-id="75885507170679440000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`//테스트에서 lombok 사용
-testCompileOnly 'org.projectlombok:lombok' testAnnotationProcessor 'org.projectlombok:lombok'`, `61913646199007630000`)"
+testCompileOnly 'org.projectlombok:lombok' testAnnotationProcessor 'org.projectlombok:lombok'`, `75885507170679440000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -136,13 +136,60 @@ testCompileOnly 'org.projectlombok:lombok' testAnnotationProcessor 'org.projectl
 <p>DB변경 시 JDBC코드는 변경하지 않아도 되지만 SQL은 해당 데이터 베이스에 맞게 변경 필요</p>
 <hr>
 <p>JDBC기술은 대표적으로 SQL Mapper와 ORM으로 나뉜다.</p>
-<p><img src="sqlmapper.png" alt=""></p>
+<p>SQL Mapper</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/370e729201e36fa32247d165484a4f08/d2d74/SQLMapper.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 24.539877300613497%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA3ElEQVR42nWQSYqAMBBFc//beAIHUARFUXEE54WK08KFguhvfsBN011QpCqp4eeJaZoQxzG6rsN937iuC+/7gsZzXVcsy4J937Ftm4yf58F/JtI0he/7SJIEVVWhLEu0bYvjONA0DaIogm3bUFUVlmUhDEP0fS/fx3GUPXVdS2cugiCA53nI8xwcziGu62IYBhiGIYfzXtM0OI4j46IoZLOu68iyTC76+gW/+qmiM57nWcrn91hEVYqiwDRNGRMDjSqpjIophPXiLw5k9/l5nnIB+ZEjczL8OP9m+APlWnHE25rC0wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/370e729201e36fa32247d165484a4f08/a81b5/SQLMapper.webp 163w,
+/static/370e729201e36fa32247d165484a4f08/da3ef/SQLMapper.webp 325w,
+/static/370e729201e36fa32247d165484a4f08/309d5/SQLMapper.webp 650w,
+/static/370e729201e36fa32247d165484a4f08/78344/SQLMapper.webp 975w,
+/static/370e729201e36fa32247d165484a4f08/e2c2f/SQLMapper.webp 1152w"
+              sizes="(max-width: 650px) 100vw, 650px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/370e729201e36fa32247d165484a4f08/5e043/SQLMapper.png 163w,
+/static/370e729201e36fa32247d165484a4f08/e5cc6/SQLMapper.png 325w,
+/static/370e729201e36fa32247d165484a4f08/663f3/SQLMapper.png 650w,
+/static/370e729201e36fa32247d165484a4f08/d880f/SQLMapper.png 975w,
+/static/370e729201e36fa32247d165484a4f08/d2d74/SQLMapper.png 1152w"
+            sizes="(max-width: 650px) 100vw, 650px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/370e729201e36fa32247d165484a4f08/663f3/SQLMapper.png"
+            alt="SQLMapper"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
 <ul>
 <li>SQL응답 결과를 객체로 편리하게 변환</li>
 <li>JDBC의 반복코드 제거</li>
 <li>개발자가 SQL 직접 작성</li>
 <li>ex - JdbcTemplate, MyBatis</li>
 </ul>
+<p>ORM</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
@@ -249,7 +296,7 @@ testCompileOnly 'org.projectlombok:lombok' testAnnotationProcessor 'org.projectl
 <p>삽입</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="62343892240580540000"
+              data-toaster-id="65116119996545030000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -257,7 +304,7 @@ testCompileOnly 'org.projectlombok:lombok' testAnnotationProcessor 'org.projectl
               onClick="copyToClipboard(`pstmt = con.prepareStatement(sql);
 pstmt.setString(1, member.getMemberId());
 pstmt.setInt(2, member.getMoney());
-pstmt.executeUpdate();`, `62343892240580540000`)"
+pstmt.executeUpdate();`, `65116119996545030000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -275,7 +322,7 @@ prepareStatement - 파라미터를 binding</p>
 <p>조회</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="61787994196386850000"
+              data-toaster-id="68778238673326490000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -293,7 +340,7 @@ if (rs.next()) {
 }
 
 ...
-`, `61787994196386850000`)"
+`, `68778238673326490000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -438,14 +485,14 @@ if (rs.next()) {
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="12656892920860895000"
+              data-toaster-id="67758199378665810000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`public interface DataSource {
     Connection getConnection() throws SQLException;
-}`, `12656892920860895000`)"
+}`, `67758199378665810000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -528,7 +575,7 @@ if (rs.next()) {
 <p>보통 이렇게 <strong>자동 커밋 모드에서 수동 커밋 모드로 전환하는 것을 트랜잭션을 시작한다고 표현</strong>한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="65780318816205230000"
+              data-toaster-id="45029001596180220000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -537,7 +584,7 @@ if (rs.next()) {
 set autocommit true;
 
 # 수동 커밋 사용
-set autocommit false;`, `65780318816205230000`)"
+set autocommit false;`, `45029001596180220000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -561,13 +608,13 @@ set autocommit false;`, `65780318816205230000`)"
 <p>예제</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="76682761884430910000"
+              data-toaster-id="71639280455903860000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`set autocommit false;
-select * from member where member_id='memberA' for update;`, `76682761884430910000`)"
+select * from member where member_id='memberA' for update;`, `71639280455903860000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -654,7 +701,7 @@ select * from member where member_id='memberA' for update;`, `766827618844309100
 <p>트랜잭션 추상화 인터페이스를 구현</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="45893050420150860000"
+              data-toaster-id="72245091051690330000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -663,7 +710,7 @@ select * from member where member_id='memberA' for update;`, `766827618844309100
     begin();
     commit();
     rollback();
-}`, `45893050420150860000`)"
+}`, `72245091051690330000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -788,7 +835,7 @@ select * from member where member_id='memberA' for update;`, `766827618844309100
 <p>PlatformTransactionManager 인터페이스</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="84512977740198610000"
+              data-toaster-id="78951546807847880000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -799,7 +846,7 @@ public interface PlatformTransactionManager extends TransactionManager {
     TransactionStatus getTransaction(@Nullable TransactionDefinition definition) throws TransactionException;
     void commit(TransactionStatus status) throws TransactionException;
     void rollback(TransactionStatus status) throws TransactionException;
-}`, `84512977740198610000`)"
+}`, `78951546807847880000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -899,7 +946,7 @@ public interface PlatformTransactionManager extends TransactionManager {
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="76851790100741770000"
+              data-toaster-id="12983099549369514000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -914,7 +961,7 @@ private Connection getConnection() throws SQLException {
     Connection con = DataSourceUtils.getConnection(dataSource);
     log.info(&quot;get connection={} class={}&quot;, con, con.getClass());
     return con;
-}`, `76851790100741770000`)"
+}`, `12983099549369514000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -938,7 +985,7 @@ private Connection getConnection() throws SQLException {
 <p><code>DataSourceUtils.releaseConnection()</code>을 <strong>사용하면 커넥션을 바로 닫는것이 아니라 트랜잭션을 사용하기 위해 동기화된 커넥션은 유지</strong>하고, 트랜잭션 동기화 매니저가 관리하는 커넥션이 없는 경우 해당 커넥션을 닫는다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="1333416977680079600"
+              data-toaster-id="97675884569911310000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -993,7 +1040,7 @@ public class MemberServiceV3_1 {
             }
         }
     }
-}`, `1333416977680079600`)"
+}`, `97675884569911310000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1251,7 +1298,7 @@ public class MemberServiceV3_1 {
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="5857751200304451000"
+              data-toaster-id="77681554757381200000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1266,7 +1313,7 @@ try {
 } catch (Exception e) {
     transactionManager.rollback(status); //실패시 롤백
     throw new IllegalStateException(e);
-}`, `5857751200304451000`)"
+}`, `77681554757381200000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1295,7 +1342,7 @@ try {
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="62477285526650130000"
+              data-toaster-id="89352486675427600000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1305,7 +1352,7 @@ try {
 
     public <T> T execute(TransactionCallback<T> action){..}
     void executeWithoutResult(Consumer<TransactionStatus> action){..}
-}`, `62477285526650130000`)"
+}`, `89352486675427600000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1330,7 +1377,7 @@ V3_1 -> DataSourceUtils 사용 (파라미터로 전달하지 않아도 된다.)
 V3_2 -> try, catch등 반복문제 제거</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="95906369599567280000"
+              data-toaster-id="86770224397107720000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1355,7 +1402,7 @@ V3_2 -> try, catch등 반복문제 제거</p>
                 throw new IllegalStateException(e);
             }
         });
-    }`, `95906369599567280000`)"
+    }`, `86770224397107720000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1419,7 +1466,7 @@ V3_2 -> try, catch등 반복문제 제거</p>
 어드바이스: <code>TransactionInterceptor</code></p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="16440418380533406000"
+              data-toaster-id="34381465735272300000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1427,7 +1474,7 @@ V3_2 -> try, catch등 반복문제 제거</p>
               onClick="copyToClipboard(`@Transactional
 public void accountTransfer(String fromId, String toId, int money) throws SQLException {
     bizLogic(fromId, toId, money);
-}`, `16440418380533406000`)"
+}`, `34381465735272300000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1448,7 +1495,7 @@ public void accountTransfer(String fromId, String toId, int money) throws SQLExc
 <p>@Transaction Test 코드를 짜다보면 스프링 컨테이너를 쓰고 있지 않아서 @Transaction 적용이 되지 않는다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="31645400010183213000"
+              data-toaster-id="23426625033081373000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1483,7 +1530,7 @@ class MemberServiceV3_3Test {
             return new MemberServiceV3_3(memberRepositoryV3());
         }
     }
-}`, `31645400010183213000`)"
+}`, `23426625033081373000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1624,7 +1671,7 @@ class MemberServiceV3_3Test {
 <p>스프링 부트가 등장하기 이전에는 데이터소스와 트랜잭션 매니저를 개발자가 직접 스프링 빈으로 등록해서 사용</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="46300471460928410000"
+              data-toaster-id="17148688812860402000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1637,7 +1684,7 @@ DataSource dataSource() {
 @Bean
 PlatformTransactionManager transactionManager() {
     return new DataSourceTransactionManager(dataSource());
-}`, `46300471460928410000`)"
+}`, `17148688812860402000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1664,14 +1711,14 @@ PlatformTransactionManager transactionManager() {
 <p><code>application.properties</code>의 속성을 사용해 <code>DataSource</code>생성</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="61395713438107900000"
+              data-toaster-id="91714429615183300000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`spring.datasource.url=jdbc:h2:tcp://localhost/~/test
 spring.datasource.username=sa
-spring.datasource.password=`, `61395713438107900000`)"
+spring.datasource.password=`, `91714429615183300000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1770,7 +1817,7 @@ spring.datasource.password=`, `61395713438107900000`)"
 <p>컴파일러가 오류를 잡아낸다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="35714598781248676000"
+              data-toaster-id="17782556110431402000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1779,7 +1826,7 @@ spring.datasource.password=`, `61395713438107900000`)"
     public MyCheckedException(String message) {
         super(message);
     }
-}`, `35714598781248676000`)"
+}`, `17782556110431402000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1919,7 +1966,7 @@ spring.datasource.password=`, `61395713438107900000`)"
 <p>예제로 <code>SQLException</code>을 <code>RuntimeSQLException</code>로 바꿔 던짐</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="58295218064013100000"
+              data-toaster-id="66665630689670750000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1930,7 +1977,7 @@ spring.datasource.password=`, `61395713438107900000`)"
     } catch (SQLException e) {
         throw new RuntimeSQLException(e);
     }
-}`, `58295218064013100000`)"
+}`, `66665630689670750000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1970,7 +2017,7 @@ spring.datasource.password=`, `61395713438107900000`)"
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="40458448685796780000"
+              data-toaster-id="44787942875063400000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1990,7 +2037,7 @@ static class RuntimeSQLException extends RuntimeException {
     public RuntimeSQLException(Throwable cause) {
         super(cause);
     }
-}`, `40458448685796780000`)"
+}`, `44787942875063400000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2020,7 +2067,7 @@ static class RuntimeSQLException extends RuntimeException {
 <p>인터페이스로 분리하더라도 인터페이스에도 동일하게 <code>SQLException</code>이 필요</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="28259810570787480000"
+              data-toaster-id="25383825273117176000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2030,7 +2077,7 @@ static class RuntimeSQLException extends RuntimeException {
     Member findById(String memberId) throws SQLException;
     void update(String memberId, int money) throws SQLException;
     void delete(String memberId) throws SQLException;
-}`, `28259810570787480000`)"
+}`, `25383825273117176000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2049,7 +2096,7 @@ static class RuntimeSQLException extends RuntimeException {
 <p>레포지토리에서 던지는 <code>SQLException</code>체크 예외를 런타임 예외로 전환한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="36506682017275118000"
+              data-toaster-id="71132272681749180000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2091,7 +2138,7 @@ static class RuntimeSQLException extends RuntimeException {
         } finally {
             close(con, pstmt, null);
         }
-    }`, `36506682017275118000`)"
+    }`, `71132272681749180000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2230,13 +2277,13 @@ MySQL: <code>1062</code></p>
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="50973148239532564000"
+              data-toaster-id="49945110513141650000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`SQLExceptionTranslator exTranslator = new SQLErrorCodeSQLExceptionTranslator(dataSource);
-DataAccessException resultEx = exTranslator.translate(&quot;select&quot;, sql, e);`, `50973148239532564000`)"
+DataAccessException resultEx = exTranslator.translate(&quot;select&quot;, sql, e);`, `49945110513141650000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2260,7 +2307,7 @@ DataAccessException resultEx = exTranslator.translate(&quot;select&quot;, sql, e
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="73838882244243570000"
+              data-toaster-id="45014914636275850000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2284,7 +2331,7 @@ DataAccessException resultEx = exTranslator.translate(&quot;select&quot;, sql, e
         } finally {
             close(con, pstmt, null);
         }
-    }`, `73838882244243570000`)"
+    }`, `45014914636275850000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
