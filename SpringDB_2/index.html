@@ -79,7 +79,7 @@
 <p>하지만 동적 SQL을 해결하기 어렵다는 단점이 있다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="37314844610153000000"
+              data-toaster-id="96268260417378010000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -171,7 +171,7 @@ public class JdbcTemplateItemRepositoryV1 implements ItemRepository {
         };
     }
 
-}`, `37314844610153000000`)"
+}`, `96268260417378010000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -295,14 +295,14 @@ public class JdbcTemplateItemRepositoryV1 implements ItemRepository {
 <h4 id="db-접근-설정" style="position:relative;"><a href="#db-%EC%A0%91%EA%B7%BC-%EC%84%A4%EC%A0%95" aria-label="db 접근 설정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DB 접근 설정</h4>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="94141712170167170000"
+              data-toaster-id="90338010506708030000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`spring.profiles.active=local
 spring.datasource.url=jdbc:h2:tcp://localhost/~/test
-spring.datasource.username=sa`, `94141712170167170000`)"
+spring.datasource.username=sa`, `90338010506708030000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -319,7 +319,7 @@ spring.datasource.username=sa`, `94141712170167170000`)"
 <p>JdbcTemplate을 기본으로 사용하면 파라미터를 순서대로 바인딩 한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="32417261436547260000"
+              data-toaster-id="45043735322248830000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -329,7 +329,7 @@ template.update(sql,
  	  itemName,
  	  price,
  	  quantity,
- 	  itemId);`, `32417261436547260000`)"
+ 	  itemId);`, `45043735322248830000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -348,7 +348,7 @@ template.update(sql,
 <p>=> <code>JdbcTemplate</code>는 이런 문제를 보완하기 위해 <code>NamedParameterJdbcTemplate</code>라는 <strong>이름 지정해서 파라미터를 바인딩하는 기능</strong> 제공</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="23694796829023290000"
+              data-toaster-id="26239369396403100000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -376,7 +376,7 @@ public class JdbcTemplateItemRepositoryV2 implements ItemRepository {
     }
 
     ...
-}`, `23694796829023290000`)"
+}`, `26239369396403100000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -415,7 +415,7 @@ public class JdbcTemplateItemRepositoryV2 implements ItemRepository {
 <p>자주 사용하는 파라미터의 종류는 크게 3가지가 있다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="84470054060894400000"
+              data-toaster-id="16460503370116063000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -429,7 +429,7 @@ SqlParameterSource param = new MapSqlParameterSource()
 
 // 는 자바 빈 프로퍼티 규약을 통해서 자동으로 파라미터 객체를 생성한다.
 //예) (\`getXxx()\` -> xxx, \`getItemName()\` -> itemName)
-SqlParameterSource param = new BeanPropertySqlParameterSource(item);`, `84470054060894400000`)"
+SqlParameterSource param = new BeanPropertySqlParameterSource(item);`, `16460503370116063000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -452,14 +452,14 @@ SqlParameterSource param = new BeanPropertySqlParameterSource(item);`, `84470054
 <p>BeanPropertyRowMapper 는 ResultSet 의 결과를 받아서 자바빈 규약에 맞추어 데이터를 변환한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="25981517419422585000"
+              data-toaster-id="39307416122576224000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`private RowMapper<Item> itemRowMapper() {
     return BeanPropertyRowMapper.newInstance(Item.class); //camel 변환 지원
-}`, `25981517419422585000`)"
+}`, `39307416122576224000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -476,7 +476,7 @@ SqlParameterSource param = new BeanPropertySqlParameterSource(item);`, `84470054
 <p>Jdbc Template는 InsertSQL을 직접 작성하지 않아도 되도록 <code>SimpleJdbcInsert</code>라는 편리한 기능 제공</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="96560328339728370000"
+              data-toaster-id="402192003957613250"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -506,7 +506,7 @@ public class JdbcTemplateItemRepositoryV3 implements ItemRepository {
 
     ...
 
-}`, `96560328339728370000`)"
+}`, `402192003957613250`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -575,7 +575,7 @@ public class JdbcTemplateItemRepositoryV3 implements ItemRepository {
 <p>src/test/resources/application.properties에도 설정을 추가한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="49749956043981230000"
+              data-toaster-id="52095411763386016000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -589,7 +589,7 @@ class ItemRepositoryTest {}
 //@Import(JdbcTemplateV2Config.class)
 @Import(JdbcTemplateV3Config.class)
 @SpringBootApplication(scanBasePackages = &quot;hello.itemservice.web&quot;)
-public class ItemServiceApplication {}`, `49749956043981230000`)"
+public class ItemServiceApplication {}`, `52095411763386016000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -627,7 +627,7 @@ public class ItemServiceApplication {}`, `49749956043981230000`)"
 <p>테스트를 하면서 데이터를 이미 저장했는데, 중간에 테스트가 실패해서 롤백을 호출하지 못해도 트랜잭션을 커밋하지 않았기 때문에 데이터베이스에 해당 데이터가 반영되지 않는다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="45039391290743366000"
+              data-toaster-id="71073141026243430000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -652,7 +652,7 @@ public class ItemServiceApplication {}`, `49749956043981230000`)"
         }
         //트랜잭션 롤백
         transactionManager.rollback(status);
-    }`, `45039391290743366000`)"
+    }`, `71073141026243430000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -746,7 +746,7 @@ public class ItemServiceApplication {}`, `49749956043981230000`)"
 @Commit 이나 @Rollback(value = false) 를 붙여주면 된다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="78425571547609240000"
+              data-toaster-id="40603904024002760000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -755,7 +755,7 @@ public class ItemServiceApplication {}`, `49749956043981230000`)"
 @Commit
 @Transactional
 @SpringBootTest
-class ItemRepositoryTest {}`, `78425571547609240000`)"
+class ItemRepositoryTest {}`, `40603904024002760000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -778,7 +778,7 @@ class ItemRepositoryTest {}`, `78425571547609240000`)"
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="31759499514784540000"
+              data-toaster-id="31290298798253113000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -801,7 +801,7 @@ public class ItemServiceApplication {
 		dataSource.setPassword(&quot;&quot;);
 		return dataSource;
 	}
-}`, `31759499514784540000`)"
+}`, `31290298798253113000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -835,7 +835,7 @@ public class ItemServiceApplication {
 <p>SQL을 작성하고 <code>src/test/resources/schema.sql</code>에 생성한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="90928380997413010000"
+              data-toaster-id="2145614595514300200"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -849,7 +849,7 @@ create table item
  	quantity integer,
  	primary key (id)
 );
-`, `90928380997413010000`)"
+`, `2145614595514300200`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -888,7 +888,7 @@ create table item
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="47196206513382520000"
+              data-toaster-id="91968151837564450000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -904,7 +904,7 @@ mybatis.type-aliases-package=hello.itemservice.domain
 # 언더바를 카멜로 자동 변경
 mybatis.configurationmap-underscore-to-camel-case=true
 # MyBatis에서 실행되는 쿼리 로그를 확인
-logging.level.hello.itemservice.repository.mybatis=trace`, `47196206513382520000`)"
+logging.level.hello.itemservice.repository.mybatis=trace`, `91968151837564450000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -934,7 +934,7 @@ logging.level.hello.itemservice.repository.mybatis=trace`, `47196206513382520000
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="63573052858401320000"
+              data-toaster-id="83879103917101580000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -950,7 +950,7 @@ public interface ItemMapper {
     Optional<Item> findById(Long id);
 
     List<Item> findAll(ItemSearchCond itemSearch);
-}`, `63573052858401320000`)"
+}`, `83879103917101580000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -978,7 +978,7 @@ public interface ItemMapper {
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="97310294371088960000"
+              data-toaster-id="14903653968282460000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1016,7 +1016,7 @@ public interface ItemMapper {
             </if>
         </where>
     </select>
-</mapper>`, `97310294371088960000`)"
+</mapper>`, `14903653968282460000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1072,7 +1072,7 @@ public interface ItemMapper {
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="58538041192726320000"
+              data-toaster-id="15666375706341063000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1082,7 +1082,7 @@ public interface ItemMapper {
 <insert id=&quot;save&quot; useGeneratedKeys=&quot;true&quot; keyProperty=&quot;id&quot;>
  insert into item (item_name, price, quantity)
  values (#{itemName}, #{price}, #{quantity})
-</insert>`, `58538041192726320000`)"
+</insert>`, `15666375706341063000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1106,7 +1106,7 @@ public interface ItemMapper {
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="50343286066882520000"
+              data-toaster-id="93195126981302190000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1120,7 +1120,7 @@ updateParam);
  price=#{updateParam.price},
  quantity=#{updateParam.quantity}
  where id = #{id}
-</update>`, `50343286066882520000`)"
+</update>`, `93195126981302190000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1147,7 +1147,7 @@ updateParam);
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="83599004299503200000"
+              data-toaster-id="133583268449299900"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1158,7 +1158,7 @@ updateParam);
  select id, item_name, price, quantity
  from item
  where id = #{id}
-</select>`, `83599004299503200000`)"
+</select>`, `133583268449299900`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1186,7 +1186,7 @@ updateParam);
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="7649234191674425000"
+              data-toaster-id="55207352507403520000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1204,7 +1204,7 @@ updateParam);
  and price &lt;= #{maxPrice}
  </if>
  </where>
-</select>`, `7649234191674425000`)"
+</select>`, `55207352507403520000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1239,7 +1239,7 @@ updateParam);
 <p>다만 이 구문 안에서는 XML TAG가 단순 문자로 인식하기 때문에 <code>&#x3C;if></code>, <code>&#x3C;where></code> 등이 적용되지 않는다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="20842551477343908000"
+              data-toaster-id="80551770478829650000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1257,7 +1257,7 @@ updateParam);
  ]]>
  </if>
  </where>
-</select>`, `20842551477343908000`)"
+</select>`, `80551770478829650000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1362,7 +1362,7 @@ updateParam);
 <p>if문</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="13085985523915178000"
+              data-toaster-id="11906091733589697000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1373,7 +1373,7 @@ WHERE state = ‘ACTIVE’
     <if test=&quot;title != null&quot;>
     AND title like #{title}
     </if>
-</select>`, `13085985523915178000`)"
+</select>`, `11906091733589697000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1392,7 +1392,7 @@ WHERE state = ‘ACTIVE’
 <p>switch문</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="12092149732037850000"
+              data-toaster-id="3925631672693197300"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1410,7 +1410,7 @@ SELECT \* FROM BLOG WHERE state = ‘ACTIVE’
     AND featured = 1
     </otherwise>
 </choose>
-</select>`, `12092149732037850000`)"
+</select>`, `3925631672693197300`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1437,7 +1437,7 @@ SELECT \* FROM BLOG WHERE state = ‘ACTIVE’
 <p>&#x3C;where> 는 문장이 없으면 where 를 추가하지 않는다. 문장이 있으면 where 를 추가한다. 만약 and 가 먼저 시작 된다면 <strong>and를 지운다</strong></p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="62872989452592234000"
+              data-toaster-id="23994721896327586000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1455,7 +1455,7 @@ SELECT * FROM BLOG
         AND author_name like #{author.name}
         </if>
     </where>
-</select>`, `62872989452592234000`)"
+</select>`, `23994721896327586000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1481,7 +1481,7 @@ SELECT * FROM BLOG
 <p>foreach</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="29233443217337586000"
+              data-toaster-id="73875147593087780000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1494,7 +1494,7 @@ FROM POST P
         #{item}
         </foreach>
     </where>
-</select>`, `29233443217337586000`)"
+</select>`, `73875147593087780000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1525,7 +1525,7 @@ FROM POST P
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="76122595788522670000"
+              data-toaster-id="15386148126123155000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1537,7 +1537,7 @@ FROM POST P
  hashed_password as &quot;hashedPassword&quot;
  from some_table
  where id = #{id}
-</select>`, `76122595788522670000`)"
+</select>`, `15386148126123155000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1557,7 +1557,7 @@ FROM POST P
 <p>별칭을 사용하지 않고 resultMap 을 선언해서 사용하기도 한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="72566034728787020000"
+              data-toaster-id="31245050835635446000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1571,7 +1571,7 @@ FROM POST P
  select user_id, user_name, hashed_password
  from some_table
  where id = #{id}
-</select>`, `72566034728787020000`)"
+</select>`, `31245050835635446000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1728,7 +1728,7 @@ FROM POST P
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="70640859743497260000"
+              data-toaster-id="38019693353831950000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1753,7 +1753,7 @@ public class Item {
         this.price = price;
         this.quantity = quantity;
     }
-}`, `70640859743497260000`)"
+}`, `38019693353831950000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1796,7 +1796,7 @@ itemName item_name , 따라서 위 예제의 @Column(name = “item_name”) 를
 <p>JPA는 public 또는 protected 의 기본 생성자가 필수이다</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="32723633890797910000"
+              data-toaster-id="62487896592996295000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1870,7 +1870,7 @@ public class JpaItemRepository implements ItemRepository {
         }
         return query.getResultList();
     }
-}`, `32723633890797910000`)"
+}`, `62487896592996295000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2449,7 +2449,7 @@ public class JpaItemRepository implements ItemRepository {
 <p>트랜잭션 매니저가 2개 이상이라면 다음과 같이 트랜잭션 매니저의 이름을 지정해서 구분한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="58633583087176320000"
+              data-toaster-id="37561793556329250000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2462,7 +2462,7 @@ public class JpaItemRepository implements ItemRepository {
 
     @Transactional(&quot;orderTxManager&quot;)
     public void order() {...}
-}`, `58633583087176320000`)"
+}`, `37561793556329250000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2482,12 +2482,12 @@ public class JpaItemRepository implements ItemRepository {
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="25643652886067225000"
+              data-toaster-id="48156184171911770000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`@Transactional(rollbackFor = Exception.class)`, `25643652886067225000`)"
+              onClick="copyToClipboard(`@Transactional(rollbackFor = Exception.class)`, `48156184171911770000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3118,13 +3118,13 @@ public class JpaItemRepository implements ItemRepository {
 <p><code>REQUIRES_NEW</code>를 사용</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="74385659854079430000"
+              data-toaster-id="54309029151072760000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`@Transactional(propagation = Propagation.REQUIRES_NEW)
-public void save(Log logMessage)`, `74385659854079430000`)"
+public void save(Log logMessage)`, `54309029151072760000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
