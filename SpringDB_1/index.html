@@ -65,7 +65,7 @@
 </li>
 </ol>
 <p>Application에서 DB의 데이터를 관리하기 위해서는 다양한 데이터 접근 기술 학습 필요</p>
-<p>어려운 이유는 크게 3가지이다.</p>
+<p>어려운 이유는 크게 3가지</p>
 <ol>
 <li>DB기반 지식이 약하기 때문</li>
 </ol>
@@ -88,13 +88,13 @@
 <p>dependencies에 lombok설정 추가</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="52856139842472680000"
+              data-toaster-id="11327099214292535000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`//테스트에서 lombok 사용
-testCompileOnly 'org.projectlombok:lombok' testAnnotationProcessor 'org.projectlombok:lombok'`, `52856139842472680000`)"
+testCompileOnly 'org.projectlombok:lombok' testAnnotationProcessor 'org.projectlombok:lombok'`, `11327099214292535000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -110,6 +110,50 @@ testCompileOnly 'org.projectlombok:lombok' testAnnotationProcessor 'org.projectl
 <blockquote>
 <p>JDBC(Java Database Connectivity)는 자바에서 데이터베이스를 접속할 수 있도록 하는 자바 API다. JDBC는 DB에서 자료를 쿼리하거나 업데이트 하는 방법을 제공한다.</p>
 </blockquote>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/6a30d8b4581a999d1b8fcbbb0926fbda/49bb6/jdbc.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 45.39877300613497%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABJ0lEQVR42oWSy66CQBBE+f9/YsXGBWGBgoSAGqIQeaOCgEiZ6gQS9N4wSTMw05yuqR4FAJq6huu6Eo7jIC8KjOOI7/F6vVDXNZqmmefvPIWP6/WK8/mMy+WCKIoQhiHiOMb7/UbXdej7XmDcZ9HtdgvbtuF5nkA5JrAA0zTF4/FAlmUy3243+ZnJfL/f7xK+7wtQ13Xs93scj8cZuFBIEJUlSSJBWFVVi8pTnmEYME1TYrfboW3bX4X8GIZhEX95yDWehvtUluf5T46ClUEFZVmKFfSa3nLQX3pN1bSlKArx+V/gpJCAIAikCafTafaWnrKRh8NBfGUxwleBPBa9UlUVm81GgM/nU6AspGmaBNepchXIquyuZVlyR6mSV4lAdpndntTz6B98ILAYg8dxLQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/6a30d8b4581a999d1b8fcbbb0926fbda/a81b5/jdbc.webp 163w,
+/static/6a30d8b4581a999d1b8fcbbb0926fbda/da3ef/jdbc.webp 325w,
+/static/6a30d8b4581a999d1b8fcbbb0926fbda/309d5/jdbc.webp 650w,
+/static/6a30d8b4581a999d1b8fcbbb0926fbda/1230c/jdbc.webp 775w"
+              sizes="(max-width: 650px) 100vw, 650px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/6a30d8b4581a999d1b8fcbbb0926fbda/5e043/jdbc.png 163w,
+/static/6a30d8b4581a999d1b8fcbbb0926fbda/e5cc6/jdbc.png 325w,
+/static/6a30d8b4581a999d1b8fcbbb0926fbda/663f3/jdbc.png 650w,
+/static/6a30d8b4581a999d1b8fcbbb0926fbda/49bb6/jdbc.png 775w"
+            sizes="(max-width: 650px) 100vw, 650px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/6a30d8b4581a999d1b8fcbbb0926fbda/663f3/jdbc.png"
+            alt="jdbc"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
 <p>대표적으로 3가지 기능을 표준 인터페이스로 정의하여 제공</p>
 <ul>
 <li>java.sql.Connection : 연결</li>
@@ -136,60 +180,13 @@ testCompileOnly 'org.projectlombok:lombok' testAnnotationProcessor 'org.projectl
 <p>DB변경 시 JDBC코드는 변경하지 않아도 되지만 SQL은 해당 데이터 베이스에 맞게 변경 필요</p>
 <hr>
 <p>JDBC기술은 대표적으로 SQL Mapper와 ORM으로 나뉜다.</p>
-<p>SQL Mapper</p>
-<p><span
-      class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
-    >
-      <a
-    class="gatsby-resp-image-link"
-    href="/static/370e729201e36fa32247d165484a4f08/d2d74/SQLMapper.png"
-    style="display: block"
-    target="_blank"
-    rel="noopener"
-  >
-    <span
-    class="gatsby-resp-image-background-image"
-    style="padding-bottom: 24.539877300613497%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA3ElEQVR42nWQSYqAMBBFc//beAIHUARFUXEE54WK08KFguhvfsBN011QpCqp4eeJaZoQxzG6rsN937iuC+/7gsZzXVcsy4J937Ftm4yf58F/JtI0he/7SJIEVVWhLEu0bYvjONA0DaIogm3bUFUVlmUhDEP0fS/fx3GUPXVdS2cugiCA53nI8xwcziGu62IYBhiGIYfzXtM0OI4j46IoZLOu68iyTC76+gW/+qmiM57nWcrn91hEVYqiwDRNGRMDjSqpjIophPXiLw5k9/l5nnIB+ZEjczL8OP9m+APlWnHE25rC0wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
-  ></span>
-  <picture>
-          <source
-              srcset="/static/370e729201e36fa32247d165484a4f08/a81b5/SQLMapper.webp 163w,
-/static/370e729201e36fa32247d165484a4f08/da3ef/SQLMapper.webp 325w,
-/static/370e729201e36fa32247d165484a4f08/309d5/SQLMapper.webp 650w,
-/static/370e729201e36fa32247d165484a4f08/78344/SQLMapper.webp 975w,
-/static/370e729201e36fa32247d165484a4f08/e2c2f/SQLMapper.webp 1152w"
-              sizes="(max-width: 650px) 100vw, 650px"
-              type="image/webp"
-            />
-          <source
-            srcset="/static/370e729201e36fa32247d165484a4f08/5e043/SQLMapper.png 163w,
-/static/370e729201e36fa32247d165484a4f08/e5cc6/SQLMapper.png 325w,
-/static/370e729201e36fa32247d165484a4f08/663f3/SQLMapper.png 650w,
-/static/370e729201e36fa32247d165484a4f08/d880f/SQLMapper.png 975w,
-/static/370e729201e36fa32247d165484a4f08/d2d74/SQLMapper.png 1152w"
-            sizes="(max-width: 650px) 100vw, 650px"
-            type="image/png"
-          />
-          <img
-            class="gatsby-resp-image-image"
-            src="/static/370e729201e36fa32247d165484a4f08/663f3/SQLMapper.png"
-            alt="SQLMapper"
-            title=""
-            loading="lazy"
-            decoding="async"
-            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-          />
-        </picture>
-  </a>
-    </span></p>
+<p><img src="sqlmapper.png" alt=""></p>
 <ul>
 <li>SQL응답 결과를 객체로 편리하게 변환</li>
 <li>JDBC의 반복코드 제거</li>
 <li>개발자가 SQL 직접 작성</li>
 <li>ex - JdbcTemplate, MyBatis</li>
 </ul>
-<p>ORM</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
@@ -292,11 +289,11 @@ testCompileOnly 'org.projectlombok:lombok' testAnnotationProcessor 'org.projectl
         </picture>
   </a>
     </span></p>
-<p><code>DriverManager</code>는 라이브러리에 등록된 DB Driver관리, 커넥션 획득 기능 제공</p>
+<p>JDBC가 제공하는 <code>DriverManager</code>는 라이브러리에 등록된 DB Driver관리, 커넥션 획득 기능 제공</p>
 <p>삽입</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="48081782761006010000"
+              data-toaster-id="32746200308626784000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -304,7 +301,7 @@ testCompileOnly 'org.projectlombok:lombok' testAnnotationProcessor 'org.projectl
               onClick="copyToClipboard(`pstmt = con.prepareStatement(sql);
 pstmt.setString(1, member.getMemberId());
 pstmt.setInt(2, member.getMoney());
-pstmt.executeUpdate();`, `48081782761006010000`)"
+pstmt.executeUpdate();`, `32746200308626784000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -322,7 +319,7 @@ prepareStatement - 파라미터를 binding</p>
 <p>조회</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="58278958937603880000"
+              data-toaster-id="63141595505204490000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -340,7 +337,7 @@ if (rs.next()) {
 }
 
 ...
-`, `58278958937603880000`)"
+`, `63141595505204490000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -474,6 +471,7 @@ if (rs.next()) {
 <ul>
 <li>Application 시작 시점에 필요한 만큼 커넥션 확보해 풀에 보관 (보통 10개, 상황 별 다름)</li>
 <li>적절한 커넥션 풀 숫자는 성능 테스트를 통해 정함</li>
+<li>커넥션 풀은 서버당 최대 커넥션 수를 제한 가능, 따라서 DB에 무한정 연결이 생성되는 것을 막아 DB를 보호하는 효과도 있다.</li>
 <li>커넥션 풀은 얻는 이점이 크기 떄문에 <strong>실무에서 항상 기본으로 사용</strong></li>
 <li>커넥션 풀 오픈소스 ex - HikariCP</li>
 <li>성능과 사용의 편리함 측면에서 최근에는 <code>hikariCP</code>주로 사용</li>
@@ -485,14 +483,14 @@ if (rs.next()) {
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="27749307881262707000"
+              data-toaster-id="30979296436654690000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`public interface DataSource {
     Connection getConnection() throws SQLException;
-}`, `27749307881262707000`)"
+}`, `30979296436654690000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -508,8 +506,8 @@ if (rs.next()) {
 <li>대부분의 커넥션 풀은 <code>DataSource</code> 인터페이스를 이미 구현되어 있어 <code>DBCP2 커넥션 풀</code> ,
 <code>HikariCP 커넥션 풀</code> 의 코드를 직접 의존하는 것이 아니라 <code>DataSource</code> 인터페이스에만 의존하도록 애플리케이션 로직을 작성</li>
 <li>커넥션 풀 구현 기술을 변경하고 싶으면 해당 구현체로 갈아끼우기만 하면 된다.</li>
-<li><code>DriverManager</code>는 <code>DataSource</code>인터페이스를 사용하지 않음</li>
-<li><code>DriverManager</code> 도 <code>DataSource</code> 를 통해서 사용할 수 있도록 <code>DriverManagerDataSource</code>라는 <code>DataSource</code>구현한 클래스 제공</li>
+<li><code>DriverManager</code>는 <code>DataSource</code>인터페이스를 사용하지 않는다.<br>
+->  <code>DriverManager</code> 도 <code>DataSource</code> 를 통해서 사용할 수 있도록 <code>DriverManagerDataSource</code>라는 <code>DataSource</code>구현한 클래스 제공</li>
 </ul>
 <hr>
 <ul>
@@ -517,15 +515,44 @@ if (rs.next()) {
 <li>반면에 <code>DataSource</code>를 사용하는 방식은 처음 객체 생성시에만 파라미터 넘겨주고, 커넥션을 획득할 때 <code>dataSource.getConnection()</code>만 호출</li>
 </ul>
 <p>=> 설정과 사용 분리<br>
-=> 리포지토리(Repository)는 <code>DataSource</code> 만 의존하고, 이런 속성을 몰라도 된다.</p>
-<p>커넥션 풀 예제를 실행시키면 별도의 쓰레드를 사용해서 커넥션 풀에 커넥션 채우는 것을 확인가능<br>
+=> 쉽게 이야기해서 리포지토리(Repository)는 <code>DataSource</code> 만 의존하고, 이런 속성을 몰라도 된다.</p>
+<hr>
+<p><code>DataSource</code>를 통해 커넥션 풀 예제를 실행시키면 별도의 쓰레드를 사용해서 커넥션 풀에 커넥션 채우는 것을 확인가능<br>
 -> 상당히 오래 걸리는 작업, 별도 쓰레드를 사용해야 어플리케이션 실행 시간에 영향을 주지 않는다.</p>
+<div
+              class="gatsby-code-button-container copyButtonContainer"
+              data-toaster-id="25383194446061875000"
+              data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
+              data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
+              data-toaster-text="customToasterText"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`private void close(Connection con, Statement stmt, ResultSet rs) {
+    JdbcUtils.closeResultSet(rs);
+    JdbcUtils.closeStatement(stmt);
+    JdbcUtils.closeConnection(con);
+}`, `25383194446061875000`)"
+            >
+              <div
+                class="gatsby-code-button copyButtonClass"
+                data-tooltip=""
+              >
+                copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<pre class="grvsc-container default-dark" data-language="java" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">private</span><span class="mtk1"> </span><span class="mtk10">void</span><span class="mtk1"> </span><span class="mtk11">close</span><span class="mtk1">(</span><span class="mtk10">Connection</span><span class="mtk1"> con, </span><span class="mtk10">Statement</span><span class="mtk1"> stmt, </span><span class="mtk10">ResultSet</span><span class="mtk1"> rs) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">JdbcUtils</span><span class="mtk1">.</span><span class="mtk11">closeResultSet</span><span class="mtk1">(rs);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">JdbcUtils</span><span class="mtk1">.</span><span class="mtk11">closeStatement</span><span class="mtk1">(stmt);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">JdbcUtils</span><span class="mtk1">.</span><span class="mtk11">closeConnection</span><span class="mtk1">(con);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <p><code>JdbcUtils</code>편의 메서드</p>
 <ul>
 <li>스프링은 JDBC를 편리하게 다룰 수 있는<code>JdbcUtils</code>라는 편의 메서드를 제공</li>
 <li><code>JdbcUtils</code> 을 사용하면 커넥션을 좀 더 편리하게 닫을 수 있다.</li>
 </ul>
 <h1 id="3-트랜잭션과-db-lock-이해" style="position:relative;"><a href="#3-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%EA%B3%BC-db-lock-%EC%9D%B4%ED%95%B4" aria-label="3 트랜잭션과 db lock 이해 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. 트랜잭션과 DB Lock 이해</h1>
+<blockquote>
+<p>DB에서 트랜잭션은 하나의 거래를 안전하게 처리하도록 보장해주는 것을 뜻한다.</p>
+</blockquote>
 <h2 id="31-트랜잭션" style="position:relative;"><a href="#31-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98" aria-label="31 트랜잭션 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3.1 트랜잭션</h2>
 <ul>
 <li>모든 작업이 성공해서 DB에 정상 반영 => 커밋</li>
@@ -569,13 +596,14 @@ if (rs.next()) {
 </ul>
 <p>궁금하면 더 찾아보고 강의에서는 READ COMMITTED(커맷된 읽기)수준을 기준으로 설명</p>
 <hr>
+<p>자동 커밋은 쿼리 실행 직후에 자동으로 커밋 호출</p>
 <p>트랜잭션을 제대로 수행하려면 자동 커밋은 끄고, 수동 커밋을 사용해야 한다.</p>
 <p>에러 상황 가정 - 오토 커밋 모드로 동작할 때 2가지 동작이 중간에 실패하면 -> 1개 성공, 1개 실패<br>
 => 에러 발생 -> <strong>이런종류의 작업은 꼭 수동 커밋 모드를 사용해 수동으로 커밋, 롤백이 가능</strong>해야 한다.</p>
 <p>보통 이렇게 <strong>자동 커밋 모드에서 수동 커밋 모드로 전환하는 것을 트랜잭션을 시작한다고 표현</strong>한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="88367869705114480000"
+              data-toaster-id="55745774554131990000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -584,7 +612,7 @@ if (rs.next()) {
 set autocommit true;
 
 # 수동 커밋 사용
-set autocommit false;`, `88367869705114480000`)"
+set autocommit false;`, `55745774554131990000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -593,7 +621,7 @@ set autocommit false;`, `88367869705114480000`)"
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="sql" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1"># 자동 커밋 사용</span></span></span>
+<pre class="grvsc-container default-dark" data-language="sql" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1"># 자동 커밋 사용</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">set</span><span class="mtk1"> autocommit true;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1"># 수동 커밋 사용</span></span></span>
@@ -608,13 +636,13 @@ set autocommit false;`, `88367869705114480000`)"
 <p>예제</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="5568846102828751000"
+              data-toaster-id="84303141833177200000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`set autocommit false;
-select * from member where member_id='memberA' for update;`, `5568846102828751000`)"
+select * from member where member_id='memberA' for update;`, `84303141833177200000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -623,15 +651,16 @@ select * from member where member_id='memberA' for update;`, `556884610282875100
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="sql" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">set</span><span class="mtk1"> autocommit false;</span></span></span>
+<pre class="grvsc-container default-dark" data-language="sql" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">set</span><span class="mtk1"> autocommit false;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">select</span><span class="mtk1"> * </span><span class="mtk4">from</span><span class="mtk1"> member </span><span class="mtk4">where</span><span class="mtk1"> member_id=</span><span class="mtk8">&#39;memberA&#39;</span><span class="mtk1"> for </span><span class="mtk4">update</span><span class="mtk1">;</span></span></span></code></pre>
 <p>락을 걸 때 무한정 기다릴 수 없기 때문에 <code>timeout</code>이 발생한다.</p>
 <hr>
+<h4 id="트랜잭션-적용" style="position:relative;"><a href="#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EC%A0%81%EC%9A%A9" aria-label="트랜잭션 적용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>트랜잭션 적용</h4>
 <ul>
 <li>트랜잭션은 비즈니스 로직이 있는 서비스 계층에서 수행</li>
-<li>즉, 커넥션이 필요</li>
-<li>트랜잭션을 사용하는 동안 같은 커넥션 유지</li>
-<li>같은 트랜잭션을 유지하는 가장 단순한 방법은 파라미터로 전달해서 같은 커넥션이 사용되도록 유지</li>
+<li>트랜잭션이 시작하려면 커넥션이 필요하다. 서비스 계층에서 커넥션을 만들고, 트랜잭션 커밋 후에 종료</li>
+<li>트랜잭션을 사용하는 동안 <strong>같은 커넥션 유지</strong></li>
+<li>같은 트랜잭션을 유지하는 가장 단순한 방법은 파라미터로 전달해서 같은 커넥션이 사용되도록 유지 (추후 개선된다.)</li>
 </ul>
 <h1 id="4-스프링과-문제-해결---트랜잭션" style="position:relative;"><a href="#4-%EC%8A%A4%ED%94%84%EB%A7%81%EA%B3%BC-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0---%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98" aria-label="4 스프링과 문제 해결   트랜잭션 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. 스프링과 문제 해결 - 트랜잭션</h1>
 <p>보통 역할에 따라 3가지 계층으로 나눈다.</p>
@@ -696,12 +725,12 @@ select * from member where member_id='memberA' for update;`, `556884610282875100
 <li>JDBC : <code>con.setAutoCommit(false)</code></li>
 <li>JPA : <code>transaction.begin()</code></li>
 </ul>
-<p>기술을 변경 시 서비스 계층의 코드도 JPA기술을 사용하도록 수정해야 한다.</p>
+<p>JDBC에서 JPA로 기술을 변경 시 서비스 계층의 코드도 JPA기술을 사용하도록 수정해야 한다.</p>
 <p>문제를 해결하기 위해 트랜잭션 기능을 추상화</p>
 <p>트랜잭션 추상화 인터페이스를 구현</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="83472886392315690000"
+              data-toaster-id="5975953776430098000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -710,7 +739,7 @@ select * from member where member_id='memberA' for update;`, `556884610282875100
     begin();
     commit();
     rollback();
-}`, `83472886392315690000`)"
+}`, `5975953776430098000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -719,7 +748,7 @@ select * from member where member_id='memberA' for update;`, `556884610282875100
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">interface</span><span class="mtk1"> </span><span class="mtk10">TxManager</span><span class="mtk1"> {</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">interface</span><span class="mtk1"> </span><span class="mtk10">TxManager</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">begin</span><span class="mtk1">();</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">commit</span><span class="mtk1">();</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">rollback</span><span class="mtk1">();</span></span></span>
@@ -835,7 +864,7 @@ select * from member where member_id='memberA' for update;`, `556884610282875100
 <p>PlatformTransactionManager 인터페이스</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="78071178317899250000"
+              data-toaster-id="73154203773211220000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -846,7 +875,7 @@ public interface PlatformTransactionManager extends TransactionManager {
     TransactionStatus getTransaction(@Nullable TransactionDefinition definition) throws TransactionException;
     void commit(TransactionStatus status) throws TransactionException;
     void rollback(TransactionStatus status) throws TransactionException;
-}`, `78071178317899250000`)"
+}`, `73154203773211220000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -855,7 +884,7 @@ public interface PlatformTransactionManager extends TransactionManager {
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">package</span><span class="mtk1"> org.springframework.transaction;</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">package</span><span class="mtk1"> org.springframework.transaction;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">interface</span><span class="mtk1"> </span><span class="mtk10">PlatformTransactionManager</span><span class="mtk1"> </span><span class="mtk4">extends</span><span class="mtk1"> </span><span class="mtk10">TransactionManager</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk10">TransactionStatus</span><span class="mtk1"> </span><span class="mtk11">getTransaction</span><span class="mtk1">(@</span><span class="mtk10">Nullable</span><span class="mtk1"> </span><span class="mtk10">TransactionDefinition</span><span class="mtk1"> </span><span class="mtk12">definition</span><span class="mtk1">) </span><span class="mtk4">throws</span><span class="mtk1"> </span><span class="mtk10">TransactionException</span><span class="mtk1">;</span></span></span>
@@ -930,7 +959,9 @@ public interface PlatformTransactionManager extends TransactionManager {
   </a>
     </span></p>
 <ul>
-<li>트랜잭션 동기화 매니저는 쓰레드 로컬을 사용해 커넥션을 동기화</li>
+<li>트랜잭션 동기화 매니저는 쓰레드 로컬을 사용해 커넥션을 동기화 한다.</li>
+<li>트랜잭션 매니저는 내부에서 이 트랜잭션 동기화 매니저를 사용한다.</li>
+<li>쓰레드 로컬을 사용하기 때문에 멀티 쓰레드 상황에 안전하게 커넥션을 동기화 할 수 있다.</li>
 <li>트랜잭션 매니저는 내부에서 이 <strong>트랜잭션 동기화 매니저</strong> 사용</li>
 </ul>
 <p>동작 방식 설명</p>
@@ -946,7 +977,7 @@ public interface PlatformTransactionManager extends TransactionManager {
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="26107934896278030000"
+              data-toaster-id="49858734554619710000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -961,7 +992,7 @@ private Connection getConnection() throws SQLException {
     Connection con = DataSourceUtils.getConnection(dataSource);
     log.info(&quot;get connection={} class={}&quot;, con, con.getClass());
     return con;
-}`, `26107934896278030000`)"
+}`, `49858734554619710000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -970,7 +1001,7 @@ private Connection getConnection() throws SQLException {
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">private</span><span class="mtk1"> </span><span class="mtk10">void</span><span class="mtk1"> </span><span class="mtk11">close</span><span class="mtk1">(</span><span class="mtk10">Connection</span><span class="mtk1"> con, </span><span class="mtk10">Statement</span><span class="mtk1"> stmt, </span><span class="mtk10">ResultSet</span><span class="mtk1"> rs) { </span><span class="mtk12">JdbcUtils</span><span class="mtk1">.</span><span class="mtk11">closeResultSet</span><span class="mtk1">(rs);</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="9"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">private</span><span class="mtk1"> </span><span class="mtk10">void</span><span class="mtk1"> </span><span class="mtk11">close</span><span class="mtk1">(</span><span class="mtk10">Connection</span><span class="mtk1"> con, </span><span class="mtk10">Statement</span><span class="mtk1"> stmt, </span><span class="mtk10">ResultSet</span><span class="mtk1"> rs) { </span><span class="mtk12">JdbcUtils</span><span class="mtk1">.</span><span class="mtk11">closeResultSet</span><span class="mtk1">(rs);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">JdbcUtils</span><span class="mtk1">.</span><span class="mtk11">closeStatement</span><span class="mtk1">(stmt);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">//주의! 트랜잭션 동기화를 사용하려면 DataSourceUtils를 사용해야 한다.</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">DataSourceUtils</span><span class="mtk1">.</span><span class="mtk11">releaseConnection</span><span class="mtk1">(con, dataSource);</span></span></span>
@@ -985,7 +1016,7 @@ private Connection getConnection() throws SQLException {
 <p><code>DataSourceUtils.releaseConnection()</code>을 <strong>사용하면 커넥션을 바로 닫는것이 아니라 트랜잭션을 사용하기 위해 동기화된 커넥션은 유지</strong>하고, 트랜잭션 동기화 매니저가 관리하는 커넥션이 없는 경우 해당 커넥션을 닫는다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="4283172636841259000"
+              data-toaster-id="71218543625690140000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1040,7 +1071,7 @@ public class MemberServiceV3_1 {
             }
         }
     }
-}`, `4283172636841259000`)"
+}`, `71218543625690140000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1049,7 +1080,7 @@ public class MemberServiceV3_1 {
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="9"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">/**</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="10"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">/**</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk3"> * 트랜잭션 - 트랜잭션 매니저 사용해 파라미터로 전달하지 않아도 된다.</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk3"> */</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Slf4j</span></span></span>
@@ -1286,7 +1317,13 @@ public class MemberServiceV3_1 {
 <li>비즈니스 로직이 끝나고 트랜잭션 종료, 트랜잭션은 커밋하거나 롤백하면 종료</li>
 <li>트랜잭션을 종료하면 동기화된 커넥션 필요, 트랜잭션 동기화 매니저를 통해 동기화된 커넥션 획득</li>
 <li>획득한 커넥션을 통해 DB에 트랜잭션을 커밋하거나 롤백</li>
-<li>전체 리소스 정리</li>
+<li>전체 리소스 정리
+<ul>
+<li>트랜잭션 동기화 매니저 정리 (쓰레드 로컬은 사용 후 꼭 정리)</li>
+<li><code>con.setAutoCommit(true)</code>로 되돌린다. 커넥션 풀 고려</li>
+<li><code>con.close()</code>호출 해 커넥션 종료. 커넥션 풀 사용시엔 <code>con.close()</code>호출하면 커넥션 풀에 반환</li>
+</ul>
+</li>
 </ol>
 <hr>
 <p>트랜잭션 추상화 덕분에 서비스 코드는 JDBC기술에 의존 x</p>
@@ -1298,7 +1335,7 @@ public class MemberServiceV3_1 {
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="14638464774236183000"
+              data-toaster-id="29150015275267994000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1313,7 +1350,7 @@ try {
 } catch (Exception e) {
     transactionManager.rollback(status); //실패시 롤백
     throw new IllegalStateException(e);
-}`, `14638464774236183000`)"
+}`, `29150015275267994000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1322,7 +1359,7 @@ try {
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="10"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">//트랜잭션 시작</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="11"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">//트랜잭션 시작</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk10">TransactionStatus</span><span class="mtk1"> </span><span class="mtk12">status</span><span class="mtk1"> = </span><span class="mtk12">transactionManager</span><span class="mtk1">.</span><span class="mtk11">getTransaction</span><span class="mtk1">(</span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">DefaultTransactionDefinition</span><span class="mtk1">());</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk15">try</span><span class="mtk1"> {</span></span></span>
@@ -1342,7 +1379,7 @@ try {
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="6959357781765929000"
+              data-toaster-id="36805315453748343000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1352,7 +1389,7 @@ try {
 
     public <T> T execute(TransactionCallback<T> action){..}
     void executeWithoutResult(Consumer<TransactionStatus> action){..}
-}`, `6959357781765929000`)"
+}`, `36805315453748343000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1361,7 +1398,7 @@ try {
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="11"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">TransactionTemplate</span><span class="mtk1"> {</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="12"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">TransactionTemplate</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">private</span><span class="mtk1"> </span><span class="mtk10">PlatformTransactionManager</span><span class="mtk1"> </span><span class="mtk12">transactionManager</span><span class="mtk1">;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">public</span><span class="mtk1"> &lt;</span><span class="mtk10">T</span><span class="mtk1">&gt; </span><span class="mtk10">T</span><span class="mtk1"> </span><span class="mtk11">execute</span><span class="mtk1">(</span><span class="mtk10">TransactionCallback</span><span class="mtk1">&lt;</span><span class="mtk10">T</span><span class="mtk1">&gt; </span><span class="mtk12">action</span><span class="mtk1">){..}</span></span></span>
@@ -1370,14 +1407,14 @@ try {
 <p><code>execute()</code> : 응답 값이 있을 때 사용한다.
 <code>executeWithoutResult()</code> : 응답 값이 없을 때 사용한다.</p>
 <p>여기서 잠깐 정리하고 가면</p>
-<p>V0 -> JDBC DriverManager사용
-V1 -> DataSource 사용, JdbcUtils 사용
-V2 -> 트랜잭션 - 파라미터 연동, 풀을 고려한 종료 (파라미터로 커넥션 전달)
-V3_1 -> DataSourceUtils 사용 (파라미터로 전달하지 않아도 된다.)
+<p>V0 -> JDBC DriverManager사용<br>
+V1 -> DataSource 사용, JdbcUtils 사용<br>
+V2 -> 트랜잭션 - 파라미터 연동, 풀을 고려한 종료 (파라미터로 커넥션 전달)<br>
+V3_1 -> DataSourceUtils 사용 (파라미터로 전달하지 않아도 된다.)<br>
 V3_2 -> try, catch등 반복문제 제거</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="24666441024766693000"
+              data-toaster-id="47907142993628930000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1402,7 +1439,7 @@ V3_2 -> try, catch등 반복문제 제거</p>
                 throw new IllegalStateException(e);
             }
         });
-    }`, `24666441024766693000`)"
+    }`, `47907142993628930000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1411,7 +1448,7 @@ V3_2 -> try, catch등 반복문제 제거</p>
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="12"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">MemberServiceV3_2</span><span class="mtk1"> {</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="13"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">MemberServiceV3_2</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">private</span><span class="mtk1"> </span><span class="mtk4">final</span><span class="mtk1"> </span><span class="mtk10">TransactionTemplate</span><span class="mtk1"> </span><span class="mtk12">txTemplate</span><span class="mtk1">;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">private</span><span class="mtk1"> </span><span class="mtk4">final</span><span class="mtk1"> </span><span class="mtk10">MemberRepositoryV3</span><span class="mtk1"> </span><span class="mtk12">memberRepository</span><span class="mtk1">;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
@@ -1442,16 +1479,17 @@ V3_2 -> try, catch등 반복문제 제거</p>
 <hr>
 <p>정리</p>
 <ul>
-<li>트랜잭션 템플릿 덕분에 트랜잭션 사용 시 반복 코드 제거</li>
+<li>트랜잭션 템플릿 덕분에 트랜잭션 사용 시 반복 코드 제거 (commit, rollback)</li>
 <li>서비스 로직인데 비즈니스 로직 뿐만 아니라 트랜잭션을 처리하는 기술 로직이 함께 포함되어 있다.</li>
-<li>비즈니스 로직과 트랜잭션을 처리하는 기술 로직이 한 곳에 있으면 두 관심사를 하나의 클래스에서 처리하게 된다</li>
+<li>비즈니스 로직과 트랜잭션을 처리하는 기술 로직이 한 곳에 있으면 두 관심사를 하나의 클래스에서 처리하게 되어 코드를 유지보수하기 어려워진다.</li>
+<li>서비스 로직에 핵심 비즈니스 로직만 있기 위한 해결책 필요</li>
 </ul>
 <hr>
 <h4 id="트랜잭션-aop" style="position:relative;"><a href="#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-aop" aria-label="트랜잭션 aop permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>트랜잭션 AOP</h4>
 <p>아직 서비스에 비즈니스 로직과 트랜잭션 처리 로직이 함께 섞여있다.</p>
 <ul>
 <li>트랜잭션 프록시를 도입하면 트랜잭션 처리 로직을 모두 가져간다.</li>
-<li>트랜잭션을 시작한 후에 실제 서 비스를 대신 호출한다.</li>
+<li>트랜잭션을 시작한 후에 실제 서비스를 대신 호출한다.</li>
 </ul>
 <p><code>@Transactional</code></p>
 <ul>
@@ -1466,7 +1504,7 @@ V3_2 -> try, catch등 반복문제 제거</p>
 어드바이스: <code>TransactionInterceptor</code></p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="37222044995773710000"
+              data-toaster-id="17831290197716388000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1474,7 +1512,7 @@ V3_2 -> try, catch등 반복문제 제거</p>
               onClick="copyToClipboard(`@Transactional
 public void accountTransfer(String fromId, String toId, int money) throws SQLException {
     bizLogic(fromId, toId, money);
-}`, `37222044995773710000`)"
+}`, `17831290197716388000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1483,7 +1521,7 @@ public void accountTransfer(String fromId, String toId, int money) throws SQLExc
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="13"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Transactional</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="14"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Transactional</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk10">void</span><span class="mtk1"> </span><span class="mtk11">accountTransfer</span><span class="mtk1">(</span><span class="mtk10">String</span><span class="mtk1"> fromId, </span><span class="mtk10">String</span><span class="mtk1"> toId, </span><span class="mtk10">int</span><span class="mtk1"> money) throws SQLException {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">bizLogic</span><span class="mtk1">(fromId, toId, money);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
@@ -1495,7 +1533,7 @@ public void accountTransfer(String fromId, String toId, int money) throws SQLExc
 <p>@Transaction Test 코드를 짜다보면 스프링 컨테이너를 쓰고 있지 않아서 @Transaction 적용이 되지 않는다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="33190741604518846000"
+              data-toaster-id="42819896090053920000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1530,7 +1568,7 @@ class MemberServiceV3_3Test {
             return new MemberServiceV3_3(memberRepositoryV3());
         }
     }
-}`, `33190741604518846000`)"
+}`, `42819896090053920000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1539,7 +1577,7 @@ class MemberServiceV3_3Test {
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="14"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Slf4j</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="15"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Slf4j</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">SpringBootTest</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">MemberServiceV3_3Test</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    ...</span></span></span>
@@ -1658,10 +1696,11 @@ class MemberServiceV3_3Test {
 <ul>
 <li><code>@Transactional</code> 애노테이션 하나만 선언해서 매우 편리하게 트랜잭션을 적용하는 것</li>
 <li>과거 XML설정하기도 했다.</li>
+<li>이름 그대로 해당 로직에 트랜잭션을 적용하겠다. 라고 어딘가에 선언하기만 하면 트랜잭션 적용되는 방식</li>
 </ul>
 <p>프로그래밍 방식</p>
 <ul>
-<li>직접 코드로 짜는 것</li>
+<li>트랜잭션 매니저 또는 트랜잭션 템플릿 등을 사용해 트랜잭션 관련 코드를 직접 코드로 짜는 것</li>
 </ul>
 <hr>
 <p>정리</p>
@@ -1671,7 +1710,7 @@ class MemberServiceV3_3Test {
 <p>스프링 부트가 등장하기 이전에는 데이터소스와 트랜잭션 매니저를 개발자가 직접 스프링 빈으로 등록해서 사용</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="12876476872869390000"
+              data-toaster-id="11147872949805193000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1684,7 +1723,7 @@ DataSource dataSource() {
 @Bean
 PlatformTransactionManager transactionManager() {
     return new DataSourceTransactionManager(dataSource());
-}`, `12876476872869390000`)"
+}`, `11147872949805193000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1693,7 +1732,7 @@ PlatformTransactionManager transactionManager() {
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="15"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Bean</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="16"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Bean</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk10">DataSource</span><span class="mtk1"> </span><span class="mtk11">dataSource</span><span class="mtk1">() {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk15">return</span><span class="mtk1"> </span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">DriverManagerDataSource</span><span class="mtk1">(URL, USERNAME, PASSWORD);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
@@ -1711,14 +1750,14 @@ PlatformTransactionManager transactionManager() {
 <p><code>application.properties</code>의 속성을 사용해 <code>DataSource</code>생성</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="88158221995302500000"
+              data-toaster-id="34594001322706490000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`spring.datasource.url=jdbc:h2:tcp://localhost/~/test
 spring.datasource.username=sa
-spring.datasource.password=`, `88158221995302500000`)"
+spring.datasource.password=`, `34594001322706490000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1727,11 +1766,12 @@ spring.datasource.password=`, `88158221995302500000`)"
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="properties" data-index="16"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">spring.datasource.url</span><span class="mtk1">=jdbc:h2:tcp://localhost/~/test</span></span></span>
+<pre class="grvsc-container default-dark" data-language="properties" data-index="17"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">spring.datasource.url</span><span class="mtk1">=jdbc:h2:tcp://localhost/~/test</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">spring.datasource.username</span><span class="mtk1">=sa</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">spring.datasource.password</span><span class="mtk1">=</span></span></span></code></pre>
 <ul>
 <li>스프링 부트가 기본적으로 생성하는 데이터 소스는 커넥션 풀을 제공하는 <code>HikariDataSource</code>이다.</li>
+<li>커넥션풀과 관련된 설정도 application.properties 를 통해서 지정할 수 있다.</li>
 <li><code>spring.datasource.url</code>속성이 없으면 내장 DB생성 시도</li>
 </ul>
 <h4 id="트랜잭션-매니저---자동-등록" style="position:relative;"><a href="#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EB%A7%A4%EB%8B%88%EC%A0%80---%EC%9E%90%EB%8F%99-%EB%93%B1%EB%A1%9D" aria-label="트랜잭션 매니저   자동 등록 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>트랜잭션 매니저 - 자동 등록</strong></h4>
@@ -1741,8 +1781,11 @@ spring.datasource.password=`, `88158221995302500000`)"
 <li>트랜잭션 매니저를 선택할지는 현재 등록된 라이브러리를 보고 판단
 -> JDBC를 기술을 사용하면 <code>DataSourceTransactionManager</code> 를 빈으로 등록<br>
 -> JPA를 사용하면 <code>JpaTransactionManager</code> 를 빈으로 등록<br>
-(참고로 Jpa~ 는 Data~ 제공 기능 대부분 지원)</li>
+(참고로 JpaTransactionManager 는 DataSourceTransactionManager 제공 기능 대부분 지원)</li>
 </ul>
+<p>정리</p>
+<p>=> 데이터 소스와 트랜잭션 매니저는 스프링 부트가 제공하는 자동 빈 등록 기능을 사용하는게 편리하다<br>
+=> <code>application.properties</code>를 통해 설정도 편리하게 가능</p>
 <h1 id="5-자바-예외-이해" style="position:relative;"><a href="#5-%EC%9E%90%EB%B0%94-%EC%98%88%EC%99%B8-%EC%9D%B4%ED%95%B4" aria-label="5 자바 예외 이해 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. 자바 예외 이해</h1>
 <p>자바 예외의 이해부터 시작</p>
 <p><span
@@ -1809,15 +1852,20 @@ spring.datasource.password=`, `88158221995302500000`)"
 <p>2가지 기본 규칙을 기억하자</p>
 <ol>
 <li>예외는 잡아서 처리하거나 던져야 한다.</li>
-<li>예외를 잡거나 던질 때 지정한 예외 뿐만 아니라 그 예외의 자식들도 함께 처리한다.</li>
+<li>예외를 잡거나 던질 때 지정한 예외 뿐만 아니라 그 예외의 자식들도 함께 처리한다.
+<ul>
+<li>예를 들어서 Exception 을 catch 로 잡으면 그 하위 예외들도 모두 잡을 수 있다.</li>
+<li>예를 들어서 Exception 을 throws 로 던지면 그 하위 예외들도 모두 던질 수 있다</li>
+</ul>
+</li>
 </ol>
 <hr>
 <h4 id="체크-예외" style="position:relative;"><a href="#%EC%B2%B4%ED%81%AC-%EC%98%88%EC%99%B8" aria-label="체크 예외 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>체크 예외</h4>
 <p>체크 예외는 잡아서 처리하거나, 또는 밖으로 던지도록 선언해야한다. 그렇지 않으면 컴파일 오류가 발생한다.</p>
-<p>컴파일러가 오류를 잡아낸다.</p>
+<p>체크 예외는 컴파일러가 체크한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="35470399730051527000"
+              data-toaster-id="82162864055177790000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1826,7 +1874,7 @@ spring.datasource.password=`, `88158221995302500000`)"
     public MyCheckedException(String message) {
         super(message);
     }
-}`, `35470399730051527000`)"
+}`, `82162864055177790000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1835,18 +1883,15 @@ spring.datasource.password=`, `88158221995302500000`)"
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="17"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">static</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">MyCheckedException</span><span class="mtk1"> </span><span class="mtk4">extends</span><span class="mtk1"> </span><span class="mtk10">Exception</span><span class="mtk1"> {</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="18"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">static</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">MyCheckedException</span><span class="mtk1"> </span><span class="mtk4">extends</span><span class="mtk1"> </span><span class="mtk10">Exception</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk11">MyCheckedException</span><span class="mtk1">(</span><span class="mtk10">String</span><span class="mtk1"> </span><span class="mtk12">message</span><span class="mtk1">) {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk4">super</span><span class="mtk1">(message);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <ul>
-<li>
-<p><code>MyCheckedException</code>는<code>Exception</code>을 상속받았다.<code>Exception</code> 을 상속받으면 체크 예외가 된다.</p>
-</li>
-<li>
-<p>참고로 <code>RuntimeException</code> 을 상속받으면 언체크 예외가 된다. 이런 규칙은 자바 언어에서 문법으로 정한 것 이다.</p>
-</li>
+<li><code>MyCheckedException</code>는<code>Exception</code>을 상속받았다.<code>Exception</code> 을 상속받으면 체크 예외가 된다.</li>
+<li>참고로 <code>RuntimeException</code> 을 상속받으면 언체크 예외가 된다. 이런 규칙은 자바 언어에서 문법으로 정한 것 이다.</li>
+<li>예외가 제공하는 여러가지 기본 기능이 있는데, 그 중에 오류 메시지를 보관하는 기능도 있다. 예제에서 보는 것 처럼 생성자를 통해서 해당 기능을 그대로 사용하면 편리하다.</li>
 </ul>
 <h4 id="체크예외-장단점" style="position:relative;"><a href="#%EC%B2%B4%ED%81%AC%EC%98%88%EC%99%B8-%EC%9E%A5%EB%8B%A8%EC%A0%90" aria-label="체크예외 장단점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>체크예외 장단점</h4>
 <p>체크예외는 예외를 잡아서 처리할 수 없을 떄, 예외를 밖으로 던지는 <code>throw</code>예외를 필수로 선언해야 한다. 이것 때문에 장, 단점이 동시에 존재</p>
@@ -1887,33 +1932,41 @@ spring.datasource.password=`, `88158221995302500000`)"
 <p>기본적으로 원칙 2가지 생각</p>
 <ul>
 <li>기본적으로 언체크(런타임) 예외 사용</li>
-<li>체크 예외는 비즈니스 로직 상 의도적으로 던지는 예외에서만 사용</li>
+<li>체크 예외는 비즈니스 로직 상 의도적으로 던지는 예외에서만 사용
+<ul>
+<li>ex - 계좌 이체 실패 / 결제 시 포인트 부족 / 로그인 ID, PW불일치 등</li>
 </ul>
-<p>ex - 계좌 이체 실패 / 결제 시 포인트 부족 / 로그인 ID, PW불일치 등</p>
+</li>
+</ul>
 <p>체크 예외가 더 좋아보이지만 사용하지 않는 이유는 문제점 떄문이다.</p>
 <p>DB가 죽었을 때 생기는 SQLException이나 ConnectException은 Service나 Controller로직에서 처리하기가 힘듬</p>
 <p>보통 공통적으로 처리하는 ControllerAdvice에서 이런 예외를 공통적으로 처리</p>
-<p>2가지 문제</p>
+<p>지금까지 설명한 예제와 코드를 보면 2가지 문제가 있다.</p>
 <ol>
 <li>복구가 불가능한 예외</li>
 </ol>
 <ul>
 <li>대부분의 예외는 복구가 불가능</li>
 <li>대부분의 서비스나 컨트롤러는 이런 문제를 해결할 수는 없다</li>
-<li>따라서 이런 문제들은 일관성 있게 공통으로 처리</li>
+<li>따라서 이런 문제들은 일관성 있게 공통으로 처리
+<ul>
+<li>서블릿 필터, 스프링 인터셉터, 스프링의 ControllerAdvice 를 사용하면 이런 부분을 깔끔하게 공통으로 해결할 수 있다.</li>
+</ul>
+</li>
 </ul>
 <ol start="2">
 <li>의존 관계에 대한 문제</li>
 </ol>
 <ul>
-<li>체크 예외이기 때문에 컨트롤러나 서비스 입장에서는 본인 이처리할수없어도어쩔수없이 <code>throws</code> 를통해던지는예외를선언</li>
+<li>체크 예외이기 때문에 컨트롤러나 서비스 입장에서는 본인이 처리할 수 없어도 어쩔 수 없이 <code>throws</code> 를 통해 던지는 예외를 선언</li>
 <li>컨트롤러에서 <code>java.sql.SQLException</code> 을 의존하기 때문에 문제가 된다.</li>
-<li>향후 리포지토리를 JDBC 기술이 아닌 다른 기술로 변경 시 문제 (ex - JPAException)</li>
+<li>향후 리포지토리를 JDBC 기술이 아닌 다른 기술로 변경 시 문제 (ex - JPAException &#x3C;-> SQLException 변경 필요)</li>
 </ul>
-<p>문제가 있어 최상위 예외인 <code>Exception</code>을 던지는 것은 좋지 않은 패턴</p>
+<p>문제가 있어 최상위 예외인 <code>Exception</code>을 던져 해결할 수 있지만 던지는 것은 좋지 않은 패턴</p>
+<p><code>Exception</code>을 던지게 되면 다른 체크 예외를 체크할 수 있는 기능이 무효화 되고, 중요한 체크 예외를 다 놓치게 된다.</p>
 <p>꼭 필요한 예외를 그냥 넘어갈 수 있다.</p>
 <hr>
-<h4 id="런타임-예외-사용" style="position:relative;"><a href="#%EB%9F%B0%ED%83%80%EC%9E%84-%EC%98%88%EC%99%B8-%EC%82%AC%EC%9A%A9" aria-label="런타임 예외 사용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>런타임 예외 사용</h4>
+<h4 id="언체크런타임-예외-사용" style="position:relative;"><a href="#%EC%96%B8%EC%B2%B4%ED%81%AC%EB%9F%B0%ED%83%80%EC%9E%84-%EC%98%88%EC%99%B8-%EC%82%AC%EC%9A%A9" aria-label="언체크런타임 예외 사용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>언체크(런타임) 예외 사용</h4>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
@@ -1964,9 +2017,10 @@ spring.datasource.password=`, `88158221995302500000`)"
     </span></p>
 <p>그림과 같이 runtime exception 시 controller와 service에서 넘어가는게 가능하다.</p>
 <p>예제로 <code>SQLException</code>을 <code>RuntimeSQLException</code>로 바꿔 던짐</p>
+<p>기존 예외를 포함시켜 주어야 예외 출력 시 스택 트레이스에서 기존 예외도 함께 확인 가능</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="25052201526857630000"
+              data-toaster-id="57567466494020936000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1977,7 +2031,7 @@ spring.datasource.password=`, `88158221995302500000`)"
     } catch (SQLException e) {
         throw new RuntimeSQLException(e);
     }
-}`, `25052201526857630000`)"
+}`, `57567466494020936000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1986,7 +2040,7 @@ spring.datasource.password=`, `88158221995302500000`)"
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="18"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk10">void</span><span class="mtk1"> </span><span class="mtk11">call</span><span class="mtk1">() {</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="19"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk10">void</span><span class="mtk1"> </span><span class="mtk11">call</span><span class="mtk1">() {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk15">try</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">runSQL</span><span class="mtk1">();</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    } </span><span class="mtk15">catch</span><span class="mtk1"> (</span><span class="mtk10">SQLException</span><span class="mtk1"> </span><span class="mtk12">e</span><span class="mtk1">) {</span></span></span>
@@ -1994,7 +2048,7 @@ spring.datasource.password=`, `88158221995302500000`)"
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <ul>
-<li>기술을 바꿔도 해당 예외를 사용하지 않는 컨트롤러, 서비스에서는 코드 변경하지 않아도 된다.</li>
+<li>런타임 예외를 사용하면 기술을 바꿔도 해당 예외를 사용하지 않는 컨트롤러, 서비스에서는 코드 변경하지 않아도 된다.</li>
 <li>구현 기술이 변경되는 경우, 예외를 공통으로 처리하는 곳에서는 예외에 따른 다른 처리가 필요할 수 있다<br>
 -> 하지만 공통 처리하는 한곳만 변경하면 되기 때문에 변경의 영향 범위는 최소화 된다.</li>
 </ul>
@@ -2017,7 +2071,7 @@ spring.datasource.password=`, `88158221995302500000`)"
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="92240225840456630000"
+              data-toaster-id="13140647144394869000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2026,8 +2080,8 @@ spring.datasource.password=`, `88158221995302500000`)"
     try {
         runSQL();
     } catch (SQLException e) {
-        throw new RuntimeSQLException(); // e를 넘겨줘야 함
-        // throw new RuntimeSQLException(e);
+        // throw new RuntimeSQLException(); // e를 넘겨줘야 함
+        throw new RuntimeSQLException(e);
     }
 }
 
@@ -2037,7 +2091,7 @@ static class RuntimeSQLException extends RuntimeException {
     public RuntimeSQLException(Throwable cause) {
         super(cause);
     }
-}`, `92240225840456630000`)"
+}`, `13140647144394869000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2046,12 +2100,12 @@ static class RuntimeSQLException extends RuntimeException {
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="19"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk10">void</span><span class="mtk1"> </span><span class="mtk11">call</span><span class="mtk1">() {</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="20"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk10">void</span><span class="mtk1"> </span><span class="mtk11">call</span><span class="mtk1">() {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk15">try</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk11">runSQL</span><span class="mtk1">();</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    } </span><span class="mtk15">catch</span><span class="mtk1"> (</span><span class="mtk10">SQLException</span><span class="mtk1"> </span><span class="mtk12">e</span><span class="mtk1">) {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk15">throw</span><span class="mtk1"> </span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">RuntimeSQLException</span><span class="mtk1">(); </span><span class="mtk3">// e를 넘겨줘야 함</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk3">// throw new RuntimeSQLException(e);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk3">// throw new RuntimeSQLException(); // e를 넘겨줘야 함</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk15">throw</span><span class="mtk1"> </span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">RuntimeSQLException</span><span class="mtk1">(e);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
@@ -2064,10 +2118,10 @@ static class RuntimeSQLException extends RuntimeException {
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <h1 id="6-스프링과-문제-해결---예외-처리-반복" style="position:relative;"><a href="#6-%EC%8A%A4%ED%94%84%EB%A7%81%EA%B3%BC-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0---%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%AC-%EB%B0%98%EB%B3%B5" aria-label="6 스프링과 문제 해결   예외 처리 반복 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. 스프링과 문제 해결 - 예외 처리, 반복</h1>
 <p>repository를 추상화를 해 인터페이스로 작성</p>
-<p>인터페이스로 분리하더라도 인터페이스에도 동일하게 <code>SQLException</code>이 필요</p>
+<p>인터페이스로 분리하더라도 아래와 같이 인터페이스에도 동일하게 <code>SQLException</code>이 필요하기에 기존에는 작성하지 않았다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="31672227246664765000"
+              data-toaster-id="88065783099980250000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2077,7 +2131,7 @@ static class RuntimeSQLException extends RuntimeException {
     Member findById(String memberId) throws SQLException;
     void update(String memberId, int money) throws SQLException;
     void delete(String memberId) throws SQLException;
-}`, `31672227246664765000`)"
+}`, `88065783099980250000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2086,7 +2140,7 @@ static class RuntimeSQLException extends RuntimeException {
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="20"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">interface</span><span class="mtk1"> </span><span class="mtk10">MemberRepositoryEx</span><span class="mtk1"> {</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="21"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">interface</span><span class="mtk1"> </span><span class="mtk10">MemberRepositoryEx</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk10">Member</span><span class="mtk1"> </span><span class="mtk11">save</span><span class="mtk1">(</span><span class="mtk10">Member</span><span class="mtk1"> </span><span class="mtk12">member</span><span class="mtk1">) </span><span class="mtk4">throws</span><span class="mtk1"> </span><span class="mtk10">SQLException</span><span class="mtk1">;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk10">Member</span><span class="mtk1"> </span><span class="mtk11">findById</span><span class="mtk1">(</span><span class="mtk10">String</span><span class="mtk1"> </span><span class="mtk12">memberId</span><span class="mtk1">) </span><span class="mtk4">throws</span><span class="mtk1"> </span><span class="mtk10">SQLException</span><span class="mtk1">;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk10">void</span><span class="mtk1"> </span><span class="mtk11">update</span><span class="mtk1">(</span><span class="mtk10">String</span><span class="mtk1"> </span><span class="mtk12">memberId</span><span class="mtk1">, </span><span class="mtk10">int</span><span class="mtk1"> </span><span class="mtk12">money</span><span class="mtk1">) </span><span class="mtk4">throws</span><span class="mtk1"> </span><span class="mtk10">SQLException</span><span class="mtk1">;</span></span></span>
@@ -2096,7 +2150,7 @@ static class RuntimeSQLException extends RuntimeException {
 <p>레포지토리에서 던지는 <code>SQLException</code>체크 예외를 런타임 예외로 전환한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="18441540841695115000"
+              data-toaster-id="54160443435812500000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2138,7 +2192,7 @@ static class RuntimeSQLException extends RuntimeException {
         } finally {
             close(con, pstmt, null);
         }
-    }`, `18441540841695115000`)"
+    }`, `54160443435812500000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2147,7 +2201,7 @@ static class RuntimeSQLException extends RuntimeException {
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="21"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">MyDbException</span><span class="mtk1"> </span><span class="mtk4">extends</span><span class="mtk1"> </span><span class="mtk10">RuntimeException</span><span class="mtk1"> {</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="22"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">MyDbException</span><span class="mtk1"> </span><span class="mtk4">extends</span><span class="mtk1"> </span><span class="mtk10">RuntimeException</span><span class="mtk1"> {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk11">MyDbException</span><span class="mtk1">() {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
@@ -2192,10 +2246,45 @@ static class RuntimeSQLException extends RuntimeException {
 <h4 id="데이터-접근-예외-직접-만들기" style="position:relative;"><a href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%91%EA%B7%BC-%EC%98%88%EC%99%B8-%EC%A7%81%EC%A0%91-%EB%A7%8C%EB%93%A4%EA%B8%B0" aria-label="데이터 접근 예외 직접 만들기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>데이터 접근 예외 직접 만들기</h4>
 <p>데이터베이스 오류에 따라서 특정 예외는 복구하고 싶을 수 있다.</p>
 <p><code>SQLException</code>에는 <code>errorCode</code>라는 것이 들어있는데 이 오류 코드를 통해 어떤 문제가 발생했는지 확인할 수 있다.</p>
+<div
+              class="gatsby-code-button-container copyButtonContainer"
+              data-toaster-id="32218554321782400000"
+              data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
+              data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
+              data-toaster-text="customToasterText"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`} catch (SQLException e) {
+    //h2 db
+    if (e.getErrorCode() == 23505) {
+        throw new MyDuplicateKeyException(e);
+    }
+    throw new MyDbException(e);
+}`, `32218554321782400000`)"
+            >
+              <div
+                class="gatsby-code-button copyButtonClass"
+                data-tooltip=""
+              >
+                copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<pre class="grvsc-container default-dark" data-language="java" data-index="23"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">} </span><span class="mtk15">catch</span><span class="mtk1"> (</span><span class="mtk10">SQLException</span><span class="mtk1"> </span><span class="mtk12">e</span><span class="mtk1">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">//h2 db</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk15">if</span><span class="mtk1"> (</span><span class="mtk12">e</span><span class="mtk1">.</span><span class="mtk11">getErrorCode</span><span class="mtk1">() == </span><span class="mtk7">23505</span><span class="mtk1">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk15">throw</span><span class="mtk1"> </span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">MyDuplicateKeyException</span><span class="mtk1">(e);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk15">throw</span><span class="mtk1"> </span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">MyDbException</span><span class="mtk1">(e);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <p>ex) 키 중복 오류 코드<br>
 H2 DB: <code>23505</code><br>
 MySQL: <code>1062</code></p>
 <p>스프링은 이러한 문제를 미리 해결</p>
+<p>정리</p>
+<ul>
+<li>SQL ErrorCode로 데이터베이스에 어떤 오류가 있는지 확인할 수 있었다.</li>
+<li>예외 변환을 통해 SQLException 을 특정 기술에 의존하지 않는 직접 만든 예외인 MyDuplicateKeyException 로 변환 할 수 있었다.</li>
+<li>리포지토리 계층이 예외를 변환해준 덕분에 서비스 계층은 특정 기술에 의존하지 않는 MyDuplicateKeyException 을 사용해서 문제를 복구하고, 서비스 계층의 순수성도 유지할 수 있었다.</li>
+</ul>
 <hr>
 <h4 id="스프링-예외-추상화" style="position:relative;"><a href="#%EC%8A%A4%ED%94%84%EB%A7%81-%EC%98%88%EC%99%B8-%EC%B6%94%EC%83%81%ED%99%94" aria-label="스프링 예외 추상화 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>스프링 예외 추상화</h4>
 <p><span
@@ -2248,8 +2337,13 @@ MySQL: <code>1062</code></p>
     </span></p>
 <ul>
 <li>스프링은 데이터 접근 계층에 대한 수십가지 예외를 정리해서 일관된 예외 계층 제공</li>
-<li>각각의 예외는 특정 기술에 종속적이지 않게 설계</li>
-<li>JDBC나 JPA를 사용할 때 발생하는 예외를 스프링이 제공하는 예외로 변환도 스프링이 제공</li>
+<li>각각의 예외는 특정 기술에 종속적이지 않게 설계
+<ul>
+<li>서비스 계층에서도 스프링이 제공하는 예외 사용</li>
+<li>예를 들어서 JDBC 기술을 사용하든, JPA 기술을 사용하든 스프링이 제공하는 예외를 사용하면 된다</li>
+</ul>
+</li>
+<li>JDBC나 JPA를 사용할 때 발생하는 예외를 스프링이 제공하는 예외로 <strong>변환</strong>도 스프링이 제공</li>
 <li>최고 상위는 <code>org.springframework.dao.DataAccessException</code> 런타임 예외
 <ul>
 <li>런타임 예외를 상속 받았기 때문에 스프링에서 제공하는 데이터 접근 계층의 모든 예외는 런타임 예외</li>
@@ -2273,17 +2367,17 @@ MySQL: <code>1062</code></p>
 <hr>
 <ul>
 <li>오류 코드를 확인하고 스프링의 예외 체계에 맞추어 예외를 변환하는 것은 현실성이 없다.</li>
-<li>그래서 스프링은 예외 변환기를 제공한다.</li>
+<li>그래서 스프링은 <strong>예외 변환기를 제공</strong>한다.</li>
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="58167635406776740000"
+              data-toaster-id="63436573498245540000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`SQLExceptionTranslator exTranslator = new SQLErrorCodeSQLExceptionTranslator(dataSource);
-DataAccessException resultEx = exTranslator.translate(&quot;select&quot;, sql, e);`, `58167635406776740000`)"
+DataAccessException resultEx = exTranslator.translate(&quot;select&quot;, sql, e);`, `63436573498245540000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2292,22 +2386,69 @@ DataAccessException resultEx = exTranslator.translate(&quot;select&quot;, sql, e
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="22"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk10">SQLExceptionTranslator</span><span class="mtk1"> </span><span class="mtk12">exTranslator</span><span class="mtk1"> = </span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">SQLErrorCodeSQLExceptionTranslator</span><span class="mtk1">(dataSource);</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="24"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk10">SQLExceptionTranslator</span><span class="mtk1"> </span><span class="mtk12">exTranslator</span><span class="mtk1"> = </span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">SQLErrorCodeSQLExceptionTranslator</span><span class="mtk1">(dataSource);</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk10">DataAccessException</span><span class="mtk1"> </span><span class="mtk12">resultEx</span><span class="mtk1"> = </span><span class="mtk12">exTranslator</span><span class="mtk1">.</span><span class="mtk11">translate</span><span class="mtk1">(</span><span class="mtk8">&quot;select&quot;</span><span class="mtk1">, sql, e);</span></span></span></code></pre>
 <p>다음과 같이 사용한다.</p>
-<p><code>translate()</code> 메서드의 첫번째 파라미터는 읽을 수 있는 설명이고, 두번째는 실행한 sql, 마지막은 발생된
-<code>SQLException</code> 을 전달하면 된다. 이렇게 하면 적절한 스프링 데이터 접근 계층의 예외로 변환해서 반환해준다.</p>
+<p><code>translate()</code> 메서드의 첫번째 파라미터는 읽을 수 있는 설명이고, 두번째는 실행한 sql, 마지막은 발생된 <code>SQLException</code> 을 전달하면 된다. 이렇게 하면 적절한 스프링 데이터 접근 계층의 예외로 변환해서 반환해준다.</p>
 <p><code>org.springframework.jdbc.support.sql-error-codes.xml</code>파일을 확인해보면 DB마다 에러코드 시 어떤 Exception을 발생할 지 작성되어 있다.</p>
+<div
+              class="gatsby-code-button-container copyButtonContainer"
+              data-toaster-id="86776318318658930000"
+              data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
+              data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
+              data-toaster-text="customToasterText"
+              data-toaster-duration="3500"
+              onClick="copyToClipboard(`<bean id=&quot;H2&quot; class=&quot;org.springframework.jdbc.support.SQLErrorCodes&quot;>
+<property name=&quot;badSqlGrammarCodes&quot;>
+<value>42000,42001,42101,42102,42111,42112,42121,42122,42132</value>
+</property>
+<property name=&quot;duplicateKeyCodes&quot;>
+<value>23001,23505</value>
+</property>
+</bean>
+<bean id=&quot;MySQL&quot; class=&quot;org.springframework.jdbc.support.SQLErrorCodes&quot;>
+<property name=&quot;badSqlGrammarCodes&quot;>
+<value>1054,1064,1146</value>
+</property>
+<property name=&quot;duplicateKeyCodes&quot;>
+<value>1062</value>
+</property>
+</bean>`, `86776318318658930000`)"
+            >
+              <div
+                class="gatsby-code-button copyButtonClass"
+                data-tooltip=""
+              >
+                copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
+              </div>
+            </div>
+<pre class="grvsc-container default-dark" data-language="xml" data-index="25"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">bean</span><span class="mtk1"> </span><span class="mtk12">id</span><span class="mtk1">=</span><span class="mtk8">&quot;H2&quot;</span><span class="mtk1"> </span><span class="mtk12">class</span><span class="mtk1">=</span><span class="mtk8">&quot;org.springframework.jdbc.support.SQLErrorCodes&quot;</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">property</span><span class="mtk1"> </span><span class="mtk12">name</span><span class="mtk1">=</span><span class="mtk8">&quot;badSqlGrammarCodes&quot;</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">value</span><span class="mtk17">&gt;</span><span class="mtk1">42000,42001,42101,42102,42111,42112,42121,42122,42132</span><span class="mtk17">&lt;/</span><span class="mtk4">value</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;/</span><span class="mtk4">property</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">property</span><span class="mtk1"> </span><span class="mtk12">name</span><span class="mtk1">=</span><span class="mtk8">&quot;duplicateKeyCodes&quot;</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">value</span><span class="mtk17">&gt;</span><span class="mtk1">23001,23505</span><span class="mtk17">&lt;/</span><span class="mtk4">value</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;/</span><span class="mtk4">property</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;/</span><span class="mtk4">bean</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">bean</span><span class="mtk1"> </span><span class="mtk12">id</span><span class="mtk1">=</span><span class="mtk8">&quot;MySQL&quot;</span><span class="mtk1"> </span><span class="mtk12">class</span><span class="mtk1">=</span><span class="mtk8">&quot;org.springframework.jdbc.support.SQLErrorCodes&quot;</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">property</span><span class="mtk1"> </span><span class="mtk12">name</span><span class="mtk1">=</span><span class="mtk8">&quot;badSqlGrammarCodes&quot;</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">value</span><span class="mtk17">&gt;</span><span class="mtk1">1054,1064,1146</span><span class="mtk17">&lt;/</span><span class="mtk4">value</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;/</span><span class="mtk4">property</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">property</span><span class="mtk1"> </span><span class="mtk12">name</span><span class="mtk1">=</span><span class="mtk8">&quot;duplicateKeyCodes&quot;</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">value</span><span class="mtk17">&gt;</span><span class="mtk1">1062</span><span class="mtk17">&lt;/</span><span class="mtk4">value</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;/</span><span class="mtk4">property</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;/</span><span class="mtk4">bean</span><span class="mtk17">&gt;</span></span></span></code></pre>
 <h4 id="정리" style="position:relative;"><a href="#%EC%A0%95%EB%A6%AC" aria-label="정리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>정리</h4>
 <ul>
 <li>스프링은 데이터 접근 계층에 대한 일관된 예외 추상화를 제공</li>
 <li>스프링은 예외 변환기를 통해 <code>SQLException</code>의 <code>ErrorCode</code>에 맞는 적절한 스프링 데이터 접근 예외로 변경해준다.</li>
 <li>만약 컨트롤러, 서비스 계층에서 예외 처리가 필요하면 <code>SQLException</code>같은 스프링이 제공하는 데이터 접근예외를 사용</li>
-<li>추상화 덕분에 특정 기술에 종속적이지 않고, 향후 JDBC에서 JPA로 구현기술을 변경하더라도, 스프링은 JPA예외를 적절한 스프링 데이터 접근 예외로 변환한다.ㅂ</li>
+<li>추상화 덕분에 특정 기술에 종속적이지 않고, 기술이 변경 되어도 예외로 인한 변경 최소화</li>
 </ul>
+<p>->향후 JDBC에서 JPA로 구현기술을 변경하더라도, 스프링은 JPA예외를 적절한 스프링 데이터 접근 예외로 변환한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="42118749770412900000"
+              data-toaster-id="64040324540860420000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2331,7 +2472,7 @@ DataAccessException resultEx = exTranslator.translate(&quot;select&quot;, sql, e
         } finally {
             close(con, pstmt, null);
         }
-    }`, `42118749770412900000`)"
+    }`, `64040324540860420000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2340,7 +2481,7 @@ DataAccessException resultEx = exTranslator.translate(&quot;select&quot;, sql, e
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="java" data-index="23"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    @</span><span class="mtk10">Override</span></span></span>
+<pre class="grvsc-container default-dark" data-language="java" data-index="26"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    @</span><span class="mtk10">Override</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk10">Member</span><span class="mtk1"> </span><span class="mtk11">save</span><span class="mtk1">(</span><span class="mtk10">Member</span><span class="mtk1"> member) {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk10">String</span><span class="mtk1"> </span><span class="mtk12">sql</span><span class="mtk1"> = </span><span class="mtk8">&quot;insert into member(member_id, money) values (?, ?)&quot;</span><span class="mtk1">;</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
@@ -2380,6 +2521,8 @@ DataAccessException resultEx = exTranslator.translate(&quot;select&quot;, sql, e
 </ul>
 <p>이러한 반복을 효과적으로 처리하는 방법 => <strong>템플릿 콜백 패턴</strong></p>
 <p>JDBC반복 문제를 해결하기 위해 <code>JDBCTemplate</code>제공</p>
+<p><code>JdbcTemplate</code>는 반복을 제거한다.</p>
+<p><strong>트랜잭션을 위한 커넥션 동기화</strong>는 물론이고, <strong>예외 발생 시 스프링 예외 변환기도 자동으로 실행</strong></p>
 <p>JDBC템플릿 사용방법에 대한 자세한 설명은 다음 강의</p>
 <p><code>JDBCTemplate</code>은 JDBC로 개발할 때 발생하는 반복 대부분 해결</p>
 <p>트랜잭션을 위한 <strong>커넥션 동기화</strong>는 물론이고, 예외 발생 시 <strong>스프링 예외 변환기</strong>도 자동으로 실행</p>
@@ -2499,6 +2642,7 @@ DataAccessException resultEx = exTranslator.translate(&quot;select&quot;, sql, e
   .default-dark .mtk15 { color: #C586C0; }
   .default-dark .mtk10 { color: #4EC9B0; }
   .default-dark .mtk4 { color: #569CD6; }
+  .default-dark .mtk17 { color: #808080; }
   .default-dark .grvsc-line-highlighted::before {
     background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
     box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
