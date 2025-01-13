@@ -176,6 +176,179 @@
 <li>등급은 상, 중, 하</li>
 <li>매년 평가</li>
 <li>갱신이 가능</li>
+<li>네트워크 (18개)
+<ul>
+<li>OSI 7계층에 대해 설명해주세요
+<pre class="grvsc-container default-dark" data-language="" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">OSI 7계층은 네트워크 통신을 계층적으로 나누어 설명하는 모델을 말합니다. 이렇게</span></span>
+<span class="grvsc-line"><span class="grvsc-source">나누는 이유는 통신 과정을 단계별로 파악이 가능해지고, 문제가 발생하면 해당 계층만</span></span>
+<span class="grvsc-line"><span class="grvsc-source">확인하면 되서 문제를 해결하기 용이해집니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">1. 물리계층은 데이터가 네트워크를 통해 전송되는 물리적인 매체를 말합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   LAN케이블이나 wifi 신호처럼 데이터를 물리적으로 전달하는 역할을 합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">2. 데이터 링크 계층은 물리 계층으로 송수신되는 정보를 안전하게 전달되도록 도와주는 역할을</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   수행합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   mac주소를 통해 네트워크 장치간에 정확히 전달되도록 보장하고,</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   스위치가 해당 계층에 해당됩니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">3. 네트워크 계층은 데이터를 목적지까지 전달하는 역할을 합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   라우터를 통해 이동할 경로를 선택하여 IP주소를 지정하고, 해당 경로에 따라 패킷을 전달</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   라우터가 해당계층에 해당됩니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">4. 전송계층은 데이터를 신뢰성 있게 전송하는 계층입니다. TCP, UDP가 사용됩니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">5. 세션 계층은 데이터가 통신하기 위한 논리적인 연결을 담당합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   tcp/ip 세션을 만들고 없애는 책임을 가지고 있습니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   API나 Socket이 해당됩니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">6. 표현 계층은 데이터의 형식 변환을 담당하는 계층입니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   JPEG나 MPEG포맷이 있습니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">7. 응용 계층은 사용자가 직접 접하는 계층으로 응용프로그램들이 네트워크상에서</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   동작할 수 있도록 도와줍니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   웹브라우저, 이메일 클라이언트 등이 해당되고 HTTP, FTP, SMTP같은</span></span>
+<span class="grvsc-line"><span class="grvsc-source">   프로토콜이 사용됩니다.</span></span></code></pre>
+</li>
+<li>TCP/IP 4계층에 대해 설명해주세요
+<pre class="grvsc-container default-dark" data-language="" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">(네인전응)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">기존 OSI 7계층에 1,2계층이 네트워크 접근 계층</span></span>
+<span class="grvsc-line"><span class="grvsc-source">3계층이 인터넷 계층</span></span>
+<span class="grvsc-line"><span class="grvsc-source">4계층은 전송계층</span></span>
+<span class="grvsc-line"><span class="grvsc-source">나머지 5,6,7계층이 응용 계층입니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">먼저 응용계층에서는 HTTP, FTP와 같은 프로토콜이 사용자의 요청을 처리합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">다음 전송계층에서는 TCP나 UDP를 통해 데이터 전송의 신뢰성을 관리합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">네트워크 계층에서는 IP주소를 기반으로 데이터를 목적지 까지 전달하는 경로를 설정하고</span></span>
+<span class="grvsc-line"><span class="grvsc-source">마지막으로 네트워크 인터페이스 계층에서는 이더넷 등 물리적인 전송을 통해</span></span>
+<span class="grvsc-line"><span class="grvsc-source">장치 간 데이터를 주고 받습니다.</span></span></code></pre>
+</li>
+<li>URL을 치고 검색했을 때 과정에 대해 설명해주세요
+<pre class="grvsc-container default-dark" data-language="" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">브라우저가 URL에  적힌 값을 파싱해서 HTTP Request Message를 만들고,</span></span>
+<span class="grvsc-line"><span class="grvsc-source">OS에 전송 요청을 합니다. 그리고 DNS LookUp을 수행합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">DNS 룩업 과정은 크롬의 경우 브라우저, hosts파일, DNS Cache의 순서로</span></span>
+<span class="grvsc-line"><span class="grvsc-source">도메인에 해당되는 IP를 찾습니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">이 요청은 프로토콜 스택이라는 OS에 내장된 네트워크 제어용 소프트웨어에 의해 패킷에 담기고</span></span>
+<span class="grvsc-line"><span class="grvsc-source">패킷에 제어정보를 덧붙여 LAN 어댑터로 전송</span></span>
+<span class="grvsc-line"><span class="grvsc-source">LAN 어댑터는 이를 전기신호로 변환시켜 송출합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">패킷은 스위치, 허브 들을 거쳐 인터넷으로 이동합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">목적지 LAN에 도착하면 방화벽이 패킷을 검사한 후 웹서버에 도착합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">웹서버에 도착한 패킷은 메시지를 복원하고 웹서버 어플리케이션에 넘겨집니다.</span></span></code></pre>
+</li>
+<li>TCP 3way handshake에 대해 설명해보세요
+<pre class="grvsc-container default-dark" data-language="" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">TCP 3way handshake는 가상회선을 수립하는 단계입니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">클라이언트와 서버가 서로 요청과 응답을 전송할 수 있는지 확인합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">(가상회선 - 논리적으로 설정된 데이터 통신 경로)</span></span>
+<span class="grvsc-line"><span class="grvsc-source">-&gt; 통신할 준비가 되어있는지, 주고받을 수 있는 상태인지 확인</span></span></code></pre>
+</li>
+<li>TCP 4way handshake에 대해 설명해보세요
+<pre class="grvsc-container default-dark" data-language="" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">TCP연결을 해제하는 단계로</span></span>
+<span class="grvsc-line"><span class="grvsc-source">클라이언트는 서버에게 연결해제를 통지하고, 서버가 이를 확인하고</span></span>
+<span class="grvsc-line"><span class="grvsc-source">클라이언트에게 이를 받았음을 전송해 연결이 해제됩니다.</span></span></code></pre>
+</li>
+<li>TCP와 UDP의 차이점에 대해 설명해보세요
+<pre class="grvsc-container default-dark" data-language="" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">TCP와 UDP의 차이는 크게 3가지 입니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">첫번째는 TCP는 연결 지향형이라 3-way handshake과정을 통해 가상회선을 만들고,</span></span>
+<span class="grvsc-line"><span class="grvsc-source">udp는 비연결형이라 바로 데이터를 빠르게 보냅니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">둘째는 TCP는 신뢰성을 보장해줘서 데이터를 제대로 보내지 않으면 다시 보냅니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">UDP는 보내지 않습니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">즉, TCP는 느리지만 안전하고 UDP는 빠르지만 데이터 손실이 있을 수 있습니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">TCP는 웹 브라우저나 이메일같이 정확한 데이터가 중요한 곳에서</span></span>
+<span class="grvsc-line"><span class="grvsc-source">UDP는 게임이나 스트리밍처럼 속도가 더 중요한 곳에서 사용됩니다.</span></span></code></pre>
+</li>
+<li>HTTP란 무엇인가요?
+<pre class="grvsc-container default-dark" data-language="" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">HTTP는 웹서버와 클라이언트 간의 문서를 교환하기 위한 통신 규약입니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">웹에서만 사용하는 프로토콜로 TCP/IP기반으로 서버와 클라이언트 간의</span></span>
+<span class="grvsc-line"><span class="grvsc-source">요청과 응답을 전송합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">단방향성이고 비연결을 지향합니다.</span></span></code></pre>
+</li>
+<li>HTTP와 HTTPS차이점에 대해 설명해보세요
+<pre class="grvsc-container default-dark" data-language="" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">HTTP는 패킷이 암호화 되지 않고 전송됩니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">그에 비해 HTTPS는 암호화 계층을 거쳐서 패킷을 암호화합니다.</span></span></code></pre>
+</li>
+<li>HTTPS에 대해 설명하고 SSL Handshake에 대해 설명해보세요
+<pre class="grvsc-container default-dark" data-language="" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">HTTPS는 HTTP에 보안계층을 추가한 것입니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">클라이언트는 TCP 3way Handshake를 수행한 이후 client Hello를 전송합니다</span></span>
+<span class="grvsc-line"><span class="grvsc-source">서버는 인증서를 보냅니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">클라이언트는 받은 인증서를 신뢰하기 위해 등록된 인증기관에 확인합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">이 인증서는 인증기관의 개인키로 암호화 되어 있으며 공개키로 검증이 가능합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">클라이언트는 사이트의 정보, 서버의 공개키, 공개키 암호화 방법을 알 수 있습니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">서버의 공개키로 통신에 사용할 비밀키(handshake과정에서 주고받은 난수 조합)를 암호화해서</span></span>
+<span class="grvsc-line"><span class="grvsc-source">서버에 전송합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">서버는 이를 개인키로 복호화 해서 공유된 비밀키로 암호화 통신을 합니다.</span></span></code></pre>
+</li>
+<li>GET과 POST의 차이점에 대해 설명해보세요
+<pre class="grvsc-container default-dark" data-language="" data-index="9"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">GET은 데이터를 가져올 때, POST는 데이터를 전송하거나 수정할 때 주로</span></span>
+<span class="grvsc-line"><span class="grvsc-source">사용됩니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">GET은 짧은 데이터를 URL에 담아 전송하고, POST는 본문에 담기 때문에</span></span>
+<span class="grvsc-line"><span class="grvsc-source">많은 양과 민감한 정보를 전송할 때  적합합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">GET은 캐시가 되고, POST는 캐시가 되지 않습니다.</span></span></code></pre>
+</li>
+<li>HTTP 메서드와 이것이 하는 역할에 대해 설명해보세요
+<pre class="grvsc-container default-dark" data-language="" data-index="10"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">HTTP 메서드는 클라이언트와 서버간의 통신 방식을 정의하는데</span></span>
+<span class="grvsc-line"><span class="grvsc-source">각각의 메서드는 특정한 역할을 합니다. 총 7개의 메서드가 있습니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">GET = 조회</span></span>
+<span class="grvsc-line"><span class="grvsc-source">POST = 서버로 데이터 전송</span></span>
+<span class="grvsc-line"><span class="grvsc-source">PUT = 서버 리소스 업데이트</span></span>
+<span class="grvsc-line"><span class="grvsc-source">PATCH = 서버 리소스 일부 수정</span></span>
+<span class="grvsc-line"><span class="grvsc-source">DELETE = 서버 리소스 삭제</span></span>
+<span class="grvsc-line"><span class="grvsc-source">HEAD = 헤더 정보 요청, 요청한 리소스의 메타 정보 확인</span></span>
+<span class="grvsc-line"><span class="grvsc-source">OPTIONS = 서버가 지원하는 메서드 목록 확인</span></span></code></pre>
+</li>
+<li>HTTP Status Code에 대해 말해보세요
+<pre class="grvsc-container default-dark" data-language="" data-index="11"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">1xx : 서버가 요청을 수신했고, 처리중인 정보를 보냅니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">2xx : 서버가 요청을 성공적으로 받았음을 알려줍니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">3xx : 리다이렉션</span></span>
+<span class="grvsc-line"><span class="grvsc-source">4xx : 클라이언트에서 요청을 잘못해 서버가 요청을 해결할 수 없는 경우</span></span>
+<span class="grvsc-line"><span class="grvsc-source">5xx : 서버측에서 처리하지 못할 때 발생</span></span></code></pre>
+</li>
+<li>CORS란 무엇이며 이것에 대해 설명해보세요
+<pre class="grvsc-container default-dark" data-language="" data-index="12"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">Cross-Origin Resource Sharing의 약자로,</span></span>
+<span class="grvsc-line"><span class="grvsc-source">서로 다른 도메인간에 자원을 공유하는 것을 뜻합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">대부분의 브라우저에서는 이를 기본적으로 차단하며,</span></span>
+<span class="grvsc-line"><span class="grvsc-source">서버측에서 헤더를 통해서 사용가능한 자원을 알려줍니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">OPTIONS 메서드로 요청해 CORS를 허용하는지 확인하고,</span></span>
+<span class="grvsc-line"><span class="grvsc-source">CORS가 허용된 웹서버라면 사용 가능한 리소스를 헤더에 담아 응답합니다.</span></span></code></pre>
+</li>
+<li>로드밸런싱이란 무엇인가요?
+<pre class="grvsc-container default-dark" data-language="" data-index="13"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">로드밸런싱이란 여러 서버에 걸리는 트래픽을 효율적으로 분산시켜 하나의</span></span>
+<span class="grvsc-line"><span class="grvsc-source">서버에 과부하가 걸리지 않도록 하는 기술입니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">서버의 자원을 최적화하고 서비스 가용성과 성능을 높이는데 중요한 역할을 합니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">(로드밸런서란)</span></span></code></pre>
+</li>
+<li>프로토콜이란 무엇인가요?
+<pre class="grvsc-container default-dark" data-language="" data-index="14"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source">프로토콜이란 컴퓨터나 네트워크 장치들이 서로 데이터를 주고 받을 때 따라야 할 규칙이나</span></span>
+<span class="grvsc-line"><span class="grvsc-source">약속의 집합입니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">이 규칙을 통해 장치들 간의 통신이 원활하게 이루어 지며, 서로 다른</span></span>
+<span class="grvsc-line"><span class="grvsc-source">시스템이 이해할 수 있는 방식으로 데이터를 주고 받을 수 있습니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source">예를 들어 HTTP는 웹브라우저와 웹서버간의 통신 규칙을 정의한 프로토콜 입니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">TCP는 데이터를 신뢰성 있게 전송하기 위한 규칙을 제공하고</span></span>
+<span class="grvsc-line"><span class="grvsc-source">IP는 목적지 까지 전달하는 규칙을 정의합니다.</span></span></code></pre>
+</li>
+<li>웹서버는 OSI 7계층 중 어디서 작동하는지 설명해보세요</li>
+<li>웹서버의 서버 간 라우팅기능은 OSI 7계층 중 어디서 작동하는지 설명해보세요</li>
+<li>쿠기와 세션의 차이를 말해보세요
+<pre class="grvsc-container default-dark" data-language="" data-index="15"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"> HTTP는 비상태 프로토콜로 상태정보를 유지하지 않습니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source">그렇기 때문에 사용자에 대한 상태값이 필요한데 사용자 측에 저장되는 값이 쿠키이고,</span></span>
+<span class="grvsc-line"><span class="grvsc-source">서버측에 저장되는 값이 세션입니다.</span></span>
+<span class="grvsc-line"><span class="grvsc-source"> 쿠키의 특징으로는 한 도메인당 20개, 하나의 쿠키당 4KB로 크기를 제한해두었습니다.</span></span></code></pre>
+</li>
+</ul>
+</li>
 </ul>
 <h1 id="4-정보보호-등급제" style="position:relative;"><a href="#4-%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8-%EB%93%B1%EA%B8%89%EC%A0%9C" aria-label="4 정보보호 등급제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. 정보보호 등급제</h1>
 <blockquote>
@@ -277,6 +450,14 @@
     opacity: 0.7;
   }
   
+  .default-dark {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+  }
+  .default-dark .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
 </style></div><style data-emotion="css 1sq4j6o">.css-1sq4j6o{width:25%;padding:8px;position:-webkit-sticky;position:sticky;-webkit-align-self:flex-start;-ms-flex-item-align:flex-start;align-self:flex-start;-webkit-box-flex:0;-webkit-flex-grow:0;-ms-flex-positive:0;flex-grow:0;top:72px;border:1px solid rgba(0, 0, 0, 0.12);border-radius:6px;}@media (max-width: 1080px){.css-1sq4j6o{display:none;}}</style><div class="css-1sq4j6o e1iookw12"><ul>
 <li><a href="#1-%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8-%EA%B4%80%EB%A6%AC%EC%B2%B4%EA%B3%84-%EC%9D%B8%EC%A6%9Disms">1. 정보보호 관리체계 인증(ISMS)</a></li>
 <li><a href="#2-%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8-%EB%B0%8F-%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8-%EA%B4%80%EB%A6%AC%EC%B2%B4%EA%B3%84-%EC%9D%B8%EC%A6%9D-isms-p">2. 정보보호 및 개인정보보호 관리체계 인증 (ISMS-P)</a></li>

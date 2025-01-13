@@ -66,7 +66,18 @@
 <hr>
 <h1 id="1-jdbctemplate" style="position:relative;"><a href="#1-jdbctemplate" aria-label="1 jdbctemplate permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. JdbcTemplate</h1>
 <p>JdbcTemplate은 JDBC를 매우 편리하게 사용할 수 있게 도와준다.</p>
-<p>JdbcTemplate은 템플릿 콜백 패턴을 사용해서, JDBC를 직접 사용할 때 발생하는 대부분의 반복 작업을 대신 처리해준다.</p>
+<p>장점</p>
+<ul>
+<li>설정의 편리함
+<ul>
+<li>JdbcTemplate는 <code>spring-jdbc</code>라이브러리에 포함되어 있는데, 이 라이브러리는 스프링으로 JDBC를 사용할 때 기본이 되는 라이브러리</li>
+<li>별도의 복잡한 설정 없이 바로 사용 가능</li>
+</ul>
+</li>
+<li>반복 문제 해결
+<ul>
+<li>JdbcTemplate은 템플릿 콜백 패턴을 사용해서, JDBC를 직접 사용할 때 발생하는 대부분의 반복 작업을 대신 처리해준다.</li>
+<li>개발자는 SQL을 작성하고, 전달할 파라미터를 정의하고, 응답 값을 매핑한다.
 <ul>
 <li>커넥션 획득</li>
 <li>statement 를 준비하고 실행</li>
@@ -75,11 +86,14 @@
 <li>트랜잭션 다루기 위한 커넥션 동기화</li>
 <li>예외 발생시 스프링 예외 변환기 실행</li>
 </ul>
-<p>개발자는 SQL을 작성하고, 전달할 파리미터를 정의하고, 응답 값을 매핑하기만 하면 된다.</p>
+</li>
+</ul>
+</li>
+</ul>
 <p>하지만 동적 SQL을 해결하기 어렵다는 단점이 있다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="48501877087959474000"
+              data-toaster-id="543889226315275000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -171,7 +185,7 @@ public class JdbcTemplateItemRepositoryV1 implements ItemRepository {
         };
     }
 
-}`, `48501877087959474000`)"
+}`, `543889226315275000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -295,14 +309,14 @@ public class JdbcTemplateItemRepositoryV1 implements ItemRepository {
 <h4 id="db-접근-설정" style="position:relative;"><a href="#db-%EC%A0%91%EA%B7%BC-%EC%84%A4%EC%A0%95" aria-label="db 접근 설정 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DB 접근 설정</h4>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="14940581233747685000"
+              data-toaster-id="69616446503809450000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`spring.profiles.active=local
 spring.datasource.url=jdbc:h2:tcp://localhost/~/test
-spring.datasource.username=sa`, `14940581233747685000`)"
+spring.datasource.username=sa`, `69616446503809450000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -319,7 +333,7 @@ spring.datasource.username=sa`, `14940581233747685000`)"
 <p>JdbcTemplate을 기본으로 사용하면 파라미터를 순서대로 바인딩 한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="85816913919837550000"
+              data-toaster-id="58464731600644735000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -329,7 +343,7 @@ template.update(sql,
  	  itemName,
  	  price,
  	  quantity,
- 	  itemId);`, `85816913919837550000`)"
+ 	  itemId);`, `58464731600644735000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -348,7 +362,7 @@ template.update(sql,
 <p>=> <code>JdbcTemplate</code>는 이런 문제를 보완하기 위해 <code>NamedParameterJdbcTemplate</code>라는 <strong>이름 지정해서 파라미터를 바인딩하는 기능</strong> 제공</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="80670990936681610000"
+              data-toaster-id="56412419302572880000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -376,7 +390,7 @@ public class JdbcTemplateItemRepositoryV2 implements ItemRepository {
     }
 
     ...
-}`, `80670990936681610000`)"
+}`, `56412419302572880000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -415,13 +429,14 @@ public class JdbcTemplateItemRepositoryV2 implements ItemRepository {
 <p>자주 사용하는 파라미터의 종류는 크게 3가지가 있다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="31354061022337910000"
+              data-toaster-id="4794669595001677000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`//단순히 Map 사용
 Map<String, Object> param = Map.of(&quot;id&quot;, id);
+Item item = template.queryForObject(sql, param, itemRowMapper());
 
 // Map 과 유사한데, SQL 타입을 지정할 수 있는 등 SQL에 좀 더 특화된 기능을 제공
 SqlParameterSource param = new MapSqlParameterSource()
@@ -429,7 +444,9 @@ SqlParameterSource param = new MapSqlParameterSource()
 
 // 는 자바 빈 프로퍼티 규약을 통해서 자동으로 파라미터 객체를 생성한다.
 //예) (\`getXxx()\` -> xxx, \`getItemName()\` -> itemName)
-SqlParameterSource param = new BeanPropertySqlParameterSource(item);`, `31354061022337910000`)"
+SqlParameterSource param = new BeanPropertySqlParameterSource(item);
+KeyHolder keyHolder = new GeneratedKeyHolder();
+template.update(sql, param, keyHolder);`, `4794669595001677000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -440,6 +457,7 @@ SqlParameterSource param = new BeanPropertySqlParameterSource(item);`, `31354061
             </div>
 <pre class="grvsc-container default-dark" data-language="java" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">//단순히 Map 사용</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk10">Map</span><span class="mtk1">&lt;</span><span class="mtk10">String</span><span class="mtk1">, </span><span class="mtk10">Object</span><span class="mtk1">&gt; </span><span class="mtk12">param</span><span class="mtk1"> = </span><span class="mtk12">Map</span><span class="mtk1">.</span><span class="mtk11">of</span><span class="mtk1">(</span><span class="mtk8">&quot;id&quot;</span><span class="mtk1">, id);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk10">Item</span><span class="mtk1"> </span><span class="mtk12">item</span><span class="mtk1"> = </span><span class="mtk12">template</span><span class="mtk1">.</span><span class="mtk11">queryForObject</span><span class="mtk1">(sql, param, </span><span class="mtk11">itemRowMapper</span><span class="mtk1">());</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">// Map 과 유사한데, SQL 타입을 지정할 수 있는 등 SQL에 좀 더 특화된 기능을 제공</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk10">SqlParameterSource</span><span class="mtk1"> </span><span class="mtk12">param</span><span class="mtk1"> = </span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">MapSqlParameterSource</span><span class="mtk1">()</span></span></span>
@@ -447,19 +465,32 @@ SqlParameterSource param = new BeanPropertySqlParameterSource(item);`, `31354061
 <span class="grvsc-line"><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">// 는 자바 빈 프로퍼티 규약을 통해서 자동으로 파라미터 객체를 생성한다.</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">//예) (`getXxx()` -&gt; xxx, `getItemName()` -&gt; itemName)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-source"><span class="mtk10">SqlParameterSource</span><span class="mtk1"> </span><span class="mtk12">param</span><span class="mtk1"> = </span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">BeanPropertySqlParameterSource</span><span class="mtk1">(item);</span></span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk10">SqlParameterSource</span><span class="mtk1"> </span><span class="mtk12">param</span><span class="mtk1"> = </span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">BeanPropertySqlParameterSource</span><span class="mtk1">(item);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk10">KeyHolder</span><span class="mtk1"> </span><span class="mtk12">keyHolder</span><span class="mtk1"> = </span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">GeneratedKeyHolder</span><span class="mtk1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk12">template</span><span class="mtk1">.</span><span class="mtk11">update</span><span class="mtk1">(sql, param, keyHolder);</span></span></span></code></pre>
 <p><strong>BeanPropertyRowMapper</strong></p>
 <p>BeanPropertyRowMapper 는 ResultSet 의 결과를 받아서 자바빈 규약에 맞추어 데이터를 변환한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="79067067274004320000"
+              data-toaster-id="52030791021915480000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`private RowMapper<Item> itemRowMapper() {
+  return (rs, rowNum) -> {
+    Item item = new Item();
+    item.setId(rs.getLong(&quot;id&quot;));
+    item.setItemName(rs.getString(&quot;item_name&quot;));
+    item.setPrice(rs.getInt(&quot;price&quot;));
+    item.setQuantity(rs.getInt(&quot;quantity&quot;));
+    return item;
+ };
+}
+
+private RowMapper<Item> itemRowMapper() {
     return BeanPropertyRowMapper.newInstance(Item.class); //camel 변환 지원
-}`, `79067067274004320000`)"
+}`, `52030791021915480000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -469,6 +500,17 @@ SqlParameterSource param = new BeanPropertySqlParameterSource(item);`, `31354061
               </div>
             </div>
 <pre class="grvsc-container default-dark" data-language="java" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">private</span><span class="mtk1"> </span><span class="mtk10">RowMapper</span><span class="mtk1">&lt;Item&gt; </span><span class="mtk11">itemRowMapper</span><span class="mtk1">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk15">return</span><span class="mtk1"> (rs, rowNum) </span><span class="mtk4">-&gt;</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk10">Item</span><span class="mtk1"> </span><span class="mtk12">item</span><span class="mtk1"> = </span><span class="mtk15">new</span><span class="mtk1"> </span><span class="mtk11">Item</span><span class="mtk1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">item</span><span class="mtk1">.</span><span class="mtk11">setId</span><span class="mtk1">(</span><span class="mtk12">rs</span><span class="mtk1">.</span><span class="mtk11">getLong</span><span class="mtk1">(</span><span class="mtk8">&quot;id&quot;</span><span class="mtk1">));</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">item</span><span class="mtk1">.</span><span class="mtk11">setItemName</span><span class="mtk1">(</span><span class="mtk12">rs</span><span class="mtk1">.</span><span class="mtk11">getString</span><span class="mtk1">(</span><span class="mtk8">&quot;item_name&quot;</span><span class="mtk1">));</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">item</span><span class="mtk1">.</span><span class="mtk11">setPrice</span><span class="mtk1">(</span><span class="mtk12">rs</span><span class="mtk1">.</span><span class="mtk11">getInt</span><span class="mtk1">(</span><span class="mtk8">&quot;price&quot;</span><span class="mtk1">));</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk12">item</span><span class="mtk1">.</span><span class="mtk11">setQuantity</span><span class="mtk1">(</span><span class="mtk12">rs</span><span class="mtk1">.</span><span class="mtk11">getInt</span><span class="mtk1">(</span><span class="mtk8">&quot;quantity&quot;</span><span class="mtk1">));</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk15">return</span><span class="mtk1"> item;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1"> };</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">private</span><span class="mtk1"> </span><span class="mtk10">RowMapper</span><span class="mtk1">&lt;Item&gt; </span><span class="mtk11">itemRowMapper</span><span class="mtk1">() {</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk15">return</span><span class="mtk1"> </span><span class="mtk12">BeanPropertyRowMapper</span><span class="mtk1">.</span><span class="mtk11">newInstance</span><span class="mtk1">(</span><span class="mtk12">Item</span><span class="mtk1">.</span><span class="mtk12">class</span><span class="mtk1">); </span><span class="mtk3">//camel 변환 지원</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <p>BeanPropertyRowMapper 는 언더스코어 표기법을 카멜로 자동 변환해준다</p>
@@ -476,7 +518,7 @@ SqlParameterSource param = new BeanPropertySqlParameterSource(item);`, `31354061
 <p>Jdbc Template는 InsertSQL을 직접 작성하지 않아도 되도록 <code>SimpleJdbcInsert</code>라는 편리한 기능 제공</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="60963332943712370000"
+              data-toaster-id="65000464723956154000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -506,7 +548,7 @@ public class JdbcTemplateItemRepositoryV3 implements ItemRepository {
 
     ...
 
-}`, `60963332943712370000`)"
+}`, `65000464723956154000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -575,7 +617,7 @@ public class JdbcTemplateItemRepositoryV3 implements ItemRepository {
 <p>src/test/resources/application.properties에도 설정을 추가한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="66914689410728730000"
+              data-toaster-id="72929961695469700000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -589,7 +631,7 @@ class ItemRepositoryTest {}
 //@Import(JdbcTemplateV2Config.class)
 @Import(JdbcTemplateV3Config.class)
 @SpringBootApplication(scanBasePackages = &quot;hello.itemservice.web&quot;)
-public class ItemServiceApplication {}`, `66914689410728730000`)"
+public class ItemServiceApplication {}`, `72929961695469700000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -608,7 +650,7 @@ public class ItemServiceApplication {}`, `66914689410728730000`)"
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Import</span><span class="mtk1">(</span><span class="mtk12">JdbcTemplateV3Config</span><span class="mtk1">.</span><span class="mtk12">class</span><span class="mtk1">)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">SpringBootApplication</span><span class="mtk1">(scanBasePackages = </span><span class="mtk8">&quot;hello.itemservice.web&quot;</span><span class="mtk1">)</span></span></span>
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">ItemServiceApplication</span><span class="mtk1"> {}</span></span></span></code></pre>
-<p><code>@SpringBootApplication</code>설정이 있으면 <code>@SpringBootApplication</code>을 찾아서 설정으로 사용한다.</p>
+<p><code>@SpringBootTest</code>설정이 있으면 <code>@SpringBootApplication</code>을 찾아서 설정으로 사용한다.</p>
 <p>실제 DB를 연동해서 실행하면 기존 데이터가 테스트에 영향을 준다.</p>
 <p>이런 문제를 해결하려면 테스트를 다른 환경과 철저하게 분리해야 한다.</p>
 <p>가장 간단한 방법은 테스트 전용 데이터베이스를 별도로 운영하는 것이다.</p>
@@ -627,7 +669,7 @@ public class ItemServiceApplication {}`, `66914689410728730000`)"
 <p>테스트를 하면서 데이터를 이미 저장했는데, 중간에 테스트가 실패해서 롤백을 호출하지 못해도 트랜잭션을 커밋하지 않았기 때문에 데이터베이스에 해당 데이터가 반영되지 않는다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="69714516641007740000"
+              data-toaster-id="69694455654677110000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -652,7 +694,7 @@ public class ItemServiceApplication {}`, `66914689410728730000`)"
         }
         //트랜잭션 롤백
         transactionManager.rollback(status);
-    }`, `69714516641007740000`)"
+    }`, `69694455654677110000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -746,7 +788,7 @@ public class ItemServiceApplication {}`, `66914689410728730000`)"
 @Commit 이나 @Rollback(value = false) 를 붙여주면 된다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="81762311257374030000"
+              data-toaster-id="75958309074776570000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -755,7 +797,7 @@ public class ItemServiceApplication {}`, `66914689410728730000`)"
 @Commit
 @Transactional
 @SpringBootTest
-class ItemRepositoryTest {}`, `81762311257374030000`)"
+class ItemRepositoryTest {}`, `75958309074776570000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -778,7 +820,7 @@ class ItemRepositoryTest {}`, `81762311257374030000`)"
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="94942338030338690000"
+              data-toaster-id="55595111767623730000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -801,7 +843,7 @@ public class ItemServiceApplication {
 		dataSource.setPassword(&quot;&quot;);
 		return dataSource;
 	}
-}`, `94942338030338690000`)"
+}`, `55595111767623730000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -835,7 +877,7 @@ public class ItemServiceApplication {
 <p>SQL을 작성하고 <code>src/test/resources/schema.sql</code>에 생성한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="13710212770803065000"
+              data-toaster-id="89047607025870680000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -849,7 +891,7 @@ create table item
  	quantity integer,
  	primary key (id)
 );
-`, `13710212770803065000`)"
+`, `89047607025870680000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -888,7 +930,7 @@ create table item
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="62417737388426330000"
+              data-toaster-id="68235823653915710000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -904,7 +946,7 @@ mybatis.type-aliases-package=hello.itemservice.domain
 # 언더바를 카멜로 자동 변경
 mybatis.configurationmap-underscore-to-camel-case=true
 # MyBatis에서 실행되는 쿼리 로그를 확인
-logging.level.hello.itemservice.repository.mybatis=trace`, `62417737388426330000`)"
+logging.level.hello.itemservice.repository.mybatis=trace`, `68235823653915710000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -931,10 +973,18 @@ logging.level.hello.itemservice.repository.mybatis=trace`, `62417737388426330000
 <li>지정한 패키지와 하위 패키지 자동으로 인식</li>
 <li>여러 위치 지정 시 <code>,</code>, <code>;</code>으로 구분</li>
 </ul>
+<p><code>mybatis.configuration.map-underscore-to-camel-case</code></p>
+<ul>
+<li>JdbcTemplate의 BeanPropertyRowMapper 에서 처럼 언더바를 카멜로 자동 변경해주는 기능을 활성화 한다. 바로 다음에 설명하는 관례의 불일치 내용을 참고하자.</li>
+</ul>
+<p><code>logging.level.hello.itemservice.repository.mybatis=trace</code></p>
+<ul>
+<li>MyBatis에서 실행되는 쿼리 로그를 확인할 수 있다.</li>
+</ul>
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="86413662224985950000"
+              data-toaster-id="67407547020623040000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -950,7 +1000,7 @@ public interface ItemMapper {
     Optional<Item> findById(Long id);
 
     List<Item> findAll(ItemSearchCond itemSearch);
-}`, `86413662224985950000`)"
+}`, `67407547020623040000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -978,7 +1028,7 @@ public interface ItemMapper {
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="71606337546442210000"
+              data-toaster-id="90939353915962770000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1016,7 +1066,7 @@ public interface ItemMapper {
             </if>
         </where>
     </select>
-</mapper>`, `71606337546442210000`)"
+</mapper>`, `90939353915962770000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1072,7 +1122,7 @@ public interface ItemMapper {
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="5405561981252261000"
+              data-toaster-id="55272373982252220000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1082,7 +1132,7 @@ public interface ItemMapper {
 <insert id=&quot;save&quot; useGeneratedKeys=&quot;true&quot; keyProperty=&quot;id&quot;>
  insert into item (item_name, price, quantity)
  values (#{itemName}, #{price}, #{quantity})
-</insert>`, `5405561981252261000`)"
+</insert>`, `55272373982252220000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1106,7 +1156,7 @@ public interface ItemMapper {
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="61034740817305625000"
+              data-toaster-id="93930930913472510000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1120,7 +1170,7 @@ updateParam);
  price=#{updateParam.price},
  quantity=#{updateParam.quantity}
  where id = #{id}
-</update>`, `61034740817305625000`)"
+</update>`, `93930930913472510000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1147,7 +1197,7 @@ updateParam);
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="25014660594933910000"
+              data-toaster-id="40763116875931020000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1158,7 +1208,7 @@ updateParam);
  select id, item_name, price, quantity
  from item
  where id = #{id}
-</select>`, `25014660594933910000`)"
+</select>`, `40763116875931020000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1186,7 +1236,7 @@ updateParam);
 <hr>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="79498518616749280000"
+              data-toaster-id="12666722771445270000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1204,7 +1254,7 @@ updateParam);
  and price &lt;= #{maxPrice}
  </if>
  </where>
-</select>`, `79498518616749280000`)"
+</select>`, `12666722771445270000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1239,7 +1289,7 @@ updateParam);
 <p>다만 이 구문 안에서는 XML TAG가 단순 문자로 인식하기 때문에 <code>&#x3C;if></code>, <code>&#x3C;where></code> 등이 적용되지 않는다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="86907509991997370000"
+              data-toaster-id="78543692880616540000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1257,7 +1307,7 @@ updateParam);
  ]]>
  </if>
  </where>
-</select>`, `86907509991997370000`)"
+</select>`, `78543692880616540000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1362,7 +1412,7 @@ updateParam);
 <p>if문</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="43238216420104946000"
+              data-toaster-id="22400663055155225000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1373,7 +1423,7 @@ WHERE state = ‘ACTIVE’
     <if test=&quot;title != null&quot;>
     AND title like #{title}
     </if>
-</select>`, `43238216420104946000`)"
+</select>`, `22400663055155225000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1392,7 +1442,7 @@ WHERE state = ‘ACTIVE’
 <p>switch문</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="46113798337745250000"
+              data-toaster-id="90933061787568700000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1410,7 +1460,7 @@ SELECT \* FROM BLOG WHERE state = ‘ACTIVE’
     AND featured = 1
     </otherwise>
 </choose>
-</select>`, `46113798337745250000`)"
+</select>`, `90933061787568700000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1437,7 +1487,7 @@ SELECT \* FROM BLOG WHERE state = ‘ACTIVE’
 <p>&#x3C;where> 는 문장이 없으면 where 를 추가하지 않는다. 문장이 있으면 where 를 추가한다. 만약 and 가 먼저 시작 된다면 <strong>and를 지운다</strong></p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="24745621154759643000"
+              data-toaster-id="62727337378066390000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1455,7 +1505,7 @@ SELECT * FROM BLOG
         AND author_name like #{author.name}
         </if>
     </where>
-</select>`, `24745621154759643000`)"
+</select>`, `62727337378066390000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1481,7 +1531,7 @@ SELECT * FROM BLOG
 <p>foreach</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="76735443488924530000"
+              data-toaster-id="77576631995478200000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1494,7 +1544,7 @@ FROM POST P
         #{item}
         </foreach>
     </where>
-</select>`, `76735443488924530000`)"
+</select>`, `77576631995478200000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1525,7 +1575,7 @@ FROM POST P
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="38319880943380546000"
+              data-toaster-id="83952125203823620000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1537,7 +1587,7 @@ FROM POST P
  hashed_password as &quot;hashedPassword&quot;
  from some_table
  where id = #{id}
-</select>`, `38319880943380546000`)"
+</select>`, `83952125203823620000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1557,7 +1607,7 @@ FROM POST P
 <p>별칭을 사용하지 않고 resultMap 을 선언해서 사용하기도 한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="46882758961374350000"
+              data-toaster-id="83507749704206420000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1571,7 +1621,7 @@ FROM POST P
  select user_id, user_name, hashed_password
  from some_table
  where id = #{id}
-</select>`, `46882758961374350000`)"
+</select>`, `83507749704206420000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1728,7 +1778,7 @@ FROM POST P
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="87688815333231970000"
+              data-toaster-id="60557920865950960000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1753,7 +1803,7 @@ public class Item {
         this.price = price;
         this.quantity = quantity;
     }
-}`, `87688815333231970000`)"
+}`, `60557920865950960000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1796,7 +1846,7 @@ itemName item_name , 따라서 위 예제의 @Column(name = “item_name”) 를
 <p>JPA는 public 또는 protected 의 기본 생성자가 필수이다</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="90131694020658900000"
+              data-toaster-id="8641115989248705000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1870,7 +1920,7 @@ public class JpaItemRepository implements ItemRepository {
         }
         return query.getResultList();
     }
-}`, `90131694020658900000`)"
+}`, `8641115989248705000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2062,17 +2112,20 @@ public class JpaItemRepository implements ItemRepository {
 <li>추가로 JPA는 IllegalStateException , IllegalArgumentException 을 발생시킬 수 있다</li>
 </ul>
 </li>
+<li>@Repository는 JPA예외를 스프링 예외(DataAccessException)으로 변환시켜 준다.</li>
 <li>@Repository의 기능
 <ul>
 <li>@Repository 가 붙은 클래스는 컴포넌트 스캔의 대상이 된다.</li>
 <li>@Repository 가 붙은 클래스는 예외 변환 AOP의 적용 대상이 된다.
 <ul>
 <li>스프링과 JPA를 함께 사용하는 경우 스프링은 JPA 예외 변환기 (PersistenceExceptionTranslator)를 등록한다.</li>
-<li>예외 변환 AOP 프록시는 JPA 관련 예외가 발생하면 JPA 예외 변환기를 통해 발생한 예외를 스프링 데이터 접근 예외로 변환한다</li>
+<li>예외 변환 AOP 프록시는 <strong>JPA 관련 예외가 발생하면 JPA 예외 변환기를 통해 발생한 예외를 스프링 데이터 접근 예외로 변환</strong>한다</li>
 </ul>
 </li>
 </ul>
 </li>
+<li>스프링 부트는PersistenceExceptionTranslationPostProcessor 를 자동으로 등록하는데, 여기에서 @Repository 를 AOP 프록시로 만드는 어드바이저가 등록</li>
+<li>복잡한 과정을 거쳐서 실제 예외를 변환하는데, 실제 JPA 예외를 변환하는 코드는 EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible() 이다.</li>
 </ul>
 <h1 id="5-spring-data-jpa" style="position:relative;"><a href="#5-spring-data-jpa" aria-label="5 spring data jpa permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. Spring Data JPA</h1>
 <ul>
@@ -2108,6 +2161,9 @@ public class JpaItemRepository implements ItemRepository {
 <li>Query는 문자, Type-check불가능</li>
 <li>실행하기 전까지 작동여부 확인 불가</li>
 <li>에러는 크게 컴파일 에러, 런타임 에러</li>
+</ul>
+<p>QueryDSL 장점</p>
+<ul>
 <li>QueryDSL은 <strong>컴파일 시 컴파일 오류 발생</strong></li>
 <li>QueryDSL은 <strong>동적 쿼리 작성에 용이</strong></li>
 <li>Java Code로 작성하기에 모듈화가 가능하다.</li>
@@ -2123,6 +2179,11 @@ public class JpaItemRepository implements ItemRepository {
 </ul>
 </li>
 <li>데이터 쿼리 추상화</li>
+</ul>
+<p>QueryDSL 사용</p>
+<ul>
+<li>복잡한 과정을 거쳐서 실제 예외를 변환하는데, 실제 JPA 예외를 변환하는 코드는 EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible() 이다.</li>
+<li>참고로 JPAQueryFactory 를 스프링 빈으로 등록해서 사용해도 된다.</li>
 </ul>
 <h1 id="7-데이터-접근-기술---활용-방안" style="position:relative;"><a href="#7-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%91%EA%B7%BC-%EA%B8%B0%EC%88%A0---%ED%99%9C%EC%9A%A9-%EB%B0%A9%EC%95%88" aria-label="7 데이터 접근 기술   활용 방안 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7. 데이터 접근 기술 - 활용 방안</h1>
 <ul>
@@ -2185,7 +2246,7 @@ public class JpaItemRepository implements ItemRepository {
 <li>트랜잭션 매니저 선택
 <ul>
 <li>모두 JPA기술을 사용하니 <code>JpaTransactionManager</code>사용</li>
-<li>JPA기술을 사용하면 스프링 부타는 자동으로 <code>JpaTransactionManager</code>를 스프링 빈에 등록</li>
+<li>JPA기술을 사용하면 스프링 부트는 자동으로 <code>JpaTransactionManager</code>를 스프링 빈에 등록</li>
 <li>JdbcTemplate, MyBatis는 내부에서 직접 SDBC를 사용해서 <code>DataSourceTransactionManager</code>를 사용
 <ul>
 <li><code>JpaTransactionManager</code>는 <code>DataSourceTransactionManager</code>가 제공하는 기능을 대부분 제공
@@ -2204,10 +2265,20 @@ public class JpaItemRepository implements ItemRepository {
 <p>하나의 트랜잭션 안에서 JPA를 통해 데이터를 변경한 다음 JdbcTemplate를 호출하는 경우 JPA가 변경한 데이터를 읽지 못하는 경우 생김</p>
 <p>JPA변경 내역을 플러시 기능을 사용해 반영해줘야 사용 가능</p>
 <h1 id="8-스프링-트랜잭션-이해" style="position:relative;"><a href="#8-%EC%8A%A4%ED%94%84%EB%A7%81-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EC%9D%B4%ED%95%B4" aria-label="8 스프링 트랜잭션 이해 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>8. 스프링 트랜잭션 이해</h1>
+<p>JPA와 JDBC기술은(각각의 데이터 접근 기술들은) 트랜잭션을 처리하는 방식에 차이가 있다.</p>
+<p>따라서 JDBC 기술을 사용하다가 JPA 기술로 변경하게 되면 트랜잭션을 사용하는 코드도 모두 함께 변경해야 한다.</p>
+<p>스프링은 이런 문제를 해결하기 위해 트랜잭션 추상화를 제공한다</p>
+<p>스프링은 <code>PlatformTransactionManager</code> 라는 인터페이스를 통해 트랜잭션을 추상화한다.</p>
+<p>스프링은 트랜잭션을 추상화해서 제공할 뿐만 아니라, 실무에서 주로 사용하는 데이터 접근 기술에 대한 트랜잭션 매니저의 구현체도 제공한다. 우리는 필요한 구현체를 스프링 빈으로 등록하고 주입 받아서 사용하기만 하면 된다.</p>
+<p>여기에 더해서 스프링 부트는 어떤 데이터 접근 기술을 사용하는지를 자동으로 인식해서 적절한 트랜잭션 매니저를 선택해서 스프링 빈으로 등록해주기 때문에 트랜잭션 매니저를 선택하고 등록하는 과정도 생략할 수 있다.</p>
+<p>예를 들어서 JdbcTemplate , MyBatis 를 사용하면
+<code>DataSourceTransactionManager(JdbcTransactionManager)</code> 를 스프링 빈으로 등록하고, JPA를
+사용하면 <code>JpaTransactionManager</code> 를 스프링 빈으로 등록해준다.</p>
 <h4 id="트랜잭션-적용-확인" style="position:relative;"><a href="#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EC%A0%81%EC%9A%A9-%ED%99%95%EC%9D%B8" aria-label="트랜잭션 적용 확인 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>트랜잭션 적용 확인</h4>
 <ul>
 <li>AOP기반으로 동작하기에 눈으로 확인이 어렵다.</li>
-<li>실제로 <code>@Transactinal</code>을 사용하고, 주입받은 클래스를 <code>getClass()</code>로 찍어보면 프록시 객체가 나온다.</li>
+<li>@Transactional 을 메서드나 클래스에 붙이면 해당 객체는 트랜잭션 AOP 적용의 대상이 되고, 결과적으로 실제 객체 대신에 트랜잭션을 처리해주는 프록시 객체가 스프링 빈에 등록된다.</li>
+<li>실제로 <code>@Transactinal</code>을 사용하고, 주입받은 클래스를 <code>getClass()</code>로 찍어보면 프록시 객체가 주입되어 나온다.</li>
 </ul>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -2259,7 +2330,8 @@ public class JpaItemRepository implements ItemRepository {
     </span></p>
 <ul>
 <li><code>@Transactional</code>어노테이션이 특정 클래스나 메서드에 하나라도 있으면 트랜잭션 AOP는 프록시를 만들어 스프링 컨테이너에 등록한다.</li>
-<li>클라이언트인 <code>txBasicTest</code>는 스프링 컨테이너에 의족관계 주입을 요청한다.</li>
+<li>핵심은 실제 객체 대신에 프록시가 스프링 컨테이너에 등록되었다는 점이다.</li>
+<li>클라이언트인 <code>txBasicTest</code>는 스프링 컨테이너에 의존관계 주입을 요청한다.</li>
 <li>스프링 컨테이너에서는 실제 객체 대신 프록시가 스프링 빈으로 등록되어 있기 때문에 프록시를 주입한다.</li>
 </ul>
 <h4 id="트랜잭션-적용-위치" style="position:relative;"><a href="#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EC%A0%81%EC%9A%A9-%EC%9C%84%EC%B9%98" aria-label="트랜잭션 적용 위치 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>트랜잭션 적용 위치</h4>
@@ -2383,6 +2455,7 @@ public class JpaItemRepository implements ItemRepository {
     </span></p>
 <p>external() 메서드에서 @Transactional이 적용된 proxy객체인 internal이 아니라</p>
 <p>내부의 internal() 메소드를 호출하면 내부 호출이 되어 프록시를 거치지 않아 <strong>트랜잭션이 적용되지 않는다.</strong></p>
+<p>external에서 internal을 호출 시 자기 자신의 내부 메서드를 호출하는 this.internal() 이 되는데, 여기서 this 는 자기 자신을 가리키므로, 실제 대상 객체( target )의 인스턴스를 뜻한다. 결과적으로 이러한 내부 호출은 프록시를 거치지 않는다.</p>
 <p>내부 호출로 인해 트랜잭션이 적용되지 않는 것은 프록시 방식의 AOP 한계이다.</p>
 <p>문제를 해결하는 방법은 내부 호출을 피하기 위해 <strong>메서드를 별도의 클래스로 분리</strong>하는 것이다.</p>
 <p>아래와 같이 <strong>내부 호출을 외부 호출로 변경</strong>한다</p>
@@ -2434,9 +2507,11 @@ public class JpaItemRepository implements ItemRepository {
         </picture>
   </a>
     </span></p>
-<p>다른 해결방안도 있지만, 실무에서는 이렇게 별도의 클래스로 분리하는 방법을 주로 사용한다.</p>
+<p>다른 해결방안도 있지만, 실무에서는 이렇게 별도의 클래스(서비스)로 분리하는 방법을 주로 사용한다.</p>
 <h4 id="트랜잭션-aop-주의사항---public-메서드에만-트랜잭션-적용" style="position:relative;"><a href="#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-aop-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD---public-%EB%A9%94%EC%84%9C%EB%93%9C%EC%97%90%EB%A7%8C-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EC%A0%81%EC%9A%A9" aria-label="트랜잭션 aop 주의사항   public 메서드에만 트랜잭션 적용 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>트랜잭션 AOP 주의사항 - public 메서드에만 트랜잭션 적용</h4>
 <p>스프링 트랜잭션 AOP기능은 <code>public</code>메서드에만 트랜잭션을 적용하게 기본 설정이 되어있다.</p>
+<p>그래서 protected , private , package-visible 에는 트랜잭션이 적용되지 않는다</p>
+<p>클래스 레벨에 트랜잭션을 적용하면 모든 메서드에 트랜잭션이 걸릴 수 있다.</p>
 <p>트랜잭션을 의도하지 않는 곳까지 과도하게 적용되지 않게 하기 위해 <code>public</code>에만 적용하도록 설정<br>
 (private나 protected같은 경우 트랜잭션을 사용하지 않을 의도를 가질 확률이 높음)</p>
 <h4 id="트랜잭션-aop-주의사항---초기화-시점" style="position:relative;"><a href="#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-aop-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD---%EC%B4%88%EA%B8%B0%ED%99%94-%EC%8B%9C%EC%A0%90" aria-label="트랜잭션 aop 주의사항   초기화 시점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>트랜잭션 AOP 주의사항 - 초기화 시점</h4>
@@ -2449,7 +2524,7 @@ public class JpaItemRepository implements ItemRepository {
 <p>트랜잭션 매니저가 2개 이상이라면 다음과 같이 트랜잭션 매니저의 이름을 지정해서 구분한다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="37819938645161665000"
+              data-toaster-id="19601270519628456000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -2462,7 +2537,7 @@ public class JpaItemRepository implements ItemRepository {
 
     @Transactional(&quot;orderTxManager&quot;)
     public void order() {...}
-}`, `37819938645161665000`)"
+}`, `19601270519628456000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2482,12 +2557,12 @@ public class JpaItemRepository implements ItemRepository {
 <span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="21066471352836280000"
+              data-toaster-id="15451908285544280000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`@Transactional(rollbackFor = Exception.class)`, `21066471352836280000`)"
+              onClick="copyToClipboard(`@Transactional(rollbackFor = Exception.class)`, `15451908285544280000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -2519,12 +2594,16 @@ public class JpaItemRepository implements ItemRepository {
 <li>label : 트랜잭션 어노테이션 있는 값을 일거 어떤 동작을 하고 싶을 때 사용 (잘 사용 안함)</li>
 <li>readOnly : 기본적으로 읽기 쓰기가 모두 가능한 트랜잭션 생성
 <ul>
+<li>readOnly=true 옵션을 사용하면 읽기 전용 트랜잭션이 생성된다</li>
 <li>크게 3곳에 적용된다.
 <ul>
 <li>프레임워크
 <ul>
 <li>JdbcTemplate는 읽기전용 트랜잭션 안에서 변경 기능을 실행하면 예외를 던진다.</li>
-<li>JPA는 읽기 전용 트랜잭션의 경우 커밋시점에 플로시 호출x (추가적인 다양한 최적화 발생)</li>
+<li>JPA는 읽기 전용 트랜잭션의 경우 커밋시점에 플러시 호출x (추가적인 다양한 최적화 발생)</li>
+<li>readOnly 옵션을 사용하면 읽기에서 다양한 성능 최적화가 발생할 수 있다.</li>
+<li>추가로 변경이 필요 없으니 변경 감지를 위한 스냅샷 객체도 생성하지 않는다.</li>
+<li>이렇게 JPA에서는 다양한 최적화가 발생한다</li>
 </ul>
 </li>
 <li>JDBC드라이버
@@ -2623,7 +2702,7 @@ public class JpaItemRepository implements ItemRepository {
         </picture>
   </a>
     </span></p>
-<p>트랜잭션을 연속해서 S2번 사용하면 같은 커넥션을 사용한 것을 볼 수 있다.<br>
+<p>트랜잭션을 연속해서 2번 사용하면 같은 커넥션을 사용한 것을 볼 수 있다.<br>
 -> 커넥션은 재사용, 프록시 객체의 주소가 다르기 때문에 각각 커넥션 풀에서 커넥션을 조회한 것이다.</p>
 <hr>
 <p>트랜잭션을 수행중인데 내부에서 트랜잭션을 중첩해서 사용한 경우</p>
@@ -2680,6 +2759,7 @@ public class JpaItemRepository implements ItemRepository {
 <li>논리 트랜잭션들은 하나의 물리 트랜잭션으로 묶인다.</li>
 <li>물리 트랜잭션은 우리가 이해하는 실제 데이터베이스에 적용되는 트랜잭션을 뜻한다. 실제 커넥션을 통해서 트랜잭션을 시작( setAutoCommit(false)) 하고, 실제 커넥션을 통해서 커밋, 롤백하는 단위이다.</li>
 <li>논리 트랜잭션은 트랜잭션 매니저를 통해 트랜잭션을 사용하는 단위이다.</li>
+<li>이러한 논리 트랜잭션 개념은 트랜잭션이 진행되는 중에 내부에 추가로 트랜잭션을 사용하는 경우에 나타난다.</li>
 </ul>
 <p>논리 트랜잭션 개념을 도입해 단순한 원칙 2가지를 만든다.</p>
 <ol>
@@ -2689,7 +2769,7 @@ public class JpaItemRepository implements ItemRepository {
 <p>외부 트랜잭션에 내부트랜잭션이 있는경우 내부 트랜잭션은 새로운 트랜잭션이 생기지 않고 그대로 이어 받는다.</p>
 <p>외부 트랜잭션과 내부 트랜잭션이 <strong>하나의 물리 트랜잭션으로 묶이는 것</strong>이다.</p>
 <p>만약 내부 트랜잭션이 실제 물리 트랜잭션을 커밋하면 트랜잭션이 끝난다. -> 내부 트랜잭션은 물리 트랜잭션을 커밋하면 안된다.</p>
-<p>스프링은 이렇게 여러 트랜잭션이 함께 사용되는 경우, <strong>차음 트랜잭션을 시작한 외부 트랜잭션이 실제 물리 트랜잭션을 관리</strong>하도록 한다.</p>
+<p>스프링은 이렇게 여러 트랜잭션이 함께 사용되는 경우, <strong>처음 트랜잭션을 시작한 외부 트랜잭션이 실제 물리 트랜잭션을 관리</strong>하도록 한다.</p>
 <p>요청 흐름</p>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -2792,7 +2872,9 @@ public class JpaItemRepository implements ItemRepository {
 <p>응답시에는 실제 커밋을 호출하지 않는다.</p>
 <p>여기서 정리하면</p>
 <ul>
-<li>핵심은 트랜잭션 매니저에 커밋을 호출한다고 해서 항상 실제 커넥션에 물리 커밋이 발생하지 안흔ㄴ다.</li>
+<li>핵심은 트랜잭션 매니저에 커밋을 호출한다고 해서 항상 실제 커넥션에 물리 커밋이 발생하지 않는다.</li>
+<li>신규 트랜잭션인 경우에만 실제 커넥션을 사용해서 물리 커밋과 롤백을 수행</li>
+<li>신규 트랜잭션이 아니면 실제 물리 커넥션을 사용하지 않는다.</li>
 <li>트랜잭션이 내부에서 추가로 사용되면, 트랜잭션 매니저를 통해 논리 트랜잭션을 관리하고, 모든 논리 트랜잭션이 커밋되면 물리 트랜잭션이 커밋된다고 이해하면 된다.</li>
 </ul>
 <hr>
@@ -2903,6 +2985,10 @@ public class JpaItemRepository implements ItemRepository {
   </a>
     </span></p>
 <p>사진과 같이 물리 트랜잭션과 내부 트랜잭션을 분리하기 위해선 <code>REQUIRES_NEW</code>옵션을 사용하면 된다.</p>
+<ul>
+<li>외부 트랜잭션과 내부 트랜잭션이 각각 별도의 물리 트랜잭션을 가진다.</li>
+<li>별도의 물리 트랜잭션을 가진다는 뜻은 DB커넥션을 따로 사용한다는 뜻이다.</li>
+</ul>
 <p>요청 흐름과 응답 흐름은 다음과 같다.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -3001,6 +3087,11 @@ public class JpaItemRepository implements ItemRepository {
   </a>
     </span></p>
 <p>내부 트랜잭션이 신규 트랜잭션인지 확인하고 롤백한다.</p>
+<p>정리</p>
+<ul>
+<li>REQUIRES_NEW 옵션을 사용하면 물리 트랜잭션이 명확하게 분리된다.</li>
+<li>REQUIRES_NEW 를 사용하면 데이터베이스 커넥션이 동시에 2개 사용된다는 점을 주의해야 한다.</li>
+</ul>
 <h4 id="트랜잭션-다양한-전파-옵션" style="position:relative;"><a href="#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EB%8B%A4%EC%96%91%ED%95%9C-%EC%A0%84%ED%8C%8C-%EC%98%B5%EC%85%98" aria-label="트랜잭션 다양한 전파 옵션 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>트랜잭션 다양한 전파 옵션</h4>
 <p>대부분 기본 설정은 <code>REQUIRED</code></p>
 <p>아주 가끔 <code>REQUIRES_NEW</code>를 사용한다. 나머지는 사용할 때 알아보자</p>
@@ -3118,13 +3209,13 @@ public class JpaItemRepository implements ItemRepository {
 <p><code>REQUIRES_NEW</code>를 사용</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="49864520625976210000"
+              data-toaster-id="22388806052143174000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`@Transactional(propagation = Propagation.REQUIRES_NEW)
-public void save(Log logMessage)`, `49864520625976210000`)"
+public void save(Log logMessage)`, `22388806052143174000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -3245,7 +3336,6 @@ public void save(Log logMessage)`, `49864520625976210000`)"
     </span></p>
 <h1 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h1>
 <p><a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-db-2/dashboard" target="_blank" rel="nofollow noopener noreferrer">스프링 DB 2편 - 데이터 접근 활용 기술 - 김영한</a></p>
-<pre><code></code></pre>
 <style class="grvsc-styles">
   .grvsc-container {
     overflow: auto;
