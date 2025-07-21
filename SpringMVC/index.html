@@ -339,7 +339,7 @@ HandlerExceptionResolver</li>
 <p>애노테이션 기반 스프링 MVC를 사용할 때 편리한 웹 MVC 기본 설정</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="70495488355187090000"
+              data-toaster-id="99662794865330590000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -347,7 +347,7 @@ HandlerExceptionResolver</li>
               onClick="copyToClipboard(`@Configuration
 @EnableWebMvc
 public class WebConfig {
-}`, `70495488355187090000`)"
+}`, `99662794865330590000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -364,7 +364,7 @@ public class WebConfig {
 <p>@EnableWebMvc가 제공하는 빈을 커스터마이징할 수 있는 기능을 제공하는 인터페이스</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="76317802707742300000"
+              data-toaster-id="6351550138029282000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -377,7 +377,7 @@ public class WebConfig implements WebMvcConfigurer {
     registry.jsp(&quot;/WEB-INF/&quot;, &quot;.jsp&quot;);
   }
 }
-`, `76317802707742300000`)"
+`, `6351550138029282000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -657,7 +657,7 @@ public class WebConfig implements WebMvcConfigurer {
 <p>예시</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="36259998939055428000"
+              data-toaster-id="4292677604240258000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -667,7 +667,7 @@ public class WebConfig implements WebMvcConfigurer {
 // public Event getEvent(@ModelAttribute Event event) {
 public Event getEvent(Event event) {
   return event;
-}`, `36259998939055428000`)"
+}`, `4292677604240258000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -714,7 +714,7 @@ public Event getEvent(Event event) {
 <p>예시 코드</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="7923645329060514000"
+              data-toaster-id="71245928707506676000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -730,7 +730,7 @@ public void createEvent() throws Exception {
       .accept(MediaType.APPLICATION_JSON)
   ).andExpect(status().isOk());
 }
-`, `7923645329060514000`)"
+`, `71245928707506676000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -770,7 +770,7 @@ public void createEvent() throws Exception {
 <p>예제에선 Interceptor를 활용해 session에 localdatetime을 넣어주고 실행</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="21385186824289760000"
+              data-toaster-id="53698840267094704000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -778,7 +778,7 @@ public void createEvent() throws Exception {
               onClick="copyToClipboard(`@PostMapping(&quot;/event&quot;)
 public Event getEvent(Model model, @SessionAttribute LocalDateTime visitTime) {
   return event;
-}`, `21385186824289760000`)"
+}`, `53698840267094704000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -797,7 +797,7 @@ public Event getEvent(Model model, @SessionAttribute LocalDateTime visitTime) {
 <p>이 경우 RedirectAttributes에 설정해 넘겨준다. (Query Parameter에 담긴다)</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="82375287268825630000"
+              data-toaster-id="90604971019167500000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -810,7 +810,7 @@ public Event eventsFormLimitSubmit(@Validated @ModelAttribute Event evnt,
     attributes.addAttribute(&quot;name&quot;, event.getName());
     attributes.addAttribute(&quot;limit&quot;, event.getLimit());
   return &quot;redirect:/events/list;
-}`, `82375287268825630000`)"
+}`, `90604971019167500000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -837,7 +837,7 @@ public Event eventsFormLimitSubmit(@Validated @ModelAttribute Event evnt,
 <p>Model안에 담겨 꺼낼 수 있다.</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="72324828685890250000"
+              data-toaster-id="80764253451221090000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -857,7 +857,7 @@ public Event eventsFormLimitSubmit(@Validated @ModelAttribute Event evnt,
   Model model) {
 
   return &quot;/events/list&quot;;
-}`, `72324828685890250000`)"
+}`, `80764253451221090000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -898,7 +898,7 @@ public Event eventsFormLimitSubmit(@Validated @ModelAttribute Event evnt,
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="38193953503153820000"
+              data-toaster-id="61395236295465730000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -915,7 +915,7 @@ public String uploadFile(@RequestParam MultipartFile file, RedirectAttributes at
   return &quot;redirect:/events/list&quot;;
 }
 
-`, `38193953503153820000`)"
+`, `61395236295465730000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -960,7 +960,7 @@ public String uploadFile(@RequestParam MultipartFile file, RedirectAttributes at
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="32515246228532970000"
+              data-toaster-id="15890413302903306000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -972,7 +972,7 @@ public String uploadFile(@RequestParam MultipartFile file, RedirectAttributes at
     attributes.addFlashAttribute(&quot;message&quot;, message);
     return &quot;redirect:/events/list&quot;;
 }
-`, `32515246228532970000`)"
+`, `15890413302903306000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1014,7 +1014,7 @@ public String uploadFile(@RequestParam MultipartFile file, RedirectAttributes at
 <p>특정 컨트롤러에서 바인딩 또는 검증 설정을 변경하고 싶을 때 사용</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="93415079911826960000"
+              data-toaster-id="97308210125943460000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1022,7 +1022,7 @@ public String uploadFile(@RequestParam MultipartFile file, RedirectAttributes at
               onClick="copyToClipboard(`@InitBinder
 public void initEventBinder(WebDataBinder webDataBinder) {
     webDataBinder.setDisallowedFields(&quot;id&quot;);
-}`, `93415079911826960000`)"
+}`, `97308210125943460000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
