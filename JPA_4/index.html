@@ -59,13 +59,13 @@
 -> Generic - &#x3C;엔티티 타입, 식별자 타입></p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="13054447568868220000"
+              data-toaster-id="299217953274033540"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`public interface TeamRepository extends JpaRepository<Team, Long> {
-}`, `13054447568868220000`)"
+}`, `299217953274033540`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -93,7 +93,7 @@
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="67060611653576260000"
+              data-toaster-id="99633139749596400000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -104,7 +104,7 @@
       query=&quot;select m from Member m where m.username = :username&quot;)
 public class Member {
   ...
-}`, `67060611653576260000`)"
+}`, `99633139749596400000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -123,13 +123,13 @@ public class Member {
 <p>엔티티에 @NamedQuery로 작성한 SQL 가져와 사용</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="93391280147471140000"
+              data-toaster-id="5449997737060631000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`@Query(name = &quot;Member.findByUsername&quot;)
-List<Member> findByUsername(@Param(&quot;username&quot;) String username);`, `93391280147471140000`)"
+List<Member> findByUsername(@Param(&quot;username&quot;) String username);`, `5449997737060631000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -150,7 +150,7 @@ List<Member> findByUsername(@Param(&quot;username&quot;) String username);`, `93
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="6214550664453755000"
+              data-toaster-id="7247959098158874000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -162,7 +162,7 @@ List<Member> findUser(@Param(&quot;username&quot;) String username, @Param(&quot
 @Query(
   &quot;select new study.datajpa.dto.MemberDto(m.id, m.username, t.name) &quot; +
   &quot;from Member m join m.team t&quot;)
-List<MemberDto> findMemberDto();`, `6214550664453755000`)"
+List<MemberDto> findMemberDto();`, `7247959098158874000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -191,7 +191,7 @@ List<MemberDto> findMemberDto();`, `6214550664453755000`)"
 <p><a href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-return-types" target="_blank" rel="nofollow noopener noreferrer">Spring Data JPA return type 문서</a></p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="6774448681232848000"
+              data-toaster-id="85280630233361920000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -203,7 +203,7 @@ List<Member> findByUsername(String name);
 Member findByUsername(String name);
 
 //단건 Optional
-Optional<Member> findByUsername(String name);`, `6774448681232848000`)"
+Optional<Member> findByUsername(String name);`, `85280630233361920000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -242,7 +242,7 @@ Optional<Member> findByUsername(String name);`, `6774448681232848000`)"
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="86452409808052030000"
+              data-toaster-id="67195420193242825000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -250,7 +250,7 @@ Optional<Member> findByUsername(String name);`, `6774448681232848000`)"
               onClick="copyToClipboard(`// repository
 Page<Member> findPageByUsername(String name, Pageable pageable);
 Slice<Member> findSliceByUsername(String name, Pageable pageable);
-List<Member> findListByUsername(String name, Pageable pageable);`, `86452409808052030000`)"
+List<Member> findListByUsername(String name, Pageable pageable);`, `67195420193242825000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -267,7 +267,7 @@ List<Member> findListByUsername(String name, Pageable pageable);`, `864524098080
 -> <strong>@Query를 사용해 count 쿼리 분리 가능</strong></p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="97084763113501690000"
+              data-toaster-id="41362859295458400000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -275,7 +275,7 @@ List<Member> findListByUsername(String name, Pageable pageable);`, `864524098080
               onClick="copyToClipboard(`// repository
 @Query(value = &quot;select m from Member m left join m.team t&quot;,
         countQuery = &quot;select count(m.username) from Member m&quot;)
-Page<Member> findByAge(int age, Pageable pageable);`, `97084763113501690000`)"
+Page<Member> findByAge(int age, Pageable pageable);`, `41362859295458400000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -294,14 +294,14 @@ Page<Member> findByAge(int age, Pageable pageable);`, `97084763113501690000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="40909460810227660000"
+              data-toaster-id="38445647412572230000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`@Modifying(clearAutomatically = true)
 @Query(&quot;update Member m set m.age = m.age + 1 where m.age >= :age&quot;)
-int bulkUpdateAgePlus(@Param(&quot;age&quot;) int age);`, `40909460810227660000`)"
+int bulkUpdateAgePlus(@Param(&quot;age&quot;) int age);`, `38445647412572230000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -324,7 +324,7 @@ JPQL 없이 패치 조인</p>
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="89491313191383940000"
+              data-toaster-id="50301093389404430000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -336,7 +336,7 @@ List<Member> findMemberEntityGraph();
 
 // 메서드 이름에서 사용
 @EntityGraph(attributePaths = {&quot;team&quot;})
-List<Member> findByUsername(String username)`, `89491313191383940000`)"
+List<Member> findByUsername(String username)`, `50301093389404430000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -375,13 +375,13 @@ List<Member> findByUsername(String username)`, `89491313191383940000`)"
 <p>다른 이름으로 적용하고 싶으면 설정 변경</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="47362172073264780000"
+              data-toaster-id="93062174905871000000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
               onClick="copyToClipboard(`@EnableJpaRepositories(basePackages = &quot;study.datajpa.repository&quot;,
-                           repositoryImplementationPostfix = &quot;Impl&quot;)`, `47362172073264780000`)"
+                           repositoryImplementationPostfix = &quot;Impl&quot;)`, `93062174905871000000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -414,7 +414,7 @@ List<Member> findByUsername(String username)`, `89491313191383940000`)"
 <p>관련 어노테이션</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="20597584946671320000"
+              data-toaster-id="67972883627757445000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -422,7 +422,7 @@ List<Member> findByUsername(String username)`, `89491313191383940000`)"
               onClick="copyToClipboard(`@CreatedDate
 @LastModifiedDate
 @CreatedBy
-@LastModifiedBy`, `20597584946671320000`)"
+@LastModifiedBy`, `67972883627757445000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -441,7 +441,7 @@ List<Member> findByUsername(String username)`, `89491313191383940000`)"
 </blockquote>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="29204941134678440000"
+              data-toaster-id="13192920478777670000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -449,7 +449,7 @@ List<Member> findByUsername(String username)`, `89491313191383940000`)"
               onClick="copyToClipboard(`@GetMapping(&quot;/members/{id}&quot;)
 public String findMember(@PathVariable(&quot;id&quot;) Member member) {
     return member.getUsername();
-}`, `29204941134678440000`)"
+}`, `13192920478777670000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -476,7 +476,7 @@ public String findMember(@PathVariable(&quot;id&quot;) Member member) {
 <p>글로벌 설정 - 스프링 부트 설정</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="40419579716452070000"
+              data-toaster-id="26844594417378587000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -486,7 +486,7 @@ data:
   web:
     pageable:
       default-page-size: 10 # 기본 페이지 사이즈
-      max-page-size: 2000 # 최대 페이지 사이즈`, `40419579716452070000`)"
+      max-page-size: 2000 # 최대 페이지 사이즈`, `26844594417378587000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -504,7 +504,7 @@ data:
 <p>개별 설정 - @PageableDefault 어노테이션 사용</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="30764155251959992000"
+              data-toaster-id="13575879100227040000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -513,7 +513,7 @@ data:
 public String list(@PageableDefault(size = 12, sort = &quot;username&quot;,
                     direction = Sort.Direction.DESC) Pageable pageable) {
   ...
-}`, `30764155251959992000`)"
+}`, `13575879100227040000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -534,7 +534,7 @@ public String list(@PageableDefault(size = 12, sort = &quot;username&quot;,
 <p>ex) /members?member_page=0&#x26;order_page=1</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="87863478499430170000"
+              data-toaster-id="51699100533824030000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -543,7 +543,7 @@ public String list(@PageableDefault(size = 12, sort = &quot;username&quot;,
   @Qualifier(&quot;member&quot;) Pageable memberPageable,
   @Qualifier(&quot;order&quot;) Pageable orderPageable,
 )
-`, `87863478499430170000`)"
+`, `51699100533824030000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -598,7 +598,7 @@ public String list(@PageableDefault(size = 12, sort = &quot;username&quot;,
 -> @CreatedDate 조합하면 편리하게 확인 가능</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="44850669661297890000"
+              data-toaster-id="42975053592250620000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -628,7 +628,7 @@ public class Item implements Persistable {
         return createdDate == null;
     }
 }
-`, `44850669661297890000`)"
+`, `42975053592250620000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -669,12 +669,12 @@ public class Item implements Persistable {
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="39996337348718750000"
+              data-toaster-id="43035620658703810000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`./gradlew dependencies --configuration compileClasspath`, `39996337348718750000`)"
+              onClick="copyToClipboard(`./gradlew dependencies --configuration compileClasspath`, `43035620658703810000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -862,6 +862,6 @@ public class Item implements Persistable {
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-6e88cdb9a8736ce745b3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-5c97ada4935f63ea4dac.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-2a79c43e773fc0b792b9.js\"],\"component---src-pages-search-tsx\":[\"/component---src-pages-search-tsx-94ebe93d875ac40c1cab.js\"],\"component---src-templates-post-tsx\":[\"/component---src-templates-post-tsx-0eb74eeef903c575f946.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-6e88cdb9a8736ce745b3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-5c97ada4935f63ea4dac.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-7451930b65d7fc3c0e31.js\"],\"component---src-pages-search-tsx\":[\"/component---src-pages-search-tsx-94ebe93d875ac40c1cab.js\"],\"component---src-templates-post-tsx\":[\"/component---src-templates-post-tsx-0eb74eeef903c575f946.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="6d4bbf9e8e00c6311832";</script><script src="/webpack-runtime-063578a15eb63226c8fa.js" async></script><script src="/framework-3a490fc63390479c2f13.js" async></script><script src="/app-6e88cdb9a8736ce745b3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="bb2612580dfcf58b413d";</script><script src="/webpack-runtime-14d31338331d72bab3ac.js" async></script><script src="/framework-3a490fc63390479c2f13.js" async></script><script src="/app-6e88cdb9a8736ce745b3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

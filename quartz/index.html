@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.11.0"/><meta data-react-helmet="true" name="description" content="데이터 플랫폼 개발 중 마주한 동적 스케줄링 요구사항. Spring Scheduling, Cron 등 여러 대안을 비교 분석하고, 최종적으로 Quartz를 선택한 이유와 그 과정에서 얻은 핵심 개념 및 구현 노하우를 정리해 본다."/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="Quartz를 활용한 동적 스케줄링 시스템 구축기"/><meta data-react-helmet="true" property="og:description" content="데이터 플랫폼 개발 중 마주한 동적 스케줄링 요구사항. Spring Scheduling, Cron 등 여러 대안을 비교 분석하고, 최종적으로 Quartz를 선택한 이유와 그 과정에서 얻은 핵심 개념 및 구현 노하우를 정리해 본다."/><meta data-react-helmet="true" property="og:image" content="/static/f784bddc9194832ab3765b5252fc49b0/thumbnail.png"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:site_name" content="Quartz를 활용한 동적 스케줄링 시스템 구축기"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="Quartz를 활용한 동적 스케줄링 시스템 구축기"/><meta data-react-helmet="true" name="twitter:description" content="데이터 플랫폼 개발 중 마주한 동적 스케줄링 요구사항. Spring Scheduling, Cron 등 여러 대안을 비교 분석하고, 최종적으로 Quartz를 선택한 이유와 그 과정에서 얻은 핵심 개념 및 구현 노하우를 정리해 본다."/><meta data-react-helmet="true" name="twitter:image" content="/static/f784bddc9194832ab3765b5252fc49b0/thumbnail.png"/><meta data-react-helmet="true" name="twitter:site" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:creator" content="@사용자이름"/><style data-href="/styles.a9a66fba0ee2dc3f2598.css" data-identity="gatsby-global-css">.gatsby-code-button-container{display:flex;justify-content:flex-end;pointer-events:none;position:relative;top:28px;touch-action:none;z-index:100}.gatsby-code-button{cursor:pointer;pointer-events:auto}.gatsby-code-button:after{background-color:#000;color:#fff;content:attr(data-tooltip);display:none;font-size:16px;padding:5px;position:absolute;visibility:hidden;white-space:nowrap}.gatsby-code-button[data-tooltip]:after{right:0;top:26px}.gatsby-code-button[data-tooltip]:focus:after,.gatsby-code-button[data-tooltip]:hover:after{display:block;visibility:visible;z-index:200}.gatsby-code-button-toaster{align-items:center;bottom:0;display:flex;height:100vh;justify-content:center;left:0;pointer-events:none;position:fixed;right:0;top:0;width:100vw;z-index:500}.gatsby-code-button-toaster-text{animation:animation 3s cubic-bezier(.98,.01,.53,.47);background-color:#000;border-radius:2px;color:#fff;font-family:monospace;font-size:24px;letter-spacing:-1px;margin:0 15px;max-width:850px;opacity:0;padding:20px;text-align:center;width:100%}.gatsby-code-button-buffer{opacity:0;position:fixed;top:-9999px}@keyframes animation{0%,50%{opacity:1}50%,to{opacity:0}}
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.11.0"/><meta data-react-helmet="true" name="description" content="데이터 플랫폼 개발 중 마주한 동적 스케줄링 요구사항 중 여러 대안을 비교 분석하고, 과정에서 얻은 핵심 개념 및 구현 정리"/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="Quartz를 활용한 동적 스케줄링 시스템 구축기"/><meta data-react-helmet="true" property="og:description" content="데이터 플랫폼 개발 중 마주한 동적 스케줄링 요구사항 중 여러 대안을 비교 분석하고, 과정에서 얻은 핵심 개념 및 구현 정리"/><meta data-react-helmet="true" property="og:image" content="/static/f784bddc9194832ab3765b5252fc49b0/thumbnail.png"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:site_name" content="Quartz를 활용한 동적 스케줄링 시스템 구축기"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="Quartz를 활용한 동적 스케줄링 시스템 구축기"/><meta data-react-helmet="true" name="twitter:description" content="데이터 플랫폼 개발 중 마주한 동적 스케줄링 요구사항 중 여러 대안을 비교 분석하고, 과정에서 얻은 핵심 개념 및 구현 정리"/><meta data-react-helmet="true" name="twitter:image" content="/static/f784bddc9194832ab3765b5252fc49b0/thumbnail.png"/><meta data-react-helmet="true" name="twitter:site" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:creator" content="@사용자이름"/><style data-href="/styles.a9a66fba0ee2dc3f2598.css" data-identity="gatsby-global-css">.gatsby-code-button-container{display:flex;justify-content:flex-end;pointer-events:none;position:relative;top:28px;touch-action:none;z-index:100}.gatsby-code-button{cursor:pointer;pointer-events:auto}.gatsby-code-button:after{background-color:#000;color:#fff;content:attr(data-tooltip);display:none;font-size:16px;padding:5px;position:absolute;visibility:hidden;white-space:nowrap}.gatsby-code-button[data-tooltip]:after{right:0;top:26px}.gatsby-code-button[data-tooltip]:focus:after,.gatsby-code-button[data-tooltip]:hover:after{display:block;visibility:visible;z-index:200}.gatsby-code-button-toaster{align-items:center;bottom:0;display:flex;height:100vh;justify-content:center;left:0;pointer-events:none;position:fixed;right:0;top:0;width:100vw;z-index:500}.gatsby-code-button-toaster-text{animation:animation 3s cubic-bezier(.98,.01,.53,.47);background-color:#000;border-radius:2px;color:#fff;font-family:monospace;font-size:24px;letter-spacing:-1px;margin:0 15px;max-width:850px;opacity:0;padding:20px;text-align:center;width:100%}.gatsby-code-button-buffer{opacity:0;position:fixed;top:-9999px}@keyframes animation{0%,50%{opacity:1}50%,to{opacity:0}}
 
 /*
 ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
@@ -230,12 +230,12 @@
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="77506651177240760000"
+              data-toaster-id="17734701761186122000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`	implementation 'org.springframework.boot:spring-boot-starter-quartz'`, `77506651177240760000`)"
+              onClick="copyToClipboard(`	implementation 'org.springframework.boot:spring-boot-starter-quartz'`, `17734701761186122000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -250,28 +250,28 @@
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="58258143162005620000"
+              data-toaster-id="22591871814994600000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
               data-toaster-duration="3500"
-              onClick="copyToClipboard(`  quartz:
-    # Quartz가 스케줄 정보를 저장할 방식을 jdbc로 지정 (DB 사용)
-    job-store-type: jdbc
-    jdbc:
-      # 애플리케이션 시작 시 Quartz 관련 테이블을 자동으로 생성/초기화
-      # 개발 초기에는 'always'가 편리하지만, 운영 환경에서는 'never'로 변경하고 DDL을 수동으로 실행하는 것을 권장
-      initialize-schema: always
-    properties:
-      org.quartz.scheduler.instanceName: my-clustered-scheduler
-      org.quartz.scheduler.instanceId: AUTO
-      org.quartz.threadPool.threadCount: 10
-      org.quartz.jobStore.driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+              onClick="copyToClipboard(`quartz:
+  # Quartz가 스케줄 정보를 저장할 방식을 jdbc로 지정 (DB 사용)
+  job-store-type: jdbc
+  jdbc:
+    # 애플리케이션 시작 시 Quartz 관련 테이블을 자동으로 생성/초기화
+    # 개발 초기에는 'always'가 편리하지만, 운영 환경에서는 'never'로 변경하고 DDL을 수동으로 실행하는 것을 권장
+    initialize-schema: always
+  properties:
+    org.quartz.scheduler.instanceName: my-clustered-scheduler
+    org.quartz.scheduler.instanceId: AUTO
+    org.quartz.threadPool.threadCount: 10
+    org.quartz.jobStore.driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
 
-      org.quartz.jobStore.tablePrefix: QRTZ_
-      # --- 클러스터링 설정 (여러 인스턴스로 앱을 실행할 경우 필수) ---
-      org.quartz.jobStore.isClustered: true
-      org.quartz.jobStore.clusterCheckinInterval: 20000`, `58258143162005620000`)"
+    org.quartz.jobStore.tablePrefix: QRTZ_
+    # --- 클러스터링 설정 (여러 인스턴스로 앱을 실행할 경우 필수) ---
+    org.quartz.jobStore.isClustered: true
+    org.quartz.jobStore.clusterCheckinInterval: 20000`, `22591871814994600000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -280,23 +280,23 @@
                 copyButtonText<svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>
               </div>
             </div>
-<pre class="grvsc-container default-dark" data-language="yaml" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="1"></span><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">quartz</span><span class="mtk1">:</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="2"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3"># Quartz가 스케줄 정보를 저장할 방식을 jdbc로 지정 (DB 사용)</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="3"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">job-store-type</span><span class="mtk1">: </span><span class="mtk8">jdbc</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="4"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">jdbc</span><span class="mtk1">:</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="5"></span><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk3"># 애플리케이션 시작 시 Quartz 관련 테이블을 자동으로 생성/초기화</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="6"></span><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk3"># 개발 초기에는 &#39;always&#39;가 편리하지만, 운영 환경에서는 &#39;never&#39;로 변경하고 DDL을 수동으로 실행하는 것을 권장</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="7"></span><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">initialize-schema</span><span class="mtk1">: </span><span class="mtk8">always</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="8"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">properties</span><span class="mtk1">:</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="9"></span><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">org.quartz.scheduler.instanceName</span><span class="mtk1">: </span><span class="mtk8">my-clustered-scheduler</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="10"></span><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">org.quartz.scheduler.instanceId</span><span class="mtk1">: </span><span class="mtk8">AUTO</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="11"></span><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">org.quartz.threadPool.threadCount</span><span class="mtk1">: </span><span class="mtk7">10</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="12"></span><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">org.quartz.jobStore.driverDelegateClass</span><span class="mtk1">: </span><span class="mtk8">org.quartz.impl.jdbcjobstore.PostgreSQLDelegate</span></span></span>
+<pre class="grvsc-container default-dark" data-language="yaml" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="1"></span><span class="grvsc-source"><span class="mtk4">quartz</span><span class="mtk1">:</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="2"></span><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk3"># Quartz가 스케줄 정보를 저장할 방식을 jdbc로 지정 (DB 사용)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="3"></span><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">job-store-type</span><span class="mtk1">: </span><span class="mtk8">jdbc</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="4"></span><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">jdbc</span><span class="mtk1">:</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="5"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3"># 애플리케이션 시작 시 Quartz 관련 테이블을 자동으로 생성/초기화</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="6"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3"># 개발 초기에는 &#39;always&#39;가 편리하지만, 운영 환경에서는 &#39;never&#39;로 변경하고 DDL을 수동으로 실행하는 것을 권장</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="7"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">initialize-schema</span><span class="mtk1">: </span><span class="mtk8">always</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="8"></span><span class="grvsc-source"><span class="mtk1">  </span><span class="mtk4">properties</span><span class="mtk1">:</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="9"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">org.quartz.scheduler.instanceName</span><span class="mtk1">: </span><span class="mtk8">my-clustered-scheduler</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="10"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">org.quartz.scheduler.instanceId</span><span class="mtk1">: </span><span class="mtk8">AUTO</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="11"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">org.quartz.threadPool.threadCount</span><span class="mtk1">: </span><span class="mtk7">10</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="12"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">org.quartz.jobStore.driverDelegateClass</span><span class="mtk1">: </span><span class="mtk8">org.quartz.impl.jdbcjobstore.PostgreSQLDelegate</span></span></span>
 <span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="13"></span><span class="grvsc-source"></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="14"></span><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">org.quartz.jobStore.tablePrefix</span><span class="mtk1">: </span><span class="mtk8">QRTZ_</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="15"></span><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk3"># --- 클러스터링 설정 (여러 인스턴스로 앱을 실행할 경우 필수) ---</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="16"></span><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">org.quartz.jobStore.isClustered</span><span class="mtk1">: </span><span class="mtk4">true</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="17"></span><span class="grvsc-source"><span class="mtk1">      </span><span class="mtk4">org.quartz.jobStore.clusterCheckinInterval</span><span class="mtk1">: </span><span class="mtk7">20000</span></span></span></code></pre>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="14"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">org.quartz.jobStore.tablePrefix</span><span class="mtk1">: </span><span class="mtk8">QRTZ_</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="15"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3"># --- 클러스터링 설정 (여러 인스턴스로 앱을 실행할 경우 필수) ---</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="16"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">org.quartz.jobStore.isClustered</span><span class="mtk1">: </span><span class="mtk4">true</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="17"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">org.quartz.jobStore.clusterCheckinInterval</span><span class="mtk1">: </span><span class="mtk7">20000</span></span></span></code></pre>
 <ul>
 <li>DB 연동 + 클러스터링 설정.</li>
 <li>운영환경에서는 initialize-schema: never로 바꿔야 함.</li>
@@ -306,7 +306,7 @@
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="85400218228646690000"
+              data-toaster-id="52416498335689286000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -347,7 +347,7 @@ public class QuartzConfig {
             // 예: schedulerFactoryBean.setWaitForJobsToCompleteOnShutdown(true);
         };
     }
-}`, `85400218228646690000`)"
+}`, `52416498335689286000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -409,7 +409,7 @@ public class QuartzConfig {
 </ul>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="5901709228138663000"
+              data-toaster-id="9238084049951945000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -429,7 +429,7 @@ public class QuartzConfig {
         beanFactory.autowireBean(job);
         return job;
     }
-}`, `5901709228138663000`)"
+}`, `9238084049951945000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -471,7 +471,7 @@ public class QuartzConfig {
 <p>job을 추가하길 원하는 service에서 job service를 호출해 job등록</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="63970416331643580000"
+              data-toaster-id="97036414308314800000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -501,7 +501,7 @@ public class WrkClctController {
 @Service
 @RequiredArgsConstructor
 public class WrkClctServiceImpl implements WrkClctService {
-    
+
     ...
 
     @Override
@@ -534,7 +534,7 @@ public class WrkClctServiceImpl implements WrkClctService {
     }
 
     ...
-}`, `63970416331643580000`)"
+}`, `97036414308314800000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -568,7 +568,7 @@ public class WrkClctServiceImpl implements WrkClctService {
 <span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="23"></span><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Service</span></span></span>
 <span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="24"></span><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">RequiredArgsConstructor</span></span></span>
 <span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="25"></span><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">WrkClctServiceImpl</span><span class="mtk1"> </span><span class="mtk4">implements</span><span class="mtk1"> </span><span class="mtk10">WrkClctService</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="26"></span><span class="grvsc-source"><span class="mtk1">    </span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="26"></span><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="27"></span><span class="grvsc-source"><span class="mtk1">    ...</span></span></span>
 <span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="28"></span><span class="grvsc-source"></span></span>
 <span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="29"></span><span class="grvsc-source"><span class="mtk1">    @</span><span class="mtk10">Override</span></span></span>
@@ -616,7 +616,7 @@ public class WrkClctServiceImpl implements WrkClctService {
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="33047997591003652000"
+              data-toaster-id="41559630896426340000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -756,7 +756,7 @@ public class QuartzSchedulService {
         log.debug(&quot;생성된 Cron: [{}] for Schedul: {}&quot;, cron, schedulDetail.getSchedulTitle());
         return cron;
     }
-}`, `33047997591003652000`)"
+}`, `41559630896426340000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -909,7 +909,7 @@ public class QuartzSchedulService {
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="45521742283137900000"
+              data-toaster-id="66424098239570166000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -975,7 +975,7 @@ public class DataPlatformJob implements Job {
 
         log.info(&quot;>>>>>> Quartz Job 실행 완료 (Schedul ID: {}) <<<<<<&quot;, schedulId);
     }
-}`, `45521742283137900000`)"
+}`, `66424098239570166000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1056,7 +1056,7 @@ public class DataPlatformJob implements Job {
 </ol>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="4275574296740591600"
+              data-toaster-id="40886982193642180000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1105,7 +1105,7 @@ public class SchedulInitializer implements CommandLineRunner {
         }
         log.info(&quot;===== [Quartz] 스케줄러 동기화 완료 =====&quot;);
     }
-}`, `4275574296740591600`)"
+}`, `40886982193642180000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1208,7 +1208,7 @@ public class SchedulInitializer implements CommandLineRunner {
 <p>확인하기 좋은 SQL문</p>
 <div
               class="gatsby-code-button-container copyButtonContainer"
-              data-toaster-id="66927893781687640000"
+              data-toaster-id="81307781605161930000"
               data-toaster-class="gatsby-code-button-toaster copyButtonToaster"
               data-toaster-text-class="gatsby-code-button-toaster-text copyButtonToasterText"
               data-toaster-text="customToasterText"
@@ -1230,7 +1230,7 @@ JOIN
 LEFT JOIN
     QRTZ_CRON_TRIGGERS C ON B.SCHED_NAME = C.SCHED_NAME AND B.TRIGGER_NAME = C.TRIGGER_NAME AND B.TRIGGER_GROUP = C.TRIGGER_GROUP
 ORDER BY
-    B.NEXT_FIRE_TIME ASC;`, `66927893781687640000`)"
+    B.NEXT_FIRE_TIME ASC;`, `81307781605161930000`)"
             >
               <div
                 class="gatsby-code-button copyButtonClass"
@@ -1500,6 +1500,6 @@ ORDER BY
           <script
             id="gatsby-chunk-mapping"
           >
-            window.___chunkMapping="{\"app\":[\"/app-6e88cdb9a8736ce745b3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-5c97ada4935f63ea4dac.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-2a79c43e773fc0b792b9.js\"],\"component---src-pages-search-tsx\":[\"/component---src-pages-search-tsx-94ebe93d875ac40c1cab.js\"],\"component---src-templates-post-tsx\":[\"/component---src-templates-post-tsx-0eb74eeef903c575f946.js\"]}";
+            window.___chunkMapping="{\"app\":[\"/app-6e88cdb9a8736ce745b3.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-5c97ada4935f63ea4dac.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-7451930b65d7fc3c0e31.js\"],\"component---src-pages-search-tsx\":[\"/component---src-pages-search-tsx-94ebe93d875ac40c1cab.js\"],\"component---src-templates-post-tsx\":[\"/component---src-templates-post-tsx-0eb74eeef903c575f946.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="6d4bbf9e8e00c6311832";</script><script src="/webpack-runtime-063578a15eb63226c8fa.js" async></script><script src="/framework-3a490fc63390479c2f13.js" async></script><script src="/app-6e88cdb9a8736ce745b3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="bb2612580dfcf58b413d";</script><script src="/webpack-runtime-14d31338331d72bab3ac.js" async></script><script src="/framework-3a490fc63390479c2f13.js" async></script><script src="/app-6e88cdb9a8736ce745b3.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
